@@ -8,6 +8,9 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { BaseUrlInterceptor } from './interceptors/base-url.interceptor';
+import { AuthTokenInterceptor } from './interceptors/auth-token.interceptor';
+import { AuthModule } from './auth/auth.module';
+import { VideojuegosModule } from './videojuegos/videojuegos.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,7 +19,9 @@ import { BaseUrlInterceptor } from './interceptors/base-url.interceptor';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    AuthModule,
+    VideojuegosModule
   ],
   providers: [
     {
@@ -26,6 +31,11 @@ import { BaseUrlInterceptor } from './interceptors/base-url.interceptor';
     {
       provide: HTTP_INTERCEPTORS,
       useClass: BaseUrlInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthTokenInterceptor,
       multi: true
     }
   ],

@@ -29,7 +29,7 @@ export class LoginPage implements OnInit {
     }).subscribe(
       () => {
         console.log('Usuario logueado');
-        this.router.navigate(['/pagina1']);
+        this.router.navigate(['/videojuegos']);
       },
       error => {
         console.error(error);
