@@ -4,8 +4,6 @@ import { Observable, of, Subject } from 'rxjs';
 import { map } from "rxjs/operators";
 import { TokenResponse } from '../interfaces/responses';
 import { LoginUsuario } from '../interfaces/LoginUsuario';
-import { Usuario } from 'src/app/interfaces/Usuario';
-import { UsuarioResponse } from 'src/app/interfaces/Responses';
 
 @Injectable({
   providedIn: 'root'

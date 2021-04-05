@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{videojuego.nombre}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-item>
+      <ion-avatar slot="start">
+        <img [src]="'http://localhost:8000/img/users/' + videojuego.usuario.avatar" alt="">
+      </ion-avatar>
+      <ion-label>
+        <h3>{{videojuego.usuario.nombre}}</h3>
+        <p>{{videojuego.fechaCreacion}}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-img [src]="'http://localhost:8000/img/videogames/' + videojuego.imagen"></ion-img>
+
+    <ion-card-header>
+      <ion-card-title>{{videojuego.nombre}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-row>
+        <ion-col>
+          {{videojuego.descripcion}}
+        </ion-col>
+        <ion-col class="ion-text-center plataforma">
+          {{videojuego.plataforma.nombre}}
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+
+    <ion-footer>
+      <ion-row>
+        <ion-col>
+          <button center text-center>
+            <ion-icon name="cart"></ion-icon>
+            <div>Añadir a carro</div>
+          </button>
+        </ion-col>
+        <ion-col>
+
+        </ion-col>
+      </ion-row>
+    </ion-footer>
+  </ion-card>
+</ion-content>

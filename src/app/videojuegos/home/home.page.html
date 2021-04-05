@@ -14,6 +14,16 @@
       <ion-card-title>{{videojuego.nombre}}</ion-card-title>
     </ion-card-header>
     <ion-card-content>{{videojuego.descripcion}}</ion-card-content>
+    <ion-card-content>
+      <ion-row>
+        <ion-col>
+          {{videojuego.descripcion}}
+        </ion-col>
+        <ion-col class="ion-text-center plataforma">
+          {{videojuego.plataforma.nombre}}
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
 
     <ion-footer>
       <ion-row class="ion-align-items-center ion-text-center">
@@ -37,7 +47,7 @@
           </button>
         </ion-col>
         <ion-col text-center>
-          <button>
+          <button [routerLink]="['/videojuegos', videojuego.id]">
             <ion-icon name="information-circle"></ion-icon>
             <div>Más info</div>
           </button>

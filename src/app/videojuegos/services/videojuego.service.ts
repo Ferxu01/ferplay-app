@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { VideojuegosResponse } from 'src/app/interfaces/Responses';
+import { VideojuegoResponse, VideojuegosResponse } from 'src/app/interfaces/Responses';
 import { Videojuego } from '../interfaces/Videojuego';
 
 @Injectable({
@@ -15,6 +15,12 @@ export class VideojuegoService {
 
   obtenerVideojuegos(): Observable<Videojuego[]> {
     return this.http.get<VideojuegosResponse>(`${this.videojuegoURL}`).pipe(
+      map(resp => resp.data)
+    );
+  }
+
+  obtenerVideojuego(id: number): Observable<Videojuego> {
+    return this.http.get<VideojuegoResponse>(`${this.videojuegoURL}/${id}`).pipe(
       map(resp => resp.data)
     );
   }

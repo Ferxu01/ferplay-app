@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './auth/services/auth.service';
 import { Usuario } from './interfaces/Usuario';
+import { Plugins } from '@capacitor/core';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',

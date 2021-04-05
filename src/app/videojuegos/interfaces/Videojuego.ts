@@ -1,3 +1,6 @@
+import { Usuario } from "src/app/interfaces/Usuario";
+import { Plataforma } from "./Plataforma";
+
 export interface Videojuego {
   id?: number;
   nombre: string;
@@ -6,4 +9,6 @@ export interface Videojuego {
   numLikes?: number;
   stock?: number;
   fechaCreacion?: string;
+  usuario?: Usuario;
+  plataforma: Plataforma;
 }
