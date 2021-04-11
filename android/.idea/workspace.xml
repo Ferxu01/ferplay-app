@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b53278ab-b655-4297-9b77-da69abc852ca" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/auth/login/login.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/auth/login/login.page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/auth/services/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/auth/services/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/interfaces/Responses.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/interfaces/Responses.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/videojuegos/home/home.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/videojuegos/home/home.page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/videojuegos/interfaces/Comentario.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/videojuegos/interfaces/Comentario.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/videojuegos/interfaces/Videojuego.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/videojuegos/interfaces/Videojuego.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/videojuegos/services/comentario.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/videojuegos/services/comentario.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/videojuegos/services/videojuego.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/videojuegos/services/videojuego.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/videojuegos/videojuego-detalles/videojuego-comentarios/videojuego-comentarios.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/videojuegos/videojuego-detalles/videojuego-comentarios/videojuego-comentarios.page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/videojuegos/videojuego-detalles/videojuego-comentarios/videojuego-comentarios.page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/videojuegos/videojuego-detalles/videojuego-comentarios/videojuego-comentarios.page.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/videojuegos/videojuego-detalles/videojuego-comentarios/videojuego-comentarios.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/videojuegos/videojuego-detalles/videojuego-comentarios/videojuego-comentarios.page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/videojuegos/videojuegos-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/videojuegos/videojuegos-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/videojuegos/videojuegos.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/videojuegos/videojuegos.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/theme/variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../src/theme/variables.scss" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1qypdCyFBlWplLlgeMVeEE0MskT" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b53278ab-b655-4297-9b77-da69abc852ca" name="Default Changelist" comment="" />
+      <created>1618061768821</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1618061768821</updated>
+    </task>
+    <servers />
+  </component>
+</project>

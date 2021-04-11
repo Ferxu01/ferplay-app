@@ -11,4 +11,5 @@ export interface Videojuego {
   fechaCreacion?: string;
   usuario?: Usuario;
   plataforma: Plataforma;
+  precio: number;
 }

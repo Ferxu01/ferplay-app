@@ -15,13 +15,6 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  //Provisional
-  /*obtenerUsuarioLogueado(): Observable<Usuario> {
-    return this.http.get<UsuarioResponse>('profile/me').pipe(
-      map(resp => resp.data)
-    );
-  }*/
-
   isLogged(): Observable<boolean> {
     if (this.logged) {
       return of(true);
@@ -40,5 +33,11 @@ export class AuthService {
         this.loginChange$.next(true);
       })
     );
+  }
+
+  cerrarSesion(): void {
+    localStorage.removeItem('token');
+    this.logged = false;
+    this.loginChange$.next(false);
   }
 }

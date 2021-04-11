@@ -24,4 +24,27 @@ export class VideojuegoService {
       map(resp => resp.data)
     );
   }
+
+  subirVideojuego(videojuego: Videojuego): Observable<Videojuego> {
+    console.log('aloha');
+    console.log(videojuego);
+    return this.http.post<VideojuegoResponse>(this.videojuegoURL, videojuego).pipe(
+      map(resp => resp.data)
+    );
+  }
+
+  editarVideojuego(videojuego: Videojuego): Observable<void> {
+    return this.http.put<void>(`${this.videojuegoURL}/${videojuego.id}`, {
+      nombre: videojuego.nombre,
+      descripcion: videojuego.descripcion,
+      precio: videojuego.precio,
+      imagen: videojuego.imagen,
+      plataforma: videojuego.plataforma,
+      stock: videojuego.stock
+    });
+  }
+
+  borrarVideojuego(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.videojuegoURL}/${id}`);
+  }
 }

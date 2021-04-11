@@ -28,7 +28,6 @@ export class LoginPage implements OnInit {
       password: this.usuario.password
     }).subscribe(
       () => {
-        console.log('Usuario logueado');
         this.router.navigate(['/videojuegos']);
       },
       error => {
