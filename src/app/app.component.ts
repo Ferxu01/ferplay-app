@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
     { title: 'Favoritos', url: '/folder/Favorites', icon: 'bookmark' },
     { title: 'Carro de compra', url: '/folder/Archived', icon: 'cart' },
     { title: 'Mis compras', url: '/folder/Trash', icon: 'list' },
-    { title: 'Mi perfil', url: '/profile/me', icon: 'person' },
+    { title: 'Mi perfil', url: '/usuarios/me', icon: 'person' },
   ];
 
   constructor(private generalService: GeneralService, private authService: AuthService, private nav: NavController) {}

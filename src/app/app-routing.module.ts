@@ -18,6 +18,11 @@ const routes: Routes = [
     path: 'videojuegos',
     loadChildren: () => import('./videojuegos/videojuegos.module').then(m => m.VideojuegosModule),
     canActivate: [LoginActivateGuard]
+  },
+  {
+    path: 'usuarios',
+    loadChildren: () => import('./usuarios/usuarios.module').then(m => m.UsuariosModule),
+    canActivate: [LoginActivateGuard]
   }
 ];
 

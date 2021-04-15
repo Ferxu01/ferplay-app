@@ -12,6 +12,7 @@ import { AuthTokenInterceptor } from './interceptors/auth-token.interceptor';
 import { AuthModule } from './auth/auth.module';
 import { VideojuegosModule } from './videojuegos/videojuegos.module';
 import { SharedModule } from './shared/shared.module';
+import { UsuariosModule } from './usuarios/usuarios.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,6 +24,7 @@ import { SharedModule } from './shared/shared.module';
     HttpClientModule,
     AuthModule,
     VideojuegosModule,
+    UsuariosModule,
     SharedModule
   ],
   providers: [
