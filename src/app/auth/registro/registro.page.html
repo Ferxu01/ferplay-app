@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+    </ion-buttons>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form #registerForm="ngForm" (ngSubmit)="registrar()">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Name</ion-label>
+        <ion-input name="name" required [(ngModel)]="usuario.nombre" #nameModel="ngModel"></ion-input>
+        <ion-icon name="checkmark-circle" slot="end" color="success" *ngIf="nameModel.dirty && nameModel.valid"></ion-icon>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" name="email" required [(ngModel)]="usuario.email" #emailModel="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"></ion-input>
+        <ion-icon name="checkmark-circle" slot="end" color="success" *ngIf="emailModel.dirty && emailModel.valid"></ion-icon>
+      </ion-item>
+
+      <div ngModelGroup="passwordGroup" #passwordGroupModel="ngModelGroup" appMatch="password,password2">
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input type="password" name="password" minlength="4" required [(ngModel)]="usuario.password" #passwordModel="ngModel"></ion-input>
+          <ion-icon name="checkmark-circle" slot="end" color="success" *ngIf="passwordModel.dirty && passwordModel.valid"></ion-icon>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input type="password" name="password2" minlength="4" required [(ngModel)]="password2" #passwordModel2="ngModel"></ion-input>
+          <ion-icon name="checkmark-circle" slot="end" color="success" *ngIf="passwordModel2.dirty && passwordGroupModel.valid"></ion-icon>
+        </ion-item>
+      </div>
+
+      <ion-item>
+        <ion-label position="inset">Avatar</ion-label>
+        <ion-button color="secondary" (click)="obtenerFotoCamara()">
+          <ion-icon name="camera" slot="start"></ion-icon>
+          Camera
+        </ion-button>
+        <ion-button color="tertiary" (click)="obtenerFotoGaleria()">
+          <ion-icon name="images" slot="start"></ion-icon>
+          Gallery
+        </ion-button>
+      </ion-item>
+    </ion-list>
+
+    <ion-img [src]="usuario.avatar" *ngIf="usuario.avatar"></ion-img>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" color="primary" expand="block" [disabled]="registerForm.invalid || !usuario.avatar">
+            <ion-icon name="paper-plane" slot="start"></ion-icon>
+            Register
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button color="danger" expand="block" fill="outline" [routerLink]="['/auth/login']" [routerDirection]="'root'">
+            <ion-icon name="arrow-undo" slot="start"></ion-icon>
+            Cancel
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

@@ -4,6 +4,7 @@ import { Observable, of, Subject } from 'rxjs';
 import { map } from "rxjs/operators";
 import { TokenResponse } from '../interfaces/responses';
 import { LoginUsuario } from '../interfaces/LoginUsuario';
+import { UsuarioRegistro } from '../interfaces/UsuarioRegistro';
 
 @Injectable({
   providedIn: 'root'
@@ -31,6 +32,20 @@ export class AuthService {
         localStorage.setItem('token', resp.token);
         this.logged = true;
         this.loginChange$.next(true);
+      })
+    );
+  }
+
+  registrar(usuario: UsuarioRegistro): Observable<void> {
+    return this.http.post<void>(`${this.authURL}/register`, usuario);
+  }
+
+  loginGoogle(token: string): Observable<void> {
+    return this.http.post<TokenResponse>(`${this.authURL}/google`, {access_token: token}).pipe(
+      map(resp => {
+        localStorage.setItem('token', resp.token);
+        this.loginChange$.next(true);
+        this.logged = true;
       })
     );
   }

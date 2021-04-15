@@ -8,6 +8,7 @@ import { LoginPageRoutingModule } from './login-routing.module';
 
 import { LoginPage } from './login.page';
 import { RouterModule, Routes } from '@angular/router';
+import { GoogleLoginModule } from '../google-login/google-login.module';
 
 const routes: Routes = [
   {
@@ -22,7 +23,8 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     LoginPageRoutingModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    GoogleLoginModule
   ],
   declarations: [LoginPage]
 })

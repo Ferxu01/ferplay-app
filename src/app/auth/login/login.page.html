@@ -26,7 +26,7 @@
           </ion-button>
         </ion-col>
         <ion-col>
-          <ion-button color="tertiary" expand="block" [routerLink]="['/auth/register']" [routerDirection]="'root'">
+          <ion-button color="tertiary" expand="block" [routerLink]="['/auth/registro']" [routerDirection]="'root'">
             <ion-icon name="paper-plane" slot="start"></ion-icon>
             Register
           </ion-button>
@@ -34,4 +34,9 @@
       </ion-row>
     </ion-grid>
   </form>
+  <ion-row>
+    <ion-col>
+      <app-google-login></app-google-login>
+    </ion-col>
+  </ion-row>
 </ion-content>
