@@ -11,6 +11,7 @@ import { BaseUrlInterceptor } from './interceptors/base-url.interceptor';
 import { AuthTokenInterceptor } from './interceptors/auth-token.interceptor';
 import { AuthModule } from './auth/auth.module';
 import { VideojuegosModule } from './videojuegos/videojuegos.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,7 +22,8 @@ import { VideojuegosModule } from './videojuegos/videojuegos.module';
     AppRoutingModule,
     HttpClientModule,
     AuthModule,
-    VideojuegosModule
+    VideojuegosModule,
+    SharedModule
   ],
   providers: [
     {

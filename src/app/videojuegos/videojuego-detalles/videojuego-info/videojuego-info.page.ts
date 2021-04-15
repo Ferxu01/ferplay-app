@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ActionSheetController } from '@ionic/angular';
+import { CarroCompraService } from 'src/app/features/carro-compra/services/carro-compra.service';
 import { Videojuego } from '../../interfaces/Videojuego';
 import { VideojuegoService } from '../../services/videojuego.service';
 import { VideojuegoDetallesPage } from '../videojuego-detalles.page';
@@ -18,6 +19,7 @@ export class VideojuegoInfoPage implements OnInit {
   constructor(
     @Inject(VideojuegoDetallesPage) private parentComponent: VideojuegoDetallesPage,
     private videojuegoService: VideojuegoService,
+    private carroCompraService: CarroCompraService,
     private router: Router,
     private actionSheetCtrl: ActionSheetController
   ) {}
@@ -65,6 +67,12 @@ export class VideojuegoInfoPage implements OnInit {
 
     const { role } = await actionSheet.onDidDismiss();
     console.log('onDidDismiss resolved with role', role);
+  }
+
+  addVideojuegoCarro() {
+    this.carroCompraService.addVideojuegoCarro(this.videojuego).subscribe(
+      resp => console.log(resp)
+    );
   }
 
 }

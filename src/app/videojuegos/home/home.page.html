@@ -9,7 +9,7 @@
 
 <ion-content>
   <ion-card *ngFor="let videojuego of videojuegos">
-    <img [src]="'http://localhost:8000/img/videogames/' + videojuego.imagen" alt="{{videojuego.nombre}}">
+    <img [src]="videojuego.imagen" alt="{{videojuego.nombre}}">
     <ion-card-header>
       <ion-card-title>{{videojuego.nombre}}</ion-card-title>
     </ion-card-header>

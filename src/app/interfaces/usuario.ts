@@ -1,3 +1,5 @@
+import { Provincia } from "./Provincia";
+
 export interface Usuario {
   id?: number;
   nombre?: string;
@@ -6,6 +8,6 @@ export interface Usuario {
   password?: string;
   avatar?: string;
   nickname?: string;
-  provincia?: number;
+  provincia?: Provincia;
   fechaCreacion?: string;
 }

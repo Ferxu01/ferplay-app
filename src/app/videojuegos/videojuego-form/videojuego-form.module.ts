@@ -6,6 +6,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { VideojuegoFormPage } from './videojuego-form.page';
 import { RouterModule, Routes } from '@angular/router';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 const routes: Routes = [
   {

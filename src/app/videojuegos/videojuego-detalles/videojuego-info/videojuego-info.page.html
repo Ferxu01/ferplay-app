@@ -8,7 +8,7 @@
   <ion-card>
     <ion-item>
       <ion-avatar slot="start">
-        <img [src]="'http://localhost:8000/img/users/' + videojuego.usuario.avatar" alt="">
+        <img [src]="videojuego.usuario.avatar" alt="">
       </ion-avatar>
       <ion-label>
         <h3>{{videojuego.usuario.nombre}}</h3>
@@ -17,7 +17,7 @@
       <ion-icon slot="end" name="ellipsis-vertical" (click)="showActionSheet()"></ion-icon>
     </ion-item>
 
-    <ion-img [src]="'http://localhost:8000/img/videogames/' + videojuego.imagen"></ion-img>
+    <ion-img [src]="videojuego.imagen"></ion-img>
 
     <ion-card-header>
       <ion-card-title>{{videojuego.nombre}}</ion-card-title>
@@ -39,7 +39,7 @@
     <ion-footer>
       <ion-row>
         <ion-col>
-          <button center text-center>
+          <button center text-center (click)="addVideojuegoCarro()">
             <ion-icon name="cart"></ion-icon>
             <div>Añadir a carro</div>
           </button>

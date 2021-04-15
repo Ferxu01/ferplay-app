@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { VideojuegoResponse, VideojuegosResponse } from 'src/app/interfaces/Responses';
 import { Videojuego } from '../interfaces/Videojuego';
+import { VideojuegoNuevo } from '../interfaces/VideojuegoNuevo';
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +26,7 @@ export class VideojuegoService {
     );
   }
 
-  subirVideojuego(videojuego: Videojuego): Observable<Videojuego> {
+  subirVideojuego(videojuego: VideojuegoNuevo): Observable<Videojuego> {
     console.log('aloha');
     console.log(videojuego);
     return this.http.post<VideojuegoResponse>(this.videojuegoURL, videojuego).pipe(
@@ -33,8 +34,8 @@ export class VideojuegoService {
     );
   }
 
-  editarVideojuego(videojuego: Videojuego): Observable<void> {
-    return this.http.put<void>(`${this.videojuegoURL}/${videojuego.id}`, {
+  editarVideojuego(videojuego: VideojuegoNuevo): Observable<void> {
+    return this.http.put<void>(`${this.videojuegoURL}/edit/${videojuego.id}`, {
       nombre: videojuego.nombre,
       descripcion: videojuego.descripcion,
       precio: videojuego.precio,

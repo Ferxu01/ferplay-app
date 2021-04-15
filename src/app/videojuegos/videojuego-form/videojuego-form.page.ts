@@ -4,7 +4,7 @@ import { Camera, CameraResultType, CameraSource } from '@capacitor/core';
 import { NavController } from '@ionic/angular';
 import { CameraPlugin } from 'src/app/interfaces/native-plugins/CameraPlugin';
 import { Plataforma } from '../interfaces/Plataforma';
-import { Videojuego } from '../interfaces/Videojuego';
+import { VideojuegoNuevo } from '../interfaces/VideojuegoNuevo';
 import { PlataformaService } from '../services/plataforma.service';
 import { VideojuegoService } from '../services/videojuego.service';
 
@@ -14,15 +14,12 @@ import { VideojuegoService } from '../services/videojuego.service';
   styleUrls: ['./videojuego-form.page.scss'],
 })
 export class VideojuegoFormPage implements OnInit, CameraPlugin {
-  nuevoVideojuego: Videojuego = {
+  nuevoVideojuego: VideojuegoNuevo = {
     nombre: '',
     descripcion: '',
     precio: 0,
     imagen: '',
-    plataforma: {
-      id: 1,
-      nombre: ''
-    }
+    plataforma: 0
   };
 
   plataformas: Plataforma[];
@@ -53,7 +50,7 @@ export class VideojuegoFormPage implements OnInit, CameraPlugin {
             descripcion: resp.descripcion,
             precio: resp.precio,
             imagen: resp.imagen,
-            plataforma: resp.plataforma,
+            plataforma: resp.plataforma.id,
             stock: resp.stock
           };
 

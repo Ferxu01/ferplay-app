@@ -1,15 +1,6 @@
-import { Usuario } from "src/app/interfaces/Usuario";
 import { Plataforma } from "./Plataforma";
+import { VideojuegoBase } from "./VideojuegoBase";
 
-export interface Videojuego {
-  id?: number;
-  nombre: string;
-  imagen: string;
-  descripcion: string;
-  numLikes?: number;
-  stock?: number;
-  fechaCreacion?: string;
-  usuario?: Usuario;
+export interface Videojuego extends VideojuegoBase {
   plataforma: Plataforma;
-  precio: number;
 }

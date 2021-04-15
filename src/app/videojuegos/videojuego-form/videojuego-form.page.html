@@ -3,7 +3,12 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Nuevo videojuego</ion-title>
+    <ion-title *ngIf="editando">
+      Editar videojuego
+    </ion-title>
+    <ion-title *ngIf="!editando">
+      Nuevo videojuego
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -24,7 +29,7 @@
 
       <ion-item>
         <ion-label position="floating">Category</ion-label>
-        <ion-select required #categoryModel="ngModel" name="category" [(ngModel)]="nuevoVideojuego.plataforma.id">
+        <ion-select required #categoryModel="ngModel" name="category" [(ngModel)]="nuevoVideojuego.plataforma">
           <ion-select-option value="0">Choose a category...</ion-select-option>
           <ion-select-option *ngFor="let plataforma of plataformas" [value]="plataforma.id">{{plataforma.nombre}}</ion-select-option>
         </ion-select>
@@ -58,7 +63,7 @@
 
     <ion-img [src]="nuevoVideojuego.imagen" *ngIf="nuevoVideojuego.imagen && !editando"></ion-img>
 
-    <ion-img *ngIf="editando && !nuevoVideojuego.imagen" [src]="'http://localhost:8000/img/videogames/' + nuevoVideojuego.imagen"></ion-img>
+    <ion-img *ngIf="editando" [src]="nuevoVideojuego.imagen"></ion-img>
 
     <ion-grid>
       <ion-row>
