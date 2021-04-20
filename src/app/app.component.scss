@@ -117,3 +117,14 @@ ion-note {
 ion-item.selected {
   --color: var(--ion-color-primary);
 }
+
+/*
+  Estilos extra botón carro compra
+*/
+.badge-cart {
+  position: relative;
+  right: 20px;
+  width: 23px;
+  top: 0px;
+  border-radius: 75%;
+}

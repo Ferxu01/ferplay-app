@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Vendedor</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-row>
+        <ion-col>
+          <img (click)="mostrarActionSheet()" [src]="usuario.avatar">
+        </ion-col>
+        <ion-col class="ion-text-end">
+          <!--<ion-button (click)="mostrarModalEditar()" color="light" size="small">
+            <ion-icon name="pencil-outline"></ion-icon>
+          </ion-button>-->
+          <a (click)="mostrarModalEditar()" color="primary">
+            <ion-icon name="pencil-outline"></ion-icon>
+          </a>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-card-title>
+            {{usuario.nombre}} {{usuario.apellidos}}
+          </ion-card-title>
+
+            Email: {{usuario.email}} <br>
+            Nickname: {{usuario.nickname}} <br>
+            Provincia: {{usuario.provincia.nombre}}
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+    <ion-item-divider></ion-item-divider>
+    <ion-card-content>
+      <ion-card-title>Videojuegos del usuario</ion-card-title>
+    </ion-card-content>
+    <ion-slides #sliderVideojuegosUsuario pager="true" (ionSlidesDidLoad)="slidear(sliderVideojuegosUsuario)">
+      <ion-slide *ngFor="let videojuego of videojuegosUsuario">
+        <ion-card>
+          <ion-row>
+            <ion-img [src]="videojuego.imagen"></ion-img>
+          </ion-row>
+          <ion-footer>
+            <ion-card-title class="mb-4">
+              {{videojuego.nombre}}
+            </ion-card-title>
+          </ion-footer>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  </ion-card>

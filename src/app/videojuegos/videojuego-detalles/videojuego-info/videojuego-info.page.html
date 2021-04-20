@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Información</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-item>
+      <ion-avatar slot="start">
+        <img [src]="videojuego.usuario.avatar" alt="">
+      </ion-avatar>
+      <ion-label>
+        <h3>{{videojuego.usuario.nombre}}</h3>
+        <p>{{videojuego.fechaCreacion}}</p>
+      </ion-label>
+      <ion-icon slot="end" name="ellipsis-vertical" (click)="showActionSheet()"></ion-icon>
+    </ion-item>
+
+    <ion-img [src]="videojuego.imagen"></ion-img>
+
+    <ion-card-header>
+      <ion-card-title>{{videojuego.nombre}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-row>
+        <ion-col class="ion-text-center precio">
+          {{videojuego.precio}} €
+        </ion-col>
+        <ion-col class="ion-text-center plataforma">
+          {{videojuego.plataforma.nombre}}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>{{videojuego.descripcion}}</ion-col>
+      </ion-row>
+    </ion-card-content>
+
+    <ion-footer>
+      <ion-row>
+        <ion-col>
+          <button center text-center (click)="addVideojuegoCarro()">
+            <ion-icon name="cart"></ion-icon>
+            <div>Añadir a carro</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button center text-center [routerLink]="['/videojuegos/edit', videojuego.id]">
+            <ion-icon name="create-outline"></ion-icon>
+            <div>Editar</div>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-footer>
+  </ion-card>
+</ion-content>
