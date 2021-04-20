@@ -13,6 +13,7 @@ import { AuthModule } from './auth/auth.module';
 import { VideojuegosModule } from './videojuegos/videojuegos.module';
 import { SharedModule } from './shared/shared.module';
 import { UsuariosModule } from './usuarios/usuarios.module';
+import { FeaturesModule } from './features/features.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,6 +26,7 @@ import { UsuariosModule } from './usuarios/usuarios.module';
     AuthModule,
     VideojuegosModule,
     UsuariosModule,
+    FeaturesModule,
     SharedModule
   ],
   providers: [

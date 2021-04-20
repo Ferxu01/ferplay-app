@@ -23,6 +23,7 @@ const routes: Routes = [
     path: 'edit/:id',
     loadChildren: () => import('./videojuego-form/videojuego-form.module').then(m => m.VideojuegoFormPageModule)
   }
+
 ];
 
 @NgModule({

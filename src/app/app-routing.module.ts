@@ -23,7 +23,14 @@ const routes: Routes = [
     path: 'usuarios',
     loadChildren: () => import('./usuarios/usuarios.module').then(m => m.UsuariosModule),
     canActivate: [LoginActivateGuard]
+  },
+  {
+    path: 'features',
+    loadChildren: () => import('./features/features.module').then(m => m.FeaturesModule),
+    canActivate: [LoginActivateGuard]
   }
+
+
 ];
 
 @NgModule({
