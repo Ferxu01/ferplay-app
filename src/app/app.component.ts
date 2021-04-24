@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
     { title: 'Subir un videojuego', url: '/videojuegos/nuevo', icon: 'add-circle' },
     { title: 'Favoritos', url: '/folder/Favorites', icon: 'bookmark' },
     { title: 'Carro de compra', url: '/features/carro', icon: 'cart' },
-    { title: 'Mis compras', url: '/folder/Trash', icon: 'list' },
+    { title: 'Mis compras', url: '/features/compras/historial', icon: 'list' },
     { title: 'Mi perfil', url: '/usuarios/me', icon: 'person' },
   ];
 

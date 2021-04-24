@@ -11,7 +11,7 @@
   <ion-item-sliding *ngFor="let comentario of comentarios">
     <ion-item>
       <ion-avatar slot="start">
-        <img [src]="'http://localhost:8000/img/users/' + comentario.usuario.avatar" alt="">
+        <img [src]="comentario.usuario.avatar" alt="">
       </ion-avatar>
       <ion-label>
         <h3>{{comentario.usuario.nickname}}</h3>
