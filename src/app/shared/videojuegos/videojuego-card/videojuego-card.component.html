@@ -1,0 +1,63 @@
+<ion-card>
+  <img [src]="videojuego.imagen" alt="{{videojuego.nombre}}">
+  <ion-card-header>
+    <ion-card-title>{{videojuego.nombre}}</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-row>
+      <ion-col>
+        {{videojuego.descripcion}}
+      </ion-col>
+      <ion-col class="ion-text-center plataforma">
+        {{videojuego.plataforma.nombre}}
+      </ion-col>
+    </ion-row>
+  </ion-card-content>
+
+  <ion-footer>
+    <ion-row class="ion-align-items-center ion-text-center">
+      <ion-col text-center>
+        <ion-label>{{videojuego.numLikes}} likes</ion-label>
+      </ion-col>
+      <ion-col text-center>
+        <ion-label>{{videojuego.stock}} en stock</ion-label>
+      </ion-col>
+      <ion-col text-center>
+        <ion-label>{{videojuego.fechaCreacion}}</ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-footer>
+  <ion-footer>
+    <ion-row class="ion-align-items-center ion-text-center">
+      <ion-col text-center>
+        <button *ngIf="!videojuego.liked" (click)="darLike()">
+          <ion-icon name="heart-outline"></ion-icon>
+          <div>Like</div>
+        </button>
+
+        <button *ngIf="videojuego.liked" (click)="eliminarLike()">
+          <ion-icon color="warning" name="heart-outline"></ion-icon>
+          <div>Like</div>
+        </button>
+      </ion-col>
+      <ion-col text-center>
+        <button [routerLink]="['/videojuegos', videojuego.id]">
+          <ion-icon name="information-circle"></ion-icon>
+          <div>Más info</div>
+        </button>
+      </ion-col>
+      <ion-col text-center>
+        <button *ngIf="!videojuego.favourite" (click)="addFavoritos()">
+          <ion-icon name="bookmark-outline"></ion-icon>
+          <ion-icon *ngIf="videojuego.favourite" color="warning" name="bookmark-outline"></ion-icon>
+          <div>Favorito</div>
+        </button>
+
+        <button *ngIf="videojuego.favourite" (click)="eliminarFavoritos()">
+          <ion-icon color="warning" name="bookmark-outline"></ion-icon>
+          <div>Favorito</div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-footer>
+</ion-card>

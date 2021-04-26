@@ -26,6 +26,12 @@ export class VideojuegoService {
     );
   }
 
+  obtenerVideojuegosUsuario(idUsuario: number): Observable<Videojuego[]> {
+    return this.http.get<VideojuegosResponse>(`${this.videojuegoURL}/usuario/${idUsuario}`).pipe(
+      map(resp => resp.data)
+    );
+  }
+
   subirVideojuego(videojuego: VideojuegoNuevo): Observable<Videojuego> {
     console.log('aloha');
     console.log(videojuego);

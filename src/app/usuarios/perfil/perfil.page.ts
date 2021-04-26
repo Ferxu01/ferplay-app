@@ -66,7 +66,11 @@ export class PerfilPage implements OnInit {
   }
 
   mostrarModalEditar() {
-    this.modalEditar.crearModal();
+    this.modalEditar.crearModalEditarPassword();
+  }
+
+  modalEditarPassword() {
+    this.modalEditar
   }
 
   cerrarModal() {

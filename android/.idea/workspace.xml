@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b53278ab-b655-4297-9b77-da69abc852ca" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/app/features/features-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/features/features-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/app/videojuegos/videojuego-detalles/videojuego-comentarios/videojuego-comentarios.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/videojuegos/videojuego-detalles/videojuego-comentarios/videojuego-comentarios.page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/environments/environment.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +28,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RunManager">
