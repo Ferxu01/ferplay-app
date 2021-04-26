@@ -27,4 +27,8 @@ export class UsuariosService {
       })
     );
   }
+
+  editarPassword(password: string): Observable<void> {
+    return this.http.patch<void>(`${this.usuariosUrl}/edit/password`, {password: password});
+  }
 }

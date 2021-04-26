@@ -1,5 +1,6 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { EditPasswordComponent } from 'src/app/usuarios/shared/edit-password/edit-password.component';
 import { VideojuegoFormPage } from 'src/app/videojuegos/videojuego-form/videojuego-form.page';
 
 @Injectable({
@@ -16,11 +17,19 @@ export class ModalEditarComponent implements OnInit {
 
   ngOnInit() {}
 
-  async crearModal() {
+  async crearModalEditarPassword() {
     const modal = await this.modalCtrl.create({
-      component: VideojuegoFormPage
+      component: EditPasswordComponent
     });
     return await modal.present();
+  }
+
+  async crearModalEditarPerfil() {
+
+  }
+
+  async crearModalEditarAvatar() {
+
   }
 
   cerrarModal() {

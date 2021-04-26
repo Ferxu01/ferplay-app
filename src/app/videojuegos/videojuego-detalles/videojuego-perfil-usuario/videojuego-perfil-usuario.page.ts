@@ -28,8 +28,7 @@ export class VideojuegoPerfilUsuarioPage implements OnInit, CameraPlugin {
   ngOnInit() {
     this.usuario = this.parentComponent.videojuego.usuario;
 
-    //Provisional
-    this.videojuegosService.obtenerVideojuegos().subscribe(
+    this.videojuegosService.obtenerVideojuegosUsuario(this.usuario.id).subscribe(
       resp => {
         this.videojuegosUsuario = resp
       }
@@ -80,8 +79,8 @@ export class VideojuegoPerfilUsuarioPage implements OnInit, CameraPlugin {
     console.log('selecciona una imagen de la galería');
   }
 
-  mostrarModalEditar() {
-    this.modalEditar.crearModal();
+  modalEditarPassword() {
+    this.modalEditar.crearModalEditarPassword();
   }
 
   cerrarModal() {
