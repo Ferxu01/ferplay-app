@@ -42,15 +42,19 @@ export class VideojuegoCardComponent implements OnInit {
     this.videojuegoService.darLike(this.videojuego.id).subscribe(
       () => {
         this.videojuego.liked = true;
+        this.videojuego.numLikes += 1;
         console.log('Videojuego like');
       }
     );
   }
 
   eliminarLike() {
+    this.liked.emit();
+
     this.videojuegoService.eliminarLike(this.videojuego.id).subscribe(
       () => {
         this.videojuego.liked = false;
+        this.videojuego.numLikes -= 1;
         console.log('Videojuego like eliminado');
       }
     );
@@ -59,7 +63,7 @@ export class VideojuegoCardComponent implements OnInit {
   addFavoritos() {
     this.favourite.emit();
 
-    this.videojuegoService.addFavoritos(this.videojuego.id).subscribe(
+    this.videojuegoService.darFavorito(this.videojuego.id).subscribe(
       () => {
         this.videojuego.favourite = true;
         console.log('Videojuego favorito');

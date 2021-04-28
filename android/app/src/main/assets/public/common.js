@@ -56,6 +56,19 @@ const openURL = async (url, ev, direction, animation) => {
 
 /***/ }),
 
+/***/ "CAJa":
+/*!****************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/features/historial-compras/detalles-compra/detalles-compra.page.html ***!
+  \****************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar>\r\n    <ion-title>detalles-compra</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n\r\n</ion-content>\r\n");
+
+/***/ }),
+
 /***/ "JbSX":
 /*!*********************************************************************!*\
   !*** ./node_modules/@ionic/core/dist/esm/button-active-4927a4c1.js ***!
@@ -187,6 +200,19 @@ const detachComponent = (delegate, element) => {
 
 /***/ }),
 
+/***/ "euYS":
+/*!**************************************************************************************!*\
+  !*** ./src/app/features/historial-compras/detalles-compra/detalles-compra.page.scss ***!
+  \**************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJkZXRhbGxlcy1jb21wcmEucGFnZS5zY3NzIn0= */");
+
+/***/ }),
+
 /***/ "h3R7":
 /*!***********************************************************************!*\
   !*** ./node_modules/@ionic/core/dist/esm/spinner-configs-cd7845af.js ***!
@@ -306,6 +332,42 @@ const spinners = {
 };
 const SPINNERS = spinners;
 
+
+
+
+/***/ }),
+
+/***/ "mvSI":
+/*!************************************************************************************!*\
+  !*** ./src/app/features/historial-compras/detalles-compra/detalles-compra.page.ts ***!
+  \************************************************************************************/
+/*! exports provided: DetallesCompraPage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DetallesCompraPage", function() { return DetallesCompraPage; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _raw_loader_detalles_compra_page_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./detalles-compra.page.html */ "CAJa");
+/* harmony import */ var _detalles_compra_page_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./detalles-compra.page.scss */ "euYS");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+
+
+
+let DetallesCompraPage = class DetallesCompraPage {
+    constructor() { }
+    ngOnInit() {
+    }
+};
+DetallesCompraPage.ctorParameters = () => [];
+DetallesCompraPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+        selector: 'app-detalles-compra',
+        template: _raw_loader_detalles_compra_page_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+        styles: [_detalles_compra_page_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
+    })
+], DetallesCompraPage);
 
 
 

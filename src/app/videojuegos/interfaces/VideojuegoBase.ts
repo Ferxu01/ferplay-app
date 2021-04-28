@@ -10,4 +10,6 @@ export interface VideojuegoBase {
   fechaCreacion?: string;
   usuario?: Usuario;
   precio: number;
+  liked?: boolean;
+  favourite?: boolean;
 }

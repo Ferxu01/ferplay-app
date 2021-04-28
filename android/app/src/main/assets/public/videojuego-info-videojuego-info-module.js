@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar>\n    <ion-title>Información</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-card>\n    <ion-item>\n      <ion-avatar slot=\"start\">\n        <img [src]=\"videojuego.usuario.avatar\" alt=\"\">\n      </ion-avatar>\n      <ion-label>\n        <h3>{{videojuego.usuario.nombre}}</h3>\n        <p>{{videojuego.fechaCreacion}}</p>\n      </ion-label>\n      <ion-icon slot=\"end\" name=\"ellipsis-vertical\" (click)=\"showActionSheet()\"></ion-icon>\n    </ion-item>\n\n    <ion-img [src]=\"videojuego.imagen\"></ion-img>\n\n    <ion-card-header>\n      <ion-card-title>{{videojuego.nombre}}</ion-card-title>\n    </ion-card-header>\n    <ion-card-content>\n      <ion-row>\n        <ion-col class=\"ion-text-center precio\">\n          {{videojuego.precio}} €\n        </ion-col>\n        <ion-col class=\"ion-text-center plataforma\">\n          {{videojuego.plataforma.nombre}}\n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>{{videojuego.descripcion}}</ion-col>\n      </ion-row>\n    </ion-card-content>\n\n    <ion-footer>\n      <ion-row>\n        <ion-col>\n          <button center text-center (click)=\"addVideojuegoCarro()\">\n            <ion-icon name=\"cart\"></ion-icon>\n            <div>Añadir a carro</div>\n          </button>\n        </ion-col>\n        <ion-col>\n          <button center text-center [routerLink]=\"['/videojuegos/edit', videojuego.id]\">\n            <ion-icon name=\"create-outline\"></ion-icon>\n            <div>Editar</div>\n          </button>\n        </ion-col>\n      </ion-row>\n    </ion-footer>\n  </ion-card>\n</ion-content>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar>\r\n    <ion-title>Información</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-card>\r\n    <ion-item>\r\n      <ion-avatar slot=\"start\">\r\n        <img [src]=\"videojuego.usuario.avatar\" alt=\"\">\r\n      </ion-avatar>\r\n      <ion-label>\r\n        <h3>{{videojuego.usuario.nombre}}</h3>\r\n        <p>{{videojuego.fechaCreacion}}</p>\r\n      </ion-label>\r\n      <ion-icon slot=\"end\" name=\"ellipsis-vertical\" (click)=\"showActionSheet()\"></ion-icon>\r\n    </ion-item>\r\n\r\n    <ion-img [src]=\"videojuego.imagen\"></ion-img>\r\n\r\n    <ion-card-header>\r\n      <ion-card-title>{{videojuego.nombre}}</ion-card-title>\r\n    </ion-card-header>\r\n    <ion-card-content>\r\n      <ion-row>\r\n        <ion-col class=\"ion-text-center precio\">\r\n          {{videojuego.precio}} €\r\n        </ion-col>\r\n        <ion-col class=\"ion-text-center plataforma\">\r\n          {{videojuego.plataforma.nombre}}\r\n        </ion-col>\r\n      </ion-row>\r\n      <ion-row>\r\n        <ion-col>{{videojuego.descripcion}}</ion-col>\r\n      </ion-row>\r\n    </ion-card-content>\r\n\r\n    <ion-footer>\r\n      <ion-row>\r\n        <ion-col>\r\n          <button center text-center (click)=\"addVideojuegoCarro()\">\r\n            <ion-icon name=\"cart\"></ion-icon>\r\n            <div>Añadir a carro</div>\r\n          </button>\r\n        </ion-col>\r\n        <ion-col>\r\n          <button center text-center [routerLink]=\"['/videojuegos/edit', videojuego.id]\">\r\n            <ion-icon name=\"create-outline\"></ion-icon>\r\n            <div>Editar</div>\r\n          </button>\r\n        </ion-col>\r\n      </ion-row>\r\n    </ion-footer>\r\n  </ion-card>\r\n</ion-content>\r\n");
 
 /***/ }),
 
@@ -56,46 +56,6 @@ VideojuegoInfoPageModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate
         declarations: [_videojuego_info_page__WEBPACK_IMPORTED_MODULE_5__["VideojuegoInfoPage"]]
     })
 ], VideojuegoInfoPageModule);
-
-
-
-/***/ }),
-
-/***/ "Kboj":
-/*!************************************************************************!*\
-  !*** ./src/app/features/carro-compra/services/carro-compra.service.ts ***!
-  \************************************************************************/
-/*! exports provided: CarroCompraService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CarroCompraService", function() { return CarroCompraService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
-
-
-
-
-let CarroCompraService = class CarroCompraService {
-    constructor(http) {
-        this.http = http;
-        this.urlCarro = 'carro';
-    }
-    addVideojuegoCarro(videojuego) {
-        return this.http.post(`videojuegos/${videojuego.id}/${this.urlCarro}`, videojuego).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(resp => resp));
-    }
-};
-CarroCompraService.ctorParameters = () => [
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }
-];
-CarroCompraService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
-        providedIn: 'root'
-    })
-], CarroCompraService);
 
 
 
@@ -211,7 +171,7 @@ VideojuegoInfoPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("button {\n  background-color: white;\n}\n\nion-icon {\n  font-size: 30px;\n}\n\n.plataforma {\n  font-size: 28px;\n}\n\n.precio {\n  font-size: 28px;\n}\n\n.precio, .plataforma {\n  color: black;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcdmlkZW9qdWVnby1pbmZvLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLHVCQUFBO0FBQ0Y7O0FBRUE7RUFDRSxlQUFBO0FBQ0Y7O0FBRUE7RUFDRSxlQUFBO0FBQ0Y7O0FBRUE7RUFDRSxlQUFBO0FBQ0Y7O0FBRUE7RUFDRSxZQUFBO0FBQ0YiLCJmaWxlIjoidmlkZW9qdWVnby1pbmZvLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImJ1dHRvbiB7XG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xufVxuXG5pb24taWNvbiB7XG4gIGZvbnQtc2l6ZTogMzBweDtcbn1cblxuLnBsYXRhZm9ybWEge1xuICBmb250LXNpemU6IDI4cHg7XG59XG5cbi5wcmVjaW8ge1xuICBmb250LXNpemU6IDI4cHg7XG59XG5cbi5wcmVjaW8sIC5wbGF0YWZvcm1hIHtcbiAgY29sb3I6IGJsYWNrO1xufVxuIl19 */");
+/* harmony default export */ __webpack_exports__["default"] = ("button {\n  background-color: white;\n}\n\nion-icon {\n  font-size: 30px;\n}\n\n.plataforma {\n  font-size: 28px;\n}\n\n.precio {\n  font-size: 28px;\n}\n\n.precio, .plataforma {\n  color: black;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcdmlkZW9qdWVnby1pbmZvLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLHVCQUFBO0FBQ0Y7O0FBRUE7RUFDRSxlQUFBO0FBQ0Y7O0FBRUE7RUFDRSxlQUFBO0FBQ0Y7O0FBRUE7RUFDRSxlQUFBO0FBQ0Y7O0FBRUE7RUFDRSxZQUFBO0FBQ0YiLCJmaWxlIjoidmlkZW9qdWVnby1pbmZvLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImJ1dHRvbiB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XHJcbn1cclxuXHJcbmlvbi1pY29uIHtcclxuICBmb250LXNpemU6IDMwcHg7XHJcbn1cclxuXHJcbi5wbGF0YWZvcm1hIHtcclxuICBmb250LXNpemU6IDI4cHg7XHJcbn1cclxuXHJcbi5wcmVjaW8ge1xyXG4gIGZvbnQtc2l6ZTogMjhweDtcclxufVxyXG5cclxuLnByZWNpbywgLnBsYXRhZm9ybWEge1xyXG4gIGNvbG9yOiBibGFjaztcclxufVxyXG4iXX0= */");
 
 /***/ })
 

@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-button expand=\"block\" color=\"danger\" (click)=\"login()\">\n  <ion-icon name=\"logo-google\" slot=\"start\"></ion-icon>\n  Google Login\n</ion-button>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-button expand=\"block\" color=\"danger\" (click)=\"login()\">\r\n  <ion-icon name=\"logo-google\" slot=\"start\"></ion-icon>\r\n  Google Login\r\n</ion-button>\r\n");
 
 /***/ }),
 

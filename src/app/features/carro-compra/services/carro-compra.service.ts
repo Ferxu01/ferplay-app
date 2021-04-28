@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, throwError } from 'rxjs';
-import { catchError, debounce, debounceTime, delay, map } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 import { Videojuego } from 'src/app/videojuegos/interfaces/Videojuego';
 import { CarroCompra } from '../interfaces/carro-compra';
 import { CarroCompraResponse } from '../interfaces/Responses';

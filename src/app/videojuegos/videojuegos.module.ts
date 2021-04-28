@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { VideojuegosRoutingModule } from './videojuegos-routing.module';
 import { HomePageModule } from './home/home.module';
 import { IonicModule } from '@ionic/angular';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { IonicModule } from '@ionic/angular';
   imports: [
     CommonModule,
     IonicModule,
-    VideojuegosRoutingModule
+    VideojuegosRoutingModule,
+    SharedModule
   ],
   exports: [
     HomePageModule

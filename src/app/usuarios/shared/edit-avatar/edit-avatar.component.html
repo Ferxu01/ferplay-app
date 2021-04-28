@@ -1,0 +1,17 @@
+<form #editAvatarForm="ngForm" (ngSubmit)="editarAvatar()">
+  <ion-img [src]="avatar" *ngIf="avatar"></ion-img>
+
+  <ion-row>
+    <ion-col>
+      <ion-button type="submit" color="primary" expand="block" [disabled]="editAvatarForm.invalid">
+        Edit avatar
+      </ion-button>
+    </ion-col>
+    <ion-col>
+      <ion-button color="danger" expand="block" fill="outline" (click)="cancelar()">
+        <ion-icon name="arrow-undo" slot="start"></ion-icon>
+        Cancel
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</form>

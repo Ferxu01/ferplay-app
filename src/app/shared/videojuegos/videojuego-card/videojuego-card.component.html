@@ -17,7 +17,7 @@
   <ion-footer>
     <ion-row class="ion-align-items-center ion-text-center">
       <ion-col text-center>
-        <ion-label>{{videojuego.numLikes}} likes</ion-label>
+        <ion-label>{{videojuego.numLikes}} <span *ngIf="videojuego.numLikes === 1">like</span> <span *ngIf="videojuego.numLikes === 0 || videojuego.numLikes > 1">likes</span></ion-label>
       </ion-col>
       <ion-col text-center>
         <ion-label>{{videojuego.stock}} en stock</ion-label>

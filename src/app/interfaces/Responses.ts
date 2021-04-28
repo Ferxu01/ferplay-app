@@ -1,6 +1,7 @@
 import { Comentario } from "../videojuegos/interfaces/Comentario";
 import { Plataforma } from "../videojuegos/interfaces/Plataforma";
 import { Videojuego } from "../videojuegos/interfaces/Videojuego";
+import { Provincia } from "./Provincia";
 import { Usuario } from "./Usuario";
 
 export interface UsuarioResponse {
@@ -29,4 +30,8 @@ export interface ComentariosResponse {
 
 export interface ComentarioResponse {
   data: Comentario;
+}
+
+export interface ProvinciasResponse {
+  data: Provincia[];
 }

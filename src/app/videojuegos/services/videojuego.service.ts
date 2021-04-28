@@ -12,7 +12,7 @@ import { VideojuegoNuevo } from '../interfaces/VideojuegoNuevo';
 export class VideojuegoService {
   private readonly videojuegoURL = 'videojuegos';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   obtenerVideojuegos(): Observable<Videojuego[]> {
     return this.http.get<VideojuegosResponse>(`${this.videojuegoURL}`).pipe(
@@ -53,5 +53,21 @@ export class VideojuegoService {
 
   borrarVideojuego(id: number): Observable<void> {
     return this.http.delete<void>(`${this.videojuegoURL}/${id}`);
+  }
+
+  darLike(id: number): Observable<void> {
+    return this.http.post<void>(`${this.videojuegoURL}/${id}/like`, {liked: true});
+  }
+
+  eliminarLike(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.videojuegoURL}/${id}/like`);
+  }
+
+  darFavorito(id: number): Observable<void> {
+    return this.http.post<void>(`${this.videojuegoURL}/${id}/favourite`, {favourite: true});
+  }
+
+  eliminarFavoritos(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.videojuegoURL}/${id}/favourite`);
   }
 }

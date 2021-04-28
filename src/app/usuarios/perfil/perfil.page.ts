@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/core';
 import { ActionSheetController } from '@ionic/angular';
 import { Usuario } from 'src/app/interfaces/Usuario';
 import { ModalEditarComponent } from 'src/app/shared/modals/modal-editar/modal-editar.component';
@@ -57,20 +58,45 @@ export class PerfilPage implements OnInit {
     await actionSheet.present();
   }
 
-  obtenerFotoCamara() {
+  async obtenerFotoCamara() {
     console.log('hazte una foto');
+
+    const photo = await Camera.getPhoto({
+      source: CameraSource.Camera,
+      quality: 90,
+      height: 640,
+      width: 640,
+      allowEditing: true,
+      resultType: CameraResultType.DataUrl
+    });
+
+    this.modalEditarAvatar(photo.dataUrl);
   }
 
-  obtenerFotoGaleria() {
+  async obtenerFotoGaleria() {
     console.log('selecciona una imagen de la galería');
+
+    const photo = await Camera.getPhoto({
+      source: CameraSource.Photos,
+      height: 640,
+      width: 640,
+      allowEditing: true,
+      resultType: CameraResultType.DataUrl
+    });
+
+    this.modalEditarAvatar(photo.dataUrl);
   }
 
-  mostrarModalEditar() {
-    this.modalEditar.crearModalEditarPassword();
+  modalEditarPerfil() {
+    this.modalEditar.crearModalEditarPerfil();
   }
 
   modalEditarPassword() {
-    this.modalEditar
+    this.modalEditar.crearModalEditarPassword();
+  }
+
+  modalEditarAvatar(avatar: string) {
+    this.modalEditar.crearModalEditarAvatar(avatar);
   }
 
   cerrarModal() {

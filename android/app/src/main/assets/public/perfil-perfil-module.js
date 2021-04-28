@@ -134,14 +134,11 @@ let PerfilPage = class PerfilPage {
     obtenerFotoGaleria() {
         console.log('selecciona una imagen de la galería');
     }
-    modalEditarPassword() {
+    mostrarModalEditar() {
         this.modalEditar.crearModalEditarPassword();
     }
-    modalEditarAvatar() {
-        this.modalEditar.crearModalEditarAvatar();
-    }
-    modalEditarPerfil() {
-        this.modalEditar.crearModalEditarPerfil();
+    modalEditarPassword() {
+        this.modalEditar;
     }
     cerrarModal() {
         this.modalEditar.cerrarModal();
@@ -173,7 +170,7 @@ PerfilPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar>\r\n    <ion-title>Mi perfil</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-row>\r\n        <ion-col>\r\n          <img (click)=\"mostrarActionSheet()\" [src]=\"usuario.avatar\">\r\n        </ion-col>\r\n        <ion-col class=\"ion-text-end\">\r\n          <!--<ion-button (click)=\"mostrarModalEditar()\" color=\"light\" size=\"small\">\r\n            <ion-icon name=\"pencil-outline\"></ion-icon>\r\n          </ion-button>-->\r\n          <a (click)=\"modalEditarPerfil()\" color=\"primary\">\r\n            <ion-icon name=\"pencil-outline\"></ion-icon>\r\n          </a>\r\n        </ion-col>\r\n      </ion-row>\r\n\r\n      <ion-row>\r\n        <ion-col>\r\n          <ion-card-title>\r\n            {{usuario.nombre}} {{usuario.apellidos}}\r\n          </ion-card-title>\r\n\r\n            Email: {{usuario.email}} <br>\r\n            Nickname: {{usuario.nickname}} <br>\r\n            Provincia: {{usuario.provincia.nombre}}\r\n        </ion-col>\r\n      </ion-row>\r\n    </ion-card-content>\r\n  </ion-card>\r\n  <ion-card-content>\r\n    <ion-button (click)=\"modalEditarPassword()\" class=\"button-small\">Editar contraseña</ion-button>\r\n  </ion-card-content>\r\n</ion-content>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar>\r\n    <ion-title>Mi perfil</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-row>\r\n        <ion-col>\r\n          <img (click)=\"mostrarActionSheet()\" [src]=\"usuario.avatar\">\r\n        </ion-col>\r\n        <ion-col class=\"ion-text-end\">\r\n          <!--<ion-button (click)=\"mostrarModalEditar()\" color=\"light\" size=\"small\">\r\n            <ion-icon name=\"pencil-outline\"></ion-icon>\r\n          </ion-button>-->\r\n          <a (click)=\"mostrarModalEditar()\" color=\"primary\">\r\n            <ion-icon name=\"pencil-outline\"></ion-icon>\r\n          </a>\r\n        </ion-col>\r\n      </ion-row>\r\n\r\n      <ion-row>\r\n        <ion-col>\r\n          <ion-card-title>\r\n            {{usuario.nombre}} {{usuario.apellidos}}\r\n          </ion-card-title>\r\n\r\n            Email: {{usuario.email}} <br>\r\n            Nickname: {{usuario.nickname}} <br>\r\n            Provincia: {{usuario.provincia.nombre}}\r\n        </ion-col>\r\n      </ion-row>\r\n    </ion-card-content>\r\n  </ion-card>\r\n  <ion-card-content>\r\n    <ion-button class=\"button-small\">Editar contraseña</ion-button>\r\n  </ion-card-content>\r\n</ion-content>\r\n");
 
 /***/ })
 

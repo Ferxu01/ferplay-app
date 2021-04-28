@@ -31,4 +31,18 @@ export class UsuariosService {
   editarPassword(password: string): Observable<void> {
     return this.http.patch<void>(`${this.usuariosUrl}/edit/password`, {password: password});
   }
+
+  editarPerfil(nombre: string, apellidos: string, email: string, nickname: string, provincia: number): Observable<void> {
+    return this.http.put<void>(`${this.usuariosUrl}/me`, {
+      nombre: nombre,
+      apellidos: apellidos,
+      email: email,
+      nickname: nickname,
+      provincia: provincia
+    });
+  }
+
+  editarAvatar(avatar: string): Observable<void> {
+    return this.http.patch<void>(`${this.usuariosUrl}/edit/avatar`, {avatar: avatar});
+  }
 }

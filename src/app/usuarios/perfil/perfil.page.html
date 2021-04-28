@@ -15,7 +15,7 @@
           <!--<ion-button (click)="mostrarModalEditar()" color="light" size="small">
             <ion-icon name="pencil-outline"></ion-icon>
           </ion-button>-->
-          <a (click)="mostrarModalEditar()" color="primary">
+          <a (click)="modalEditarPerfil()" color="primary">
             <ion-icon name="pencil-outline"></ion-icon>
           </a>
         </ion-col>
@@ -35,6 +35,6 @@
     </ion-card-content>
   </ion-card>
   <ion-card-content>
-    <ion-button class="button-small">Editar contraseña</ion-button>
+    <ion-button (click)="modalEditarPassword()" class="button-small">Editar contraseña</ion-button>
   </ion-card-content>
 </ion-content>

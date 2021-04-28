@@ -1,7 +1,10 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { Usuario } from 'src/app/interfaces/Usuario';
+import { UsuariosService } from 'src/app/usuarios/services/usuarios.service';
+import { EditAvatarComponent } from 'src/app/usuarios/shared/edit-avatar/edit-avatar.component';
 import { EditPasswordComponent } from 'src/app/usuarios/shared/edit-password/edit-password.component';
-import { VideojuegoFormPage } from 'src/app/videojuegos/videojuego-form/videojuego-form.page';
+import { EditPerfilComponent } from 'src/app/usuarios/shared/edit-perfil/edit-perfil.component';
 
 @Injectable({
   providedIn: 'root'
@@ -12,10 +15,11 @@ import { VideojuegoFormPage } from 'src/app/videojuegos/videojuego-form/videojue
   styleUrls: ['./modal-editar.component.scss'],
 })
 export class ModalEditarComponent implements OnInit {
+  usuario: Usuario;
 
   constructor(public modalCtrl: ModalController) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   async crearModalEditarPassword() {
     const modal = await this.modalCtrl.create({
@@ -25,11 +29,19 @@ export class ModalEditarComponent implements OnInit {
   }
 
   async crearModalEditarPerfil() {
-
+    const modal = await this.modalCtrl.create({
+      component: EditPerfilComponent,
+      componentProps: {usuario: this.usuario}
+    });
+    return await modal.present();
   }
 
-  async crearModalEditarAvatar() {
-
+  async crearModalEditarAvatar(avatar: string) {
+    const modal = await this.modalCtrl.create({
+      component: EditAvatarComponent,
+      componentProps: {avatar: avatar}
+    });
+    return await modal.present();
   }
 
   cerrarModal() {

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">ferplay-app</string>
+    <string name="title_activity_main">ferplay-app</string>
+    <string name="package_name">com.fernando.ferplay</string>
+    <string name="custom_url_scheme">com.fernando.ferplay</string>
+</resources>

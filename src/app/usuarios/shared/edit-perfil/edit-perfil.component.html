@@ -1,3 +1,37 @@
-<p>
-  edit-perfil works!
-</p>
+<form #editProfileForm="ngForm" (ngSubmit)="editarPerfil()">
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Name</ion-label>
+      <ion-input type="text" name="name" required [(ngModel)]="nombre" #nameModel="ngModel"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Apellidos</ion-label>
+      <ion-input type="text" name="apellidos" required [(ngModel)]="apellidos" #apellidosModel="ngModel"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Nickname</ion-label>
+      <ion-input type="text" name="nickname" required [(ngModel)]="nickname" #nicknameModel="ngModel"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Provincia</ion-label>
+      <ion-select required #provinciaModel="ngModel" name="provincia" [(ngModel)]="provincia">
+        <ion-select-option value="0">Choose a province...</ion-select-option>
+        <ion-select-option *ngFor="let provincia of provincias" [value]="provincia.id">{{provincia.nombre}}</ion-select-option>
+      </ion-select>
+      <ion-icon name="checkmark-circle" slot="end" color="success" *ngIf="provinciaModel.dirty && provinciaModel.valid && provinciaModel.value !== 0"></ion-icon>
+    </ion-item>
+  </ion-list>
+  <ion-row>
+    <ion-col>
+      <ion-button type="submit" color="primary" expand="block" [disabled]="editProfileForm.invalid">
+        Edit profile
+      </ion-button>
+    </ion-col>
+    <ion-col>
+      <ion-button color="danger" expand="block" fill="outline" (click)="cancelar()">
+        <ion-icon name="arrow-undo" slot="start"></ion-icon>
+        Cancel
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</form>
