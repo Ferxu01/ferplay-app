@@ -6,6 +6,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { HistorialComprasPage } from './historial-compras.page';
 import { RouterModule, Routes } from '@angular/router';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 const routes: Routes = [
   {

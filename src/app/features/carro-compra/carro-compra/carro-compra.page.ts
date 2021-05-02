@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Videojuego } from 'src/app/videojuegos/interfaces/Videojuego';
+import { CompraService } from '../../compra/services/compra.service';
 import { CarroCompra } from '../interfaces/carro-compra';
 import { CarroCompraService } from '../services/carro-compra.service';
 
@@ -12,7 +13,7 @@ export class CarroCompraPage implements OnInit {
   videojuegosCarro: CarroCompra[];
   error: string = '';
 
-  constructor(private carroService: CarroCompraService) { }
+  constructor(private carroService: CarroCompraService, private compraService: CompraService) { }
 
   ngOnInit() {
     this.obtenerVideojuegosCarro();
@@ -71,5 +72,11 @@ export class CarroCompraPage implements OnInit {
 
   realizarCompra() {
     console.log('Compra realizada');
+
+    this.compraService.comprar().subscribe(
+      () => {
+        console.log('Compras realizadas');
+      }
+    );
   }
 }

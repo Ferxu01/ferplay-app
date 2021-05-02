@@ -12,10 +12,11 @@
           <ion-label>
             <h2>Realizado: {{compra.fechaCompra}}</h2>
             <h2>Nº compra: {{compra.id}}</h2>
+            <h2>Linea compra: {{compra.lineaCompra}}</h2>
           </ion-label>
         </ion-col>
         <ion-col class="ion-align-items-center">
-          <ion-button size="small" fill="clear" (click)="verDetalleCompra()">
+          <ion-button size="small" fill="clear" (click)="verDetalleCompra(compra.lineaCompra)">
             <ion-icon slot="icon-only" name="eye"></ion-icon>
           </ion-button>
         </ion-col>

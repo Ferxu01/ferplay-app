@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar>\r\n    <ion-title>Mi carro compra</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-item-sliding *ngFor=\"let videojuegoCarro of videojuegosCarro; let i = index;\">\r\n    <ion-item>\r\n      <ion-thumbnail slot=\"start\">\r\n        <img [src]=\"videojuegoCarro.videojuego.imagen\">\r\n      </ion-thumbnail>\r\n\r\n      <ion-grid>\r\n        <ion-row class=\"ion-align-items-center\">\r\n          <ion-col size=\"5\">\r\n            <ion-label>\r\n              <h3>{{videojuegoCarro.videojuego.nombre}}</h3>\r\n              <!--<h4>Precio: {{videojuegoCarro.videojuego.precio | currency:'EUR':'symbol':'0.0-2'}}</h4>-->\r\n            </ion-label>\r\n          </ion-col>\r\n          <ion-col size=\"3\" class=\"ion-align-self-center\">\r\n            <ion-button color=\"medium\" fill=\"clear\" (click)=\"decrementarStockVideojuego(videojuegoCarro.videojuego, videojuegoCarro)\">\r\n              <ion-icon name=\"remove-circle\" slot=\"icon-only\"></ion-icon>\r\n            </ion-button>\r\n          </ion-col>\r\n\r\n          <ion-col size=\"2\" class=\"ion-align-self-center\">\r\n            {{videojuegoCarro.cantidad}}\r\n          </ion-col>\r\n\r\n          <ion-col size=\"2\" class=\"ion-align-self-center\">\r\n            <ion-button color=\"medium\" fill=\"clear\" (click)=\"aumentarStockVideojuego(videojuegoCarro.videojuego, videojuegoCarro)\">\r\n              <ion-icon name=\"add-circle\" slot=\"icon-only\"></ion-icon>\r\n            </ion-button>\r\n          </ion-col>\r\n        </ion-row>\r\n        <ion-row class=\"ion-align-items-end\">\r\n          <ion-col size=\"4\" offset=\"8\">\r\n            <p class=\"style-item-cart\">\r\n              {{videojuegoCarro.cantidad * videojuegoCarro.videojuego.precio | currency:'EUR':'symbol':'0.0-2'}}\r\n            </p>\r\n          </ion-col>\r\n        </ion-row>\r\n      </ion-grid>\r\n    </ion-item>\r\n    <ion-item-options side=\"end\">\r\n      <ion-item-option color=\"danger\" (click)=\"eliminarVideojuegoCarro(videojuegoCarro.videojuego.id, videojuegoCarro.id, i)\">Borrar</ion-item-option>\r\n    </ion-item-options>\r\n  </ion-item-sliding>\r\n\r\n  <ion-item *ngIf=\"videojuegosCarro\">\r\n    <ion-grid>\r\n      <ion-row>\r\n        <ion-col size=\"9\">\r\n          Total:\r\n        </ion-col>\r\n        <ion-col size=\"3\" class=\"ion-text-end\">\r\n          {{getTotal() | currency:'EUR':'symbol':'0.0-2'}}\r\n        </ion-col>\r\n      </ion-row>\r\n    </ion-grid>\r\n  </ion-item>\r\n\r\n  <!--<ion-list>\r\n    <ion-item *ngFor=\"let videojuegoCarro of videojuegosCarro\" class=\"ion-text-wrap\">\r\n      <ion-grid>\r\n        <ion-row class=\"ion-align-items-center\">\r\n          <ion-col size=\"2\" class=\"ion-align-self-center\">\r\n            <ion-button color=\"medium\" fill=\"clear\">\r\n              <ion-icon name=\"remove-circle\" slot=\"icon-only\"></ion-icon>\r\n            </ion-button>\r\n          </ion-col>\r\n\r\n          <ion-col size=\"2\" class=\"ion-align-self-center\">\r\n            10\r\n          </ion-col>\r\n\r\n          <ion-col size=\"2\" class=\"ion-align-self-center\">\r\n            <ion-button color=\"medium\" fill=\"clear\">\r\n              <ion-icon name=\"add-circle\" slot=\"icon-only\"></ion-icon>\r\n            </ion-button>\r\n          </ion-col>\r\n\r\n          <ion-col size=\"2\" offset=\"4\">\r\n            <ion-button color=\"medium\" fill=\"clear\">\r\n              <ion-icon name=\"close-circle\" slot=\"icon-only\"></ion-icon>\r\n            </ion-button>\r\n          </ion-col>\r\n        </ion-row>\r\n        <ion-row>\r\n          <ion-col size=\"9\">\r\n            <b>{{ videojuegoCarro.videojuego.nombre }}</b>\r\n          </ion-col>\r\n          <ion-col size=\"3\" class=\"ion-text-end\">\r\n            {{ videojuegoCarro.cantidad * videojuegoCarro.videojuego.precio | currency:'EUR' }}\r\n          </ion-col>\r\n        </ion-row>\r\n      </ion-grid>\r\n    </ion-item>\r\n    <ion-item>\r\n      <ion-grid>\r\n        <ion-row>\r\n          <ion-col size=\"9\">\r\n            Total:\r\n          </ion-col>\r\n          <ion-col size=\"3\" class=\"ion-text-end\">\r\n            10\r\n          </ion-col>\r\n        </ion-row>\r\n      </ion-grid>\r\n    </ion-item>\r\n  </ion-list>-->\r\n\r\n  <ion-button *ngIf=\"videojuegosCarro\" expand=\"full\">\r\n    Realizar compra\r\n  </ion-button>\r\n\r\n  <div *ngIf=\"error\" class=\"alert alert-danger\">\r\n    {{error}}\r\n  </div>\r\n</ion-content>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar>\r\n    <ion-title>Mi carro compra</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-item-sliding *ngFor=\"let videojuegoCarro of videojuegosCarro; let i = index;\">\r\n    <ion-item>\r\n      <ion-thumbnail slot=\"start\">\r\n        <img [src]=\"videojuegoCarro.videojuego.imagen\">\r\n      </ion-thumbnail>\r\n\r\n      <ion-grid>\r\n        <ion-row class=\"ion-align-items-center\">\r\n          <ion-col size=\"5\">\r\n            <ion-label>\r\n              <h3>{{videojuegoCarro.videojuego.nombre}}</h3>\r\n              <!--<h4>Precio: {{videojuegoCarro.videojuego.precio | currency:'EUR':'symbol':'0.0-2'}}</h4>-->\r\n            </ion-label>\r\n          </ion-col>\r\n          <ion-col size=\"3\" class=\"ion-align-self-center\">\r\n            <ion-button color=\"medium\" fill=\"clear\" (click)=\"decrementarStockVideojuego(videojuegoCarro.videojuego, videojuegoCarro)\">\r\n              <ion-icon name=\"remove-circle\" slot=\"icon-only\"></ion-icon>\r\n            </ion-button>\r\n          </ion-col>\r\n\r\n          <ion-col size=\"2\" class=\"ion-align-self-center\">\r\n            {{videojuegoCarro.cantidad}}\r\n          </ion-col>\r\n\r\n          <ion-col size=\"2\" class=\"ion-align-self-center\">\r\n            <ion-button color=\"medium\" fill=\"clear\" (click)=\"aumentarStockVideojuego(videojuegoCarro.videojuego, videojuegoCarro)\">\r\n              <ion-icon name=\"add-circle\" slot=\"icon-only\"></ion-icon>\r\n            </ion-button>\r\n          </ion-col>\r\n        </ion-row>\r\n        <ion-row class=\"ion-align-items-end\">\r\n          <ion-col size=\"4\" offset=\"8\">\r\n            <p class=\"style-item-cart\">\r\n              {{videojuegoCarro.cantidad * videojuegoCarro.videojuego.precio | currency:'EUR':'symbol':'0.0-2'}}\r\n            </p>\r\n          </ion-col>\r\n        </ion-row>\r\n      </ion-grid>\r\n    </ion-item>\r\n    <ion-item-options side=\"end\">\r\n      <ion-item-option color=\"danger\" (click)=\"eliminarVideojuegoCarro(videojuegoCarro.videojuego.id, videojuegoCarro.id, i)\">Borrar</ion-item-option>\r\n    </ion-item-options>\r\n  </ion-item-sliding>\r\n\r\n  <ion-item *ngIf=\"videojuegosCarro\">\r\n    <ion-grid>\r\n      <ion-row>\r\n        <ion-col size=\"9\">\r\n          Total:\r\n        </ion-col>\r\n        <ion-col size=\"3\" class=\"ion-text-end\">\r\n          {{getTotal() | currency:'EUR':'symbol':'0.0-2'}}\r\n        </ion-col>\r\n      </ion-row>\r\n    </ion-grid>\r\n  </ion-item>\r\n\r\n  <!--<ion-list>\r\n    <ion-item *ngFor=\"let videojuegoCarro of videojuegosCarro\" class=\"ion-text-wrap\">\r\n      <ion-grid>\r\n        <ion-row class=\"ion-align-items-center\">\r\n          <ion-col size=\"2\" class=\"ion-align-self-center\">\r\n            <ion-button color=\"medium\" fill=\"clear\">\r\n              <ion-icon name=\"remove-circle\" slot=\"icon-only\"></ion-icon>\r\n            </ion-button>\r\n          </ion-col>\r\n\r\n          <ion-col size=\"2\" class=\"ion-align-self-center\">\r\n            10\r\n          </ion-col>\r\n\r\n          <ion-col size=\"2\" class=\"ion-align-self-center\">\r\n            <ion-button color=\"medium\" fill=\"clear\">\r\n              <ion-icon name=\"add-circle\" slot=\"icon-only\"></ion-icon>\r\n            </ion-button>\r\n          </ion-col>\r\n\r\n          <ion-col size=\"2\" offset=\"4\">\r\n            <ion-button color=\"medium\" fill=\"clear\">\r\n              <ion-icon name=\"close-circle\" slot=\"icon-only\"></ion-icon>\r\n            </ion-button>\r\n          </ion-col>\r\n        </ion-row>\r\n        <ion-row>\r\n          <ion-col size=\"9\">\r\n            <b>{{ videojuegoCarro.videojuego.nombre }}</b>\r\n          </ion-col>\r\n          <ion-col size=\"3\" class=\"ion-text-end\">\r\n            {{ videojuegoCarro.cantidad * videojuegoCarro.videojuego.precio | currency:'EUR' }}\r\n          </ion-col>\r\n        </ion-row>\r\n      </ion-grid>\r\n    </ion-item>\r\n    <ion-item>\r\n      <ion-grid>\r\n        <ion-row>\r\n          <ion-col size=\"9\">\r\n            Total:\r\n          </ion-col>\r\n          <ion-col size=\"3\" class=\"ion-text-end\">\r\n            10\r\n          </ion-col>\r\n        </ion-row>\r\n      </ion-grid>\r\n    </ion-item>\r\n  </ion-list>-->\r\n\r\n  <ion-button *ngIf=\"videojuegosCarro\" (click)=\"realizarCompra()\" expand=\"full\">\r\n    Realizar compra\r\n  </ion-button>\r\n\r\n  <div *ngIf=\"error\" class=\"alert alert-danger\">\r\n    {{error}}\r\n  </div>\r\n</ion-content>\r\n");
 
 /***/ }),
 
@@ -75,15 +75,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _raw_loader_carro_compra_page_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./carro-compra.page.html */ "Huff");
 /* harmony import */ var _carro_compra_page_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./carro-compra.page.scss */ "zeLf");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _services_carro_compra_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/carro-compra.service */ "Kboj");
+/* harmony import */ var _compra_services_compra_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../compra/services/compra.service */ "cyZM");
+/* harmony import */ var _services_carro_compra_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../services/carro-compra.service */ "Kboj");
+
 
 
 
 
 
 let CarroCompraPage = class CarroCompraPage {
-    constructor(carroService) {
+    constructor(carroService, compraService) {
         this.carroService = carroService;
+        this.compraService = compraService;
         this.error = '';
     }
     ngOnInit() {
@@ -121,10 +124,14 @@ let CarroCompraPage = class CarroCompraPage {
     }
     realizarCompra() {
         console.log('Compra realizada');
+        this.compraService.comprar().subscribe(() => {
+            console.log('Compras realizadas');
+        });
     }
 };
 CarroCompraPage.ctorParameters = () => [
-    { type: _services_carro_compra_service__WEBPACK_IMPORTED_MODULE_4__["CarroCompraService"] }
+    { type: _services_carro_compra_service__WEBPACK_IMPORTED_MODULE_5__["CarroCompraService"] },
+    { type: _compra_services_compra_service__WEBPACK_IMPORTED_MODULE_4__["CompraService"] }
 ];
 CarroCompraPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
@@ -133,6 +140,44 @@ CarroCompraPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         styles: [_carro_compra_page_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
     })
 ], CarroCompraPage);
+
+
+
+/***/ }),
+
+/***/ "cyZM":
+/*!************************************************************!*\
+  !*** ./src/app/features/compra/services/compra.service.ts ***!
+  \************************************************************/
+/*! exports provided: CompraService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CompraService", function() { return CompraService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+
+
+let CompraService = class CompraService {
+    constructor(http) {
+        this.http = http;
+        this.compraUrl = 'buy';
+    }
+    comprar() {
+        return this.http.post(`videojuegos/${this.compraUrl}`, {});
+    }
+};
+CompraService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }
+];
+CompraService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
+        providedIn: 'root'
+    })
+], CompraService);
 
 
 

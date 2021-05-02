@@ -10,4 +10,5 @@ export interface Usuario {
   nickname?: string;
   provincia?: Provincia;
   fechaCreacion?: string;
+  me?: boolean;
 }

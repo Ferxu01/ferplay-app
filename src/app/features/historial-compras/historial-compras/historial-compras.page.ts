@@ -3,8 +3,7 @@ import { Compra } from '../../interfaces/Compra';
 import { HistorialComprasService } from '../services/historial-compras.service';
 
 import * as moment from 'moment';
-import { ModalController } from '@ionic/angular';
-import { DetallesCompraPage } from '../detalles-compra/detalles-compra.page';
+import { ModalDetalleCompraComponent } from 'src/app/shared/modals/modal-detalle-compra/modal-detalle-compra.component';
 
 @Component({
   selector: 'app-historial-compras',
@@ -15,7 +14,7 @@ export class HistorialComprasPage implements OnInit {
   compras: Compra[];
   fechaCompra: string = '';
 
-  constructor(private historialCompraService: HistorialComprasService, private modalCtrl: ModalController) { }
+  constructor(private historialCompraService: HistorialComprasService, private modalDetalleCompra: ModalDetalleCompraComponent) { }
 
   ngOnInit() {
     //Configurar librería moment en idioma español
@@ -36,10 +35,7 @@ export class HistorialComprasPage implements OnInit {
     )
   }
 
-  async verDetalleCompra() {
-    const modal = await this.modalCtrl.create({
-      component: DetallesCompraPage
-    });
-    return await modal.present();
+  async verDetalleCompra(lineaCompra: number) {
+    this.modalDetalleCompra.crearModalDetalleCompra(lineaCompra);
   }
 }

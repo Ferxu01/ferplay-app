@@ -76,8 +76,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _perfil_page_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./perfil.page.scss */ "bg+W");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "tyNb");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
-/* harmony import */ var src_app_shared_modals_modal_editar_modal_editar_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/shared/modals/modal-editar/modal-editar.component */ "d2JP");
+/* harmony import */ var _capacitor_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @capacitor/core */ "gcOT");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+/* harmony import */ var src_app_shared_modals_modal_editar_modal_editar_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/shared/modals/modal-editar/modal-editar.component */ "d2JP");
+
 
 
 
@@ -129,24 +131,48 @@ let PerfilPage = class PerfilPage {
         });
     }
     obtenerFotoCamara() {
-        console.log('hazte una foto');
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            console.log('hazte una foto');
+            const photo = yield _capacitor_core__WEBPACK_IMPORTED_MODULE_5__["Camera"].getPhoto({
+                source: _capacitor_core__WEBPACK_IMPORTED_MODULE_5__["CameraSource"].Camera,
+                quality: 90,
+                height: 640,
+                width: 640,
+                allowEditing: true,
+                resultType: _capacitor_core__WEBPACK_IMPORTED_MODULE_5__["CameraResultType"].DataUrl
+            });
+            this.modalEditarAvatar(photo.dataUrl);
+        });
     }
     obtenerFotoGaleria() {
-        console.log('selecciona una imagen de la galería');
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            console.log('selecciona una imagen de la galería');
+            const photo = yield _capacitor_core__WEBPACK_IMPORTED_MODULE_5__["Camera"].getPhoto({
+                source: _capacitor_core__WEBPACK_IMPORTED_MODULE_5__["CameraSource"].Photos,
+                height: 640,
+                width: 640,
+                allowEditing: true,
+                resultType: _capacitor_core__WEBPACK_IMPORTED_MODULE_5__["CameraResultType"].DataUrl
+            });
+            this.modalEditarAvatar(photo.dataUrl);
+        });
     }
-    mostrarModalEditar() {
-        this.modalEditar.crearModalEditarPassword();
+    modalEditarPerfil() {
+        this.modalEditar.crearModalEditarPerfil();
     }
     modalEditarPassword() {
-        this.modalEditar;
+        this.modalEditar.crearModalEditarPassword();
+    }
+    modalEditarAvatar(avatar) {
+        this.modalEditar.crearModalEditarAvatar(avatar);
     }
     cerrarModal() {
         this.modalEditar.cerrarModal();
     }
 };
 PerfilPage.ctorParameters = () => [
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["ActionSheetController"] },
-    { type: src_app_shared_modals_modal_editar_modal_editar_component__WEBPACK_IMPORTED_MODULE_6__["ModalEditarComponent"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["ActionSheetController"] },
+    { type: src_app_shared_modals_modal_editar_modal_editar_component__WEBPACK_IMPORTED_MODULE_7__["ModalEditarComponent"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"] }
 ];
 PerfilPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
@@ -170,7 +196,7 @@ PerfilPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar>\r\n    <ion-title>Mi perfil</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-row>\r\n        <ion-col>\r\n          <img (click)=\"mostrarActionSheet()\" [src]=\"usuario.avatar\">\r\n        </ion-col>\r\n        <ion-col class=\"ion-text-end\">\r\n          <!--<ion-button (click)=\"mostrarModalEditar()\" color=\"light\" size=\"small\">\r\n            <ion-icon name=\"pencil-outline\"></ion-icon>\r\n          </ion-button>-->\r\n          <a (click)=\"mostrarModalEditar()\" color=\"primary\">\r\n            <ion-icon name=\"pencil-outline\"></ion-icon>\r\n          </a>\r\n        </ion-col>\r\n      </ion-row>\r\n\r\n      <ion-row>\r\n        <ion-col>\r\n          <ion-card-title>\r\n            {{usuario.nombre}} {{usuario.apellidos}}\r\n          </ion-card-title>\r\n\r\n            Email: {{usuario.email}} <br>\r\n            Nickname: {{usuario.nickname}} <br>\r\n            Provincia: {{usuario.provincia.nombre}}\r\n        </ion-col>\r\n      </ion-row>\r\n    </ion-card-content>\r\n  </ion-card>\r\n  <ion-card-content>\r\n    <ion-button class=\"button-small\">Editar contraseña</ion-button>\r\n  </ion-card-content>\r\n</ion-content>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar>\r\n    <ion-title>Mi perfil</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-row>\r\n        <ion-col>\r\n          <img (click)=\"mostrarActionSheet()\" [src]=\"usuario.avatar\">\r\n        </ion-col>\r\n        <ion-col class=\"ion-text-end\">\r\n          <!--<ion-button (click)=\"mostrarModalEditar()\" color=\"light\" size=\"small\">\r\n            <ion-icon name=\"pencil-outline\"></ion-icon>\r\n          </ion-button>-->\r\n          <a (click)=\"modalEditarPerfil()\" color=\"primary\">\r\n            <ion-icon name=\"pencil-outline\"></ion-icon>\r\n          </a>\r\n        </ion-col>\r\n      </ion-row>\r\n\r\n      <ion-row>\r\n        <ion-col>\r\n          <ion-card-title>\r\n            {{usuario.nombre}} {{usuario.apellidos}}\r\n          </ion-card-title>\r\n\r\n            Email: {{usuario.email}} <br>\r\n            Nickname: {{usuario.nickname}} <br>\r\n            Provincia: {{usuario.provincia.nombre}}\r\n        </ion-col>\r\n      </ion-row>\r\n    </ion-card-content>\r\n  </ion-card>\r\n  <ion-card-content>\r\n    <ion-button (click)=\"modalEditarPassword()\" class=\"button-small\">Editar contraseña</ion-button>\r\n  </ion-card-content>\r\n</ion-content>\r\n");
 
 /***/ })
 

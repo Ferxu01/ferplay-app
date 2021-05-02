@@ -55,6 +55,12 @@ export class VideojuegoService {
     return this.http.delete<void>(`${this.videojuegoURL}/${id}`);
   }
 
+  obtenerVideojuegosFavoritos(): Observable<Videojuego[]> {
+    return this.http.get<VideojuegosResponse>(`${this.videojuegoURL}/favoritos`).pipe(
+      map(resp => resp.data)
+    );
+  }
+
   darLike(id: number): Observable<void> {
     return this.http.post<void>(`${this.videojuegoURL}/${id}/like`, {liked: true});
   }

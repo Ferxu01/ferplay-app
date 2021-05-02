@@ -9,13 +9,15 @@
     <ion-card-content>
       <ion-row>
         <ion-col>
-          <img (click)="mostrarActionSheet()" [src]="usuario.avatar">
+          <img *ngIf="usuario.me" (click)="mostrarActionSheet()" [src]="usuario.avatar">
+
+          <img *ngIf="!usuario.me" [src]="usuario.avatar">
         </ion-col>
         <ion-col class="ion-text-end">
-          <!--<ion-button (click)="mostrarModalEditar()" color="light" size="small">
+          <!--<ion-button (click)="modalEditarPerfil()" color="light" size="small">
             <ion-icon name="pencil-outline"></ion-icon>
           </ion-button>-->
-          <a color="primary">
+          <a color="primary" *ngIf="usuario.me" (click)="modalEditarPerfil()">
             <ion-icon name="pencil-outline"></ion-icon>
           </a>
         </ion-col>

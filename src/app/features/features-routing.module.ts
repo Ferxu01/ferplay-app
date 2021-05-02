@@ -14,9 +14,14 @@ const routes: Routes = [
   {
     path: 'compras/historial',
     loadChildren: () => import('./historial-compras/historial-compras/historial-compras.module').then( m => m.HistorialComprasPageModule)
-  },  {
+  },
+  {
     path: 'detalles-compra',
     loadChildren: () => import('./historial-compras/detalles-compra/detalles-compra.module').then( m => m.DetallesCompraPageModule)
+  },
+  {
+    path: 'favoritos',
+    loadChildren: () => import('./favoritos/favoritos.module').then( m => m.FavoritosPageModule)
   }
 
 

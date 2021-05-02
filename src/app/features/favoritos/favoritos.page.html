@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mis favoritos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item [routerLink]="['/videojuegos', videojuego.id]" detail="true" button *ngFor="let videojuego of videojuegosFavoritos">
+    <ion-thumbnail slot="start">
+      <img [src]="videojuego.imagen">
+    </ion-thumbnail>
+    <ion-label>
+      {{videojuego.nombre}}
+    </ion-label>
+  </ion-item>
+</ion-content>

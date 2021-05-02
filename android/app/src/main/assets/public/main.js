@@ -38,6 +38,19 @@ AuthTokenInterceptor = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])(
 
 /***/ }),
 
+/***/ "/Of8":
+/*!**************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/usuarios/shared/edit-avatar/edit-avatar.component.html ***!
+  \**************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<form #editAvatarForm=\"ngForm\" (ngSubmit)=\"editarAvatar()\">\n  <ion-img [src]=\"avatar\" *ngIf=\"avatar\"></ion-img>\n\n  <ion-row>\n    <ion-col>\n      <ion-button type=\"submit\" color=\"primary\" expand=\"block\" [disabled]=\"editAvatarForm.invalid\">\n        Edit avatar\n      </ion-button>\n    </ion-col>\n    <ion-col>\n      <ion-button color=\"danger\" expand=\"block\" fill=\"outline\" (click)=\"cancelar()\">\n        <ion-icon name=\"arrow-undo\" slot=\"start\"></ion-icon>\n        Cancel\n      </ion-button>\n    </ion-col>\n  </ion-row>\n</form>\n");
+
+/***/ }),
+
 /***/ 0:
 /*!***************************!*\
   !*** multi ./src/main.ts ***!
@@ -65,6 +78,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "ofXK");
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
 /* harmony import */ var _usuarios_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./usuarios-routing.module */ "JctN");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
+/* harmony import */ var _shared_shared_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./shared/shared.module */ "8KJZ");
+
+
 
 
 
@@ -78,7 +95,9 @@ UsuariosModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         imports: [
             _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
             _usuarios_routing_module__WEBPACK_IMPORTED_MODULE_4__["UsuariosRoutingModule"],
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["IonicModule"]
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["IonicModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"],
+            _shared_shared_module__WEBPACK_IMPORTED_MODULE_6__["SharedModule"]
         ]
     })
 ], UsuariosModule);
@@ -115,11 +134,15 @@ const routes = [
     },
     {
         path: 'compras/historial',
-        loadChildren: () => Promise.all(/*! import() | historial-compras-historial-compras-historial-compras-module */[__webpack_require__.e("common"), __webpack_require__.e("historial-compras-historial-compras-historial-compras-module")]).then(__webpack_require__.bind(null, /*! ./historial-compras/historial-compras/historial-compras.module */ "hIar")).then(m => m.HistorialComprasPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() | historial-compras-historial-compras-historial-compras-module */ "historial-compras-historial-compras-historial-compras-module").then(__webpack_require__.bind(null, /*! ./historial-compras/historial-compras/historial-compras.module */ "hIar")).then(m => m.HistorialComprasPageModule)
     },
     {
         path: 'detalles-compra',
-        loadChildren: () => Promise.all(/*! import() | historial-compras-detalles-compra-detalles-compra-module */[__webpack_require__.e("common"), __webpack_require__.e("historial-compras-detalles-compra-detalles-compra-module")]).then(__webpack_require__.bind(null, /*! ./historial-compras/detalles-compra/detalles-compra.module */ "5q0z")).then(m => m.DetallesCompraPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() | historial-compras-detalles-compra-detalles-compra-module */ "historial-compras-detalles-compra-detalles-compra-module").then(__webpack_require__.bind(null, /*! ./historial-compras/detalles-compra/detalles-compra.module */ "5q0z")).then(m => m.DetallesCompraPageModule)
+    },
+    {
+        path: 'favoritos',
+        loadChildren: () => __webpack_require__.e(/*! import() | favoritos-favoritos-module */ "favoritos-favoritos-module").then(__webpack_require__.bind(null, /*! ./favoritos/favoritos.module */ "Bo6o")).then(m => m.FavoritosPageModule)
     }
 ];
 let FeaturesRoutingModule = class FeaturesRoutingModule {
@@ -208,11 +231,11 @@ const routes = [
     },
     {
         path: 'login',
-        loadChildren: () => Promise.all(/*! import() | login-login-module */[__webpack_require__.e("default~login-login-module~registro-registro-module~videojuego-form-videojuego-form-module"), __webpack_require__.e("login-login-module")]).then(__webpack_require__.bind(null, /*! ./login/login.module */ "lu3c")).then(m => m.LoginPageModule)
+        loadChildren: () => Promise.all(/*! import() | login-login-module */[__webpack_require__.e("default~login-login-module~perfil-perfil-module~registro-registro-module~videojuego-form-videojuego-~215c839c"), __webpack_require__.e("login-login-module")]).then(__webpack_require__.bind(null, /*! ./login/login.module */ "lu3c")).then(m => m.LoginPageModule)
     },
     {
         path: 'registro',
-        loadChildren: () => Promise.all(/*! import() | registro-registro-module */[__webpack_require__.e("default~login-login-module~registro-registro-module~videojuego-form-videojuego-form-module"), __webpack_require__.e("registro-registro-module")]).then(__webpack_require__.bind(null, /*! ./registro/registro.module */ "RyoJ")).then(m => m.RegistroPageModule)
+        loadChildren: () => Promise.all(/*! import() | registro-registro-module */[__webpack_require__.e("default~login-login-module~perfil-perfil-module~registro-registro-module~videojuego-form-videojuego-~215c839c"), __webpack_require__.e("registro-registro-module")]).then(__webpack_require__.bind(null, /*! ./registro/registro.module */ "RyoJ")).then(m => m.RegistroPageModule)
     }
 ];
 let AuthRoutingModule = class AuthRoutingModule {
@@ -225,6 +248,80 @@ AuthRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
     })
 ], AuthRoutingModule);
+
+
+
+/***/ }),
+
+/***/ "6mzX":
+/*!****************************************************************************************!*\
+  !*** ./src/app/shared/modals/modal-detalle-compra/modal-detalle-compra.component.scss ***!
+  \****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJtb2RhbC1kZXRhbGxlLWNvbXByYS5jb21wb25lbnQuc2NzcyJ9 */");
+
+/***/ }),
+
+/***/ "7l9E":
+/*!*************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/shared/videojuegos/videojuego-card/videojuego-card.component.html ***!
+  \*************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-card>\r\n  <img [src]=\"videojuego.imagen\" alt=\"{{videojuego.nombre}}\">\r\n  <ion-card-header>\r\n    <ion-card-title>{{videojuego.nombre}}</ion-card-title>\r\n  </ion-card-header>\r\n  <ion-card-content>\r\n    <ion-row>\r\n      <ion-col>\r\n        {{videojuego.descripcion}}\r\n      </ion-col>\r\n      <ion-col class=\"ion-text-center plataforma\">\r\n        {{videojuego.plataforma.nombre}}\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-card-content>\r\n\r\n  <ion-footer>\r\n    <ion-row class=\"ion-align-items-center ion-text-center\">\r\n      <ion-col text-center>\r\n        <ion-label>{{videojuego.numLikes}} <span *ngIf=\"videojuego.numLikes === 1\">like</span> <span *ngIf=\"videojuego.numLikes === 0 || videojuego.numLikes > 1\">likes</span></ion-label>\r\n      </ion-col>\r\n      <ion-col text-center>\r\n        <ion-label>{{videojuego.stock}} en stock</ion-label>\r\n      </ion-col>\r\n      <ion-col text-center>\r\n        <ion-label>{{videojuego.fechaCreacion}}</ion-label>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-footer>\r\n  <ion-footer>\r\n    <ion-row class=\"ion-align-items-center ion-text-center\">\r\n      <ion-col text-center>\r\n        <button *ngIf=\"!videojuego.liked\" (click)=\"darLike()\">\r\n          <ion-icon name=\"heart-outline\"></ion-icon>\r\n          <div>Like</div>\r\n        </button>\r\n\r\n        <button *ngIf=\"videojuego.liked\" (click)=\"eliminarLike()\">\r\n          <ion-icon color=\"warning\" name=\"heart-outline\"></ion-icon>\r\n          <div>Like</div>\r\n        </button>\r\n      </ion-col>\r\n      <ion-col text-center>\r\n        <button [routerLink]=\"['/videojuegos', videojuego.id]\">\r\n          <ion-icon name=\"information-circle\"></ion-icon>\r\n          <div>Más info</div>\r\n        </button>\r\n      </ion-col>\r\n      <ion-col text-center>\r\n        <button *ngIf=\"!videojuego.favourite\" (click)=\"addFavoritos()\">\r\n          <ion-icon name=\"bookmark-outline\"></ion-icon>\r\n          <ion-icon *ngIf=\"videojuego.favourite\" color=\"warning\" name=\"bookmark-outline\"></ion-icon>\r\n          <div>Favorito</div>\r\n        </button>\r\n\r\n        <button *ngIf=\"videojuego.favourite\" (click)=\"eliminarFavoritos()\">\r\n          <ion-icon color=\"warning\" name=\"bookmark-outline\"></ion-icon>\r\n          <div>Favorito</div>\r\n        </button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-footer>\r\n</ion-card>\r\n");
+
+/***/ }),
+
+/***/ "8KJZ":
+/*!**************************************************!*\
+  !*** ./src/app/usuarios/shared/shared.module.ts ***!
+  \**************************************************/
+/*! exports provided: SharedModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SharedModule", function() { return SharedModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _edit_password_edit_password_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./edit-password/edit-password.component */ "gLzG");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
+/* harmony import */ var _edit_perfil_edit_perfil_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./edit-perfil/edit-perfil.component */ "EVJX");
+/* harmony import */ var _edit_avatar_edit_avatar_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./edit-avatar/edit-avatar.component */ "DwT7");
+
+
+
+
+
+
+
+
+let SharedModule = class SharedModule {
+};
+SharedModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        declarations: [_edit_password_edit_password_component__WEBPACK_IMPORTED_MODULE_3__["EditPasswordComponent"], _edit_perfil_edit_perfil_component__WEBPACK_IMPORTED_MODULE_6__["EditPerfilComponent"], _edit_avatar_edit_avatar_component__WEBPACK_IMPORTED_MODULE_7__["EditAvatarComponent"]],
+        imports: [
+            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"]
+        ],
+        exports: [
+            _edit_password_edit_password_component__WEBPACK_IMPORTED_MODULE_3__["EditPasswordComponent"],
+            _edit_perfil_edit_perfil_component__WEBPACK_IMPORTED_MODULE_6__["EditPerfilComponent"],
+            _edit_avatar_edit_avatar_component__WEBPACK_IMPORTED_MODULE_7__["EditAvatarComponent"]
+        ]
+    })
+], SharedModule);
 
 
 
@@ -329,7 +426,7 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 const environment = {
     production: false,
-    baseUrl: 'http://51.91.58.177:8000/'
+    baseUrl: 'http://localhost:8000/',
 };
 /*
  * For easier debugging in development mode, you can import the following file
@@ -340,6 +437,19 @@ const environment = {
  */
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
 
+
+/***/ }),
+
+/***/ "CAJa":
+/*!****************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/features/historial-compras/detalles-compra/detalles-compra.page.html ***!
+  \****************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-content>\r\n  <ion-row>\r\n    <ion-col>\r\n      <ion-title class=\"mt-3 mb-3\">Detalle de la compra</ion-title>\r\n    </ion-col>\r\n      <ion-buttons class=\"btnCerrar\">\r\n        <ion-button (click)=\"cerrarModal()\">Cerrar</ion-button>\r\n      </ion-buttons>\r\n  </ion-row>\r\n\r\n  <ion-item *ngFor=\"let videojuegoCompra of videojuegosCompra\">\r\n    <ion-thumbnail slot=\"start\">\r\n      <img [src]=\"videojuegoCompra.videojuego.imagen\">\r\n    </ion-thumbnail>\r\n\r\n    <ion-grid>\r\n      <ion-row class=\"ion-align-items-center\">\r\n        <ion-col size=\"12\">\r\n          <ion-label>\r\n            <h2>{{videojuegoCompra.videojuego.nombre}}</h2>\r\n            <h3>\r\n              {{videojuegoCompra.precio | currency:'EUR':'symbol':'0.0-2'}} X {{videojuegoCompra.cantidad}}\r\n\r\n              <span *ngIf=\"videojuegoCompra.cantidad === 1\">unidad</span>\r\n              <span *ngIf=\"videojuegoCompra.cantidad > 1\">unidades</span>\r\n            </h3>\r\n          </ion-label>\r\n        </ion-col>\r\n      </ion-row>\r\n    </ion-grid>\r\n  </ion-item>\r\n</ion-content>\r\n");
 
 /***/ }),
 
@@ -360,6 +470,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
 /* harmony import */ var _home_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./home-routing.module */ "8TPX");
 /* harmony import */ var _home_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./home.page */ "AcIx");
+/* harmony import */ var src_app_shared_shared_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/shared/shared.module */ "PCNd");
+
 
 
 
@@ -375,11 +487,139 @@ HomePageModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
             _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
             _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"],
-            _home_routing_module__WEBPACK_IMPORTED_MODULE_5__["HomePageRoutingModule"]
+            _home_routing_module__WEBPACK_IMPORTED_MODULE_5__["HomePageRoutingModule"],
+            src_app_shared_shared_module__WEBPACK_IMPORTED_MODULE_7__["SharedModule"]
         ],
         declarations: [_home_page__WEBPACK_IMPORTED_MODULE_6__["HomePage"]]
     })
 ], HomePageModule);
+
+
+
+/***/ }),
+
+/***/ "DwT7":
+/*!**********************************************************************!*\
+  !*** ./src/app/usuarios/shared/edit-avatar/edit-avatar.component.ts ***!
+  \**********************************************************************/
+/*! exports provided: EditAvatarComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EditAvatarComponent", function() { return EditAvatarComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _raw_loader_edit_avatar_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./edit-avatar.component.html */ "/Of8");
+/* harmony import */ var _edit_avatar_component_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit-avatar.component.scss */ "iXL1");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+/* harmony import */ var _services_usuarios_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/usuarios.service */ "ust+");
+
+
+
+
+
+
+let EditAvatarComponent = class EditAvatarComponent {
+    constructor(modalCtrl, usuarioService) {
+        this.modalCtrl = modalCtrl;
+        this.usuarioService = usuarioService;
+    }
+    ngOnInit() {
+        this.usuarioService.obtenerMiPerfil().subscribe(resp => this.usuario = resp);
+    }
+    editarAvatar() {
+        this.usuarioService.editarAvatar(this.avatar).subscribe(() => {
+            console.log('Avatar editado');
+            this.modalCtrl.dismiss();
+        });
+    }
+    cancelar() {
+        this.modalCtrl.dismiss();
+    }
+};
+EditAvatarComponent.ctorParameters = () => [
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ModalController"] },
+    { type: _services_usuarios_service__WEBPACK_IMPORTED_MODULE_5__["UsuariosService"] }
+];
+EditAvatarComponent.propDecorators = {
+    avatar: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }]
+};
+EditAvatarComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+        selector: 'app-edit-avatar',
+        template: _raw_loader_edit_avatar_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+        styles: [_edit_avatar_component_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
+    })
+], EditAvatarComponent);
+
+
+
+/***/ }),
+
+/***/ "EVJX":
+/*!**********************************************************************!*\
+  !*** ./src/app/usuarios/shared/edit-perfil/edit-perfil.component.ts ***!
+  \**********************************************************************/
+/*! exports provided: EditPerfilComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EditPerfilComponent", function() { return EditPerfilComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _raw_loader_edit_perfil_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./edit-perfil.component.html */ "ST/v");
+/* harmony import */ var _edit_perfil_component_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit-perfil.component.scss */ "gyaU");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _services_usuarios_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/usuarios.service */ "ust+");
+/* harmony import */ var _services_provincia_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/provincia.service */ "kj20");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+
+
+
+
+
+
+
+let EditPerfilComponent = class EditPerfilComponent {
+    constructor(modalCtrl, usuarioService, provinciaService) {
+        this.modalCtrl = modalCtrl;
+        this.usuarioService = usuarioService;
+        this.provinciaService = provinciaService;
+    }
+    ngOnInit() {
+        this.provinciaService.obtenerProvincias().subscribe(resp => {
+            this.provincias = resp;
+        });
+        this.usuarioService.obtenerMiPerfil().subscribe(resp => {
+            this.usuario = resp;
+            this.nombre = this.usuario.nombre;
+            this.apellidos = this.usuario.apellidos;
+            this.nickname = this.usuario.nickname;
+            this.provincia = this.usuario.provincia.id;
+        });
+    }
+    editarPerfil() {
+        this.usuarioService.editarPerfil(this.nombre, this.apellidos, this.usuario.email, this.nickname, this.provincia).subscribe(() => {
+            console.log('Perfil editado');
+        });
+    }
+    cancelar() {
+        this.modalCtrl.dismiss();
+    }
+};
+EditPerfilComponent.ctorParameters = () => [
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["ModalController"] },
+    { type: _services_usuarios_service__WEBPACK_IMPORTED_MODULE_4__["UsuariosService"] },
+    { type: _services_provincia_service__WEBPACK_IMPORTED_MODULE_5__["ProvinciaService"] }
+];
+EditPerfilComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+        selector: 'app-edit-perfil',
+        template: _raw_loader_edit_perfil_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+        styles: [_edit_perfil_component_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
+    })
+], EditPerfilComponent);
 
 
 
@@ -425,6 +665,66 @@ GeneralService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 /***/ }),
 
+/***/ "Iurt":
+/*!**************************************************************************************!*\
+  !*** ./src/app/shared/modals/modal-detalle-compra/modal-detalle-compra.component.ts ***!
+  \**************************************************************************************/
+/*! exports provided: ModalDetalleCompraComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalDetalleCompraComponent", function() { return ModalDetalleCompraComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _raw_loader_modal_detalle_compra_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./modal-detalle-compra.component.html */ "cXvD");
+/* harmony import */ var _modal_detalle_compra_component_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modal-detalle-compra.component.scss */ "6mzX");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+/* harmony import */ var src_app_features_historial_compras_detalles_compra_detalles_compra_page__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/features/historial-compras/detalles-compra/detalles-compra.page */ "mvSI");
+
+
+
+
+
+
+let ModalDetalleCompraComponent = class ModalDetalleCompraComponent {
+    constructor(modalCtrl) {
+        this.modalCtrl = modalCtrl;
+    }
+    ngOnInit() { }
+    crearModalDetalleCompra(lineaCompra) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            const modal = yield this.modalCtrl.create({
+                component: src_app_features_historial_compras_detalles_compra_detalles_compra_page__WEBPACK_IMPORTED_MODULE_5__["DetallesCompraPage"],
+                componentProps: {
+                    lineaCompra: lineaCompra
+                }
+            });
+            return yield modal.present();
+        });
+    }
+    cerrarModal() {
+        this.modalCtrl.dismiss();
+    }
+};
+ModalDetalleCompraComponent.ctorParameters = () => [
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ModalController"] }
+];
+ModalDetalleCompraComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Injectable"])({
+        providedIn: 'root'
+    }),
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+        selector: 'app-modal-detalle-compra',
+        template: _raw_loader_modal_detalle_compra_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+        styles: [_modal_detalle_compra_component_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
+    })
+], ModalDetalleCompraComponent);
+
+
+
+/***/ }),
+
 /***/ "JHGF":
 /*!************************************************************************!*\
   !*** ./src/app/shared/modals/modal-editar/modal-editar.component.scss ***!
@@ -464,7 +764,7 @@ const routes = [
     },
     {
         path: 'me',
-        loadChildren: () => __webpack_require__.e(/*! import() | perfil-perfil-module */ "perfil-perfil-module").then(__webpack_require__.bind(null, /*! ./perfil/perfil.module */ "9Iej")).then(m => m.PerfilPageModule),
+        loadChildren: () => Promise.all(/*! import() | perfil-perfil-module */[__webpack_require__.e("default~login-login-module~perfil-perfil-module~registro-registro-module~videojuego-form-videojuego-~215c839c"), __webpack_require__.e("perfil-perfil-module")]).then(__webpack_require__.bind(null, /*! ./perfil/perfil.module */ "9Iej")).then(m => m.PerfilPageModule),
         resolve: {
             usuario: _shared_usuarios_resolvers_perfil_resolver_service__WEBPACK_IMPORTED_MODULE_3__["PerfilResolverService"]
         }
@@ -657,7 +957,7 @@ const routes = [
     },
     {
         path: 'nuevo',
-        loadChildren: () => Promise.all(/*! import() | videojuego-form-videojuego-form-module */[__webpack_require__.e("default~login-login-module~registro-registro-module~videojuego-form-videojuego-form-module"), __webpack_require__.e("videojuego-form-videojuego-form-module")]).then(__webpack_require__.bind(null, /*! ./videojuego-form/videojuego-form.module */ "9DYZ")).then(m => m.VideojuegoFormPageModule)
+        loadChildren: () => Promise.all(/*! import() | videojuego-form-videojuego-form-module */[__webpack_require__.e("default~login-login-module~perfil-perfil-module~registro-registro-module~videojuego-form-videojuego-~215c839c"), __webpack_require__.e("videojuego-form-videojuego-form-module")]).then(__webpack_require__.bind(null, /*! ./videojuego-form/videojuego-form.module */ "9DYZ")).then(m => m.VideojuegoFormPageModule)
     },
     {
         path: ':id',
@@ -668,7 +968,7 @@ const routes = [
     },
     {
         path: 'edit/:id',
-        loadChildren: () => Promise.all(/*! import() | videojuego-form-videojuego-form-module */[__webpack_require__.e("default~login-login-module~registro-registro-module~videojuego-form-videojuego-form-module"), __webpack_require__.e("videojuego-form-videojuego-form-module")]).then(__webpack_require__.bind(null, /*! ./videojuego-form/videojuego-form.module */ "9DYZ")).then(m => m.VideojuegoFormPageModule)
+        loadChildren: () => Promise.all(/*! import() | videojuego-form-videojuego-form-module */[__webpack_require__.e("default~login-login-module~perfil-perfil-module~registro-registro-module~videojuego-form-videojuego-~215c839c"), __webpack_require__.e("videojuego-form-videojuego-form-module")]).then(__webpack_require__.bind(null, /*! ./videojuego-form/videojuego-form.module */ "9DYZ")).then(m => m.VideojuegoFormPageModule)
     }
 ];
 let VideojuegosRoutingModule = class VideojuegosRoutingModule {
@@ -749,6 +1049,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "ofXK");
 /* harmony import */ var _modals_modal_editar_modal_editar_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modals/modal-editar/modal-editar.component */ "d2JP");
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+/* harmony import */ var _videojuegos_videojuego_card_videojuego_card_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./videojuegos/videojuego-card/videojuego-card.component */ "XBur");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "tyNb");
+/* harmony import */ var _modals_modal_detalle_compra_modal_detalle_compra_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modals/modal-detalle-compra/modal-detalle-compra.component */ "Iurt");
+
+
+
 
 
 
@@ -758,13 +1064,16 @@ let SharedModule = class SharedModule {
 };
 SharedModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-        declarations: [_modals_modal_editar_modal_editar_component__WEBPACK_IMPORTED_MODULE_3__["ModalEditarComponent"]],
+        declarations: [_modals_modal_editar_modal_editar_component__WEBPACK_IMPORTED_MODULE_3__["ModalEditarComponent"], _videojuegos_videojuego_card_videojuego_card_component__WEBPACK_IMPORTED_MODULE_5__["VideojuegoCardComponent"], _modals_modal_detalle_compra_modal_detalle_compra_component__WEBPACK_IMPORTED_MODULE_7__["ModalDetalleCompraComponent"]],
         imports: [
             _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"]
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_6__["RouterModule"]
         ],
         exports: [
-            _modals_modal_editar_modal_editar_component__WEBPACK_IMPORTED_MODULE_3__["ModalEditarComponent"]
+            _modals_modal_editar_modal_editar_component__WEBPACK_IMPORTED_MODULE_3__["ModalEditarComponent"],
+            _modals_modal_detalle_compra_modal_detalle_compra_component__WEBPACK_IMPORTED_MODULE_7__["ModalDetalleCompraComponent"],
+            _videojuegos_videojuego_card_videojuego_card_component__WEBPACK_IMPORTED_MODULE_5__["VideojuegoCardComponent"]
         ]
     })
 ], SharedModule);
@@ -836,6 +1145,21 @@ let VideojuegoService = class VideojuegoService {
     borrarVideojuego(id) {
         return this.http.delete(`${this.videojuegoURL}/${id}`);
     }
+    obtenerVideojuegosFavoritos() {
+        return this.http.get(`${this.videojuegoURL}/favoritos`).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(resp => resp.data));
+    }
+    darLike(id) {
+        return this.http.post(`${this.videojuegoURL}/${id}/like`, { liked: true });
+    }
+    eliminarLike(id) {
+        return this.http.delete(`${this.videojuegoURL}/${id}/like`);
+    }
+    darFavorito(id) {
+        return this.http.post(`${this.videojuegoURL}/${id}/favourite`, { favourite: true });
+    }
+    eliminarFavoritos(id) {
+        return this.http.delete(`${this.videojuegoURL}/${id}/favourite`);
+    }
 };
 VideojuegoService.ctorParameters = () => [
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }
@@ -847,6 +1171,321 @@ VideojuegoService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 ], VideojuegoService);
 
 
+
+/***/ }),
+
+/***/ "RnhZ":
+/*!**************************************************!*\
+  !*** ./node_modules/moment/locale sync ^\.\/.*$ ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./af": "K/tc",
+	"./af.js": "K/tc",
+	"./ar": "jnO4",
+	"./ar-dz": "o1bE",
+	"./ar-dz.js": "o1bE",
+	"./ar-kw": "Qj4J",
+	"./ar-kw.js": "Qj4J",
+	"./ar-ly": "HP3h",
+	"./ar-ly.js": "HP3h",
+	"./ar-ma": "CoRJ",
+	"./ar-ma.js": "CoRJ",
+	"./ar-sa": "gjCT",
+	"./ar-sa.js": "gjCT",
+	"./ar-tn": "bYM6",
+	"./ar-tn.js": "bYM6",
+	"./ar.js": "jnO4",
+	"./az": "SFxW",
+	"./az.js": "SFxW",
+	"./be": "H8ED",
+	"./be.js": "H8ED",
+	"./bg": "hKrs",
+	"./bg.js": "hKrs",
+	"./bm": "p/rL",
+	"./bm.js": "p/rL",
+	"./bn": "kEOa",
+	"./bn-bd": "loYQ",
+	"./bn-bd.js": "loYQ",
+	"./bn.js": "kEOa",
+	"./bo": "0mo+",
+	"./bo.js": "0mo+",
+	"./br": "aIdf",
+	"./br.js": "aIdf",
+	"./bs": "JVSJ",
+	"./bs.js": "JVSJ",
+	"./ca": "1xZ4",
+	"./ca.js": "1xZ4",
+	"./cs": "PA2r",
+	"./cs.js": "PA2r",
+	"./cv": "A+xa",
+	"./cv.js": "A+xa",
+	"./cy": "l5ep",
+	"./cy.js": "l5ep",
+	"./da": "DxQv",
+	"./da.js": "DxQv",
+	"./de": "tGlX",
+	"./de-at": "s+uk",
+	"./de-at.js": "s+uk",
+	"./de-ch": "u3GI",
+	"./de-ch.js": "u3GI",
+	"./de.js": "tGlX",
+	"./dv": "WYrj",
+	"./dv.js": "WYrj",
+	"./el": "jUeY",
+	"./el.js": "jUeY",
+	"./en-au": "Dmvi",
+	"./en-au.js": "Dmvi",
+	"./en-ca": "OIYi",
+	"./en-ca.js": "OIYi",
+	"./en-gb": "Oaa7",
+	"./en-gb.js": "Oaa7",
+	"./en-ie": "4dOw",
+	"./en-ie.js": "4dOw",
+	"./en-il": "czMo",
+	"./en-il.js": "czMo",
+	"./en-in": "7C5Q",
+	"./en-in.js": "7C5Q",
+	"./en-nz": "b1Dy",
+	"./en-nz.js": "b1Dy",
+	"./en-sg": "t+mt",
+	"./en-sg.js": "t+mt",
+	"./eo": "Zduo",
+	"./eo.js": "Zduo",
+	"./es": "iYuL",
+	"./es-do": "CjzT",
+	"./es-do.js": "CjzT",
+	"./es-mx": "tbfe",
+	"./es-mx.js": "tbfe",
+	"./es-us": "Vclq",
+	"./es-us.js": "Vclq",
+	"./es.js": "iYuL",
+	"./et": "7BjC",
+	"./et.js": "7BjC",
+	"./eu": "D/JM",
+	"./eu.js": "D/JM",
+	"./fa": "jfSC",
+	"./fa.js": "jfSC",
+	"./fi": "gekB",
+	"./fi.js": "gekB",
+	"./fil": "1ppg",
+	"./fil.js": "1ppg",
+	"./fo": "ByF4",
+	"./fo.js": "ByF4",
+	"./fr": "nyYc",
+	"./fr-ca": "2fjn",
+	"./fr-ca.js": "2fjn",
+	"./fr-ch": "Dkky",
+	"./fr-ch.js": "Dkky",
+	"./fr.js": "nyYc",
+	"./fy": "cRix",
+	"./fy.js": "cRix",
+	"./ga": "USCx",
+	"./ga.js": "USCx",
+	"./gd": "9rRi",
+	"./gd.js": "9rRi",
+	"./gl": "iEDd",
+	"./gl.js": "iEDd",
+	"./gom-deva": "qvJo",
+	"./gom-deva.js": "qvJo",
+	"./gom-latn": "DKr+",
+	"./gom-latn.js": "DKr+",
+	"./gu": "4MV3",
+	"./gu.js": "4MV3",
+	"./he": "x6pH",
+	"./he.js": "x6pH",
+	"./hi": "3E1r",
+	"./hi.js": "3E1r",
+	"./hr": "S6ln",
+	"./hr.js": "S6ln",
+	"./hu": "WxRl",
+	"./hu.js": "WxRl",
+	"./hy-am": "1rYy",
+	"./hy-am.js": "1rYy",
+	"./id": "UDhR",
+	"./id.js": "UDhR",
+	"./is": "BVg3",
+	"./is.js": "BVg3",
+	"./it": "bpih",
+	"./it-ch": "bxKX",
+	"./it-ch.js": "bxKX",
+	"./it.js": "bpih",
+	"./ja": "B55N",
+	"./ja.js": "B55N",
+	"./jv": "tUCv",
+	"./jv.js": "tUCv",
+	"./ka": "IBtZ",
+	"./ka.js": "IBtZ",
+	"./kk": "bXm7",
+	"./kk.js": "bXm7",
+	"./km": "6B0Y",
+	"./km.js": "6B0Y",
+	"./kn": "PpIw",
+	"./kn.js": "PpIw",
+	"./ko": "Ivi+",
+	"./ko.js": "Ivi+",
+	"./ku": "JCF/",
+	"./ku.js": "JCF/",
+	"./ky": "lgnt",
+	"./ky.js": "lgnt",
+	"./lb": "RAwQ",
+	"./lb.js": "RAwQ",
+	"./lo": "sp3z",
+	"./lo.js": "sp3z",
+	"./lt": "JvlW",
+	"./lt.js": "JvlW",
+	"./lv": "uXwI",
+	"./lv.js": "uXwI",
+	"./me": "KTz0",
+	"./me.js": "KTz0",
+	"./mi": "aIsn",
+	"./mi.js": "aIsn",
+	"./mk": "aQkU",
+	"./mk.js": "aQkU",
+	"./ml": "AvvY",
+	"./ml.js": "AvvY",
+	"./mn": "lYtQ",
+	"./mn.js": "lYtQ",
+	"./mr": "Ob0Z",
+	"./mr.js": "Ob0Z",
+	"./ms": "6+QB",
+	"./ms-my": "ZAMP",
+	"./ms-my.js": "ZAMP",
+	"./ms.js": "6+QB",
+	"./mt": "G0Uy",
+	"./mt.js": "G0Uy",
+	"./my": "honF",
+	"./my.js": "honF",
+	"./nb": "bOMt",
+	"./nb.js": "bOMt",
+	"./ne": "OjkT",
+	"./ne.js": "OjkT",
+	"./nl": "+s0g",
+	"./nl-be": "2ykv",
+	"./nl-be.js": "2ykv",
+	"./nl.js": "+s0g",
+	"./nn": "uEye",
+	"./nn.js": "uEye",
+	"./oc-lnc": "Fnuy",
+	"./oc-lnc.js": "Fnuy",
+	"./pa-in": "8/+R",
+	"./pa-in.js": "8/+R",
+	"./pl": "jVdC",
+	"./pl.js": "jVdC",
+	"./pt": "8mBD",
+	"./pt-br": "0tRk",
+	"./pt-br.js": "0tRk",
+	"./pt.js": "8mBD",
+	"./ro": "lyxo",
+	"./ro.js": "lyxo",
+	"./ru": "lXzo",
+	"./ru.js": "lXzo",
+	"./sd": "Z4QM",
+	"./sd.js": "Z4QM",
+	"./se": "//9w",
+	"./se.js": "//9w",
+	"./si": "7aV9",
+	"./si.js": "7aV9",
+	"./sk": "e+ae",
+	"./sk.js": "e+ae",
+	"./sl": "gVVK",
+	"./sl.js": "gVVK",
+	"./sq": "yPMs",
+	"./sq.js": "yPMs",
+	"./sr": "zx6S",
+	"./sr-cyrl": "E+lV",
+	"./sr-cyrl.js": "E+lV",
+	"./sr.js": "zx6S",
+	"./ss": "Ur1D",
+	"./ss.js": "Ur1D",
+	"./sv": "X709",
+	"./sv.js": "X709",
+	"./sw": "dNwA",
+	"./sw.js": "dNwA",
+	"./ta": "PeUW",
+	"./ta.js": "PeUW",
+	"./te": "XLvN",
+	"./te.js": "XLvN",
+	"./tet": "V2x9",
+	"./tet.js": "V2x9",
+	"./tg": "Oxv6",
+	"./tg.js": "Oxv6",
+	"./th": "EOgW",
+	"./th.js": "EOgW",
+	"./tk": "Wv91",
+	"./tk.js": "Wv91",
+	"./tl-ph": "Dzi0",
+	"./tl-ph.js": "Dzi0",
+	"./tlh": "z3Vd",
+	"./tlh.js": "z3Vd",
+	"./tr": "DoHr",
+	"./tr.js": "DoHr",
+	"./tzl": "z1FC",
+	"./tzl.js": "z1FC",
+	"./tzm": "wQk9",
+	"./tzm-latn": "tT3J",
+	"./tzm-latn.js": "tT3J",
+	"./tzm.js": "wQk9",
+	"./ug-cn": "YRex",
+	"./ug-cn.js": "YRex",
+	"./uk": "raLr",
+	"./uk.js": "raLr",
+	"./ur": "UpQW",
+	"./ur.js": "UpQW",
+	"./uz": "Loxo",
+	"./uz-latn": "AQ68",
+	"./uz-latn.js": "AQ68",
+	"./uz.js": "Loxo",
+	"./vi": "KSF8",
+	"./vi.js": "KSF8",
+	"./x-pseudo": "/X5v",
+	"./x-pseudo.js": "/X5v",
+	"./yo": "fzPg",
+	"./yo.js": "fzPg",
+	"./zh-cn": "XDpg",
+	"./zh-cn.js": "XDpg",
+	"./zh-hk": "SatO",
+	"./zh-hk.js": "SatO",
+	"./zh-mo": "OmwH",
+	"./zh-mo.js": "OmwH",
+	"./zh-tw": "kOpN",
+	"./zh-tw.js": "kOpN"
+};
+
+
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	return __webpack_require__(id);
+}
+function webpackContextResolve(req) {
+	if(!__webpack_require__.o(map, req)) {
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return map[req];
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = "RnhZ";
+
+/***/ }),
+
+/***/ "ST/v":
+/*!**************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/usuarios/shared/edit-perfil/edit-perfil.component.html ***!
+  \**************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<form #editProfileForm=\"ngForm\" (ngSubmit)=\"editarPerfil()\">\r\n  <ion-list>\r\n    <ion-item>\r\n      <ion-label position=\"floating\">Name</ion-label>\r\n      <ion-input type=\"text\" name=\"name\" required [(ngModel)]=\"nombre\" #nameModel=\"ngModel\"></ion-input>\r\n    </ion-item>\r\n    <ion-item>\r\n      <ion-label position=\"floating\">Apellidos</ion-label>\r\n      <ion-input type=\"text\" name=\"apellidos\" required [(ngModel)]=\"apellidos\" #apellidosModel=\"ngModel\"></ion-input>\r\n    </ion-item>\r\n    <ion-item>\r\n      <ion-label position=\"floating\">Nickname</ion-label>\r\n      <ion-input type=\"text\" name=\"nickname\" required [(ngModel)]=\"nickname\" #nicknameModel=\"ngModel\"></ion-input>\r\n    </ion-item>\r\n    <ion-item>\r\n      <ion-label position=\"floating\">Provincia</ion-label>\r\n      <ion-select required #provinciaModel=\"ngModel\" name=\"provincia\" [(ngModel)]=\"provincia\">\r\n        <ion-select-option value=\"0\">Choose a province...</ion-select-option>\r\n        <ion-select-option *ngFor=\"let provincia of provincias\" [value]=\"provincia.id\">{{provincia.nombre}}</ion-select-option>\r\n      </ion-select>\r\n      <ion-icon name=\"checkmark-circle\" slot=\"end\" color=\"success\" *ngIf=\"provinciaModel.dirty && provinciaModel.valid && provinciaModel.value !== 0\"></ion-icon>\r\n    </ion-item>\r\n  </ion-list>\r\n  <ion-row>\r\n    <ion-col>\r\n      <ion-button type=\"submit\" color=\"primary\" expand=\"block\" [disabled]=\"editProfileForm.invalid\">\r\n        Edit profile\r\n      </ion-button>\r\n    </ion-col>\r\n    <ion-col>\r\n      <ion-button color=\"danger\" expand=\"block\" fill=\"outline\" (click)=\"cancelar()\">\r\n        <ion-icon name=\"arrow-undo\" slot=\"start\"></ion-icon>\r\n        Cancel\r\n      </ion-button>\r\n    </ion-col>\r\n  </ion-row>\r\n</form>\r\n");
 
 /***/ }),
 
@@ -887,14 +1526,16 @@ let AppComponent = class AppComponent {
             nickname: 'nickname',
             avatar: ''
         };
+        this.menuDisabled = true;
         this.appPages = [
             { title: 'Home', url: '/videojuegos', icon: 'home' },
             { title: 'Subir un videojuego', url: '/videojuegos/nuevo', icon: 'add-circle' },
-            { title: 'Favoritos', url: '/folder/Favorites', icon: 'bookmark' },
+            { title: 'Favoritos', url: '/features/favoritos', icon: 'bookmark' },
             { title: 'Carro de compra', url: '/features/carro', icon: 'cart' },
             { title: 'Mis compras', url: '/features/compras/historial', icon: 'list' },
             { title: 'Mi perfil', url: '/usuarios/me', icon: 'person' },
         ];
+        this.authService.loginChange$.subscribe(logged => this.menuDisabled = !logged);
     }
     ngOnInit() {
         this.obtenerInfoUsuario();
@@ -941,6 +1582,116 @@ AppComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("<ion-app>\r\n  <ion-split-pane contentId=\"main-content\">\r\n    <ion-menu contentId=\"main-content\" type=\"overlay\">\r\n      <ion-content>\r\n\r\n        <ion-list id=\"inbox-list\">\r\n          <ion-item>\r\n            <ion-avatar slot=\"start\">\r\n              <img [src]=\"user.avatar\" alt=\"Avatar usuario\">\r\n            </ion-avatar>\r\n            <ion-label>\r\n              <h2>{{user.nombre}} {{user.apellidos}}</h2>\r\n              <p>{{user.email}}</p>\r\n            </ion-label>\r\n          </ion-item>\r\n\r\n          <ion-menu-toggle auto-hide=\"false\" *ngFor=\"let p of appPages; let i = index\">\r\n            <ion-item *ngIf=\"p.icon !== 'cart'\" routerDirection=\"root\" [routerLink]=\"[p.url]\" lines=\"none\" detail=\"false\">\r\n              <ion-icon slot=\"start\" [ios]=\"p.icon + '-outline'\" [md]=\"p.icon + '-sharp'\"></ion-icon>\r\n              <ion-label>{{ p.title }}</ion-label>\r\n            </ion-item>\r\n\r\n            <ion-item *ngIf=\"p.icon === 'cart'\" routerDirection=\"root\" [routerLink]=\"['/features/carro']\" lines=\"none\" detail=\"false\">\r\n              <ion-icon slot=\"start\" [ios]=\"'cart-outline'\" [md]=\"'cart-sharp'\"></ion-icon>\r\n              <ion-label>Carro de compra</ion-label>\r\n              <ion-badge *ngIf=\"numVideojuegosCarro.value !== 0\" color=\"danger\" class=\"badge-cart\">{{numVideojuegosCarro.value}}</ion-badge>\r\n            </ion-item>\r\n\r\n          </ion-menu-toggle>\r\n          <ion-menu-toggle auto-hide=\"false\">\r\n            <ion-item lines=\"none\" (click)=\"cerrarSesion()\">\r\n              <ion-icon slot=\"start\" [md]=\"'exit-sharp'\"></ion-icon>\r\n              <ion-label>Cerrar sesión</ion-label>\r\n            </ion-item>\r\n\r\n            <!-- Icono con cantidad de artículos en carro de compra -->\r\n            <!--<ion-button>\r\n              <ion-icon slot=\"icon-only\" name=\"cart\"></ion-icon>\r\n              <ion-badge color=\"danger\" class=\"badge-cart\">99</ion-badge>\r\n            </ion-button>-->\r\n          </ion-menu-toggle>\r\n        </ion-list>\r\n      </ion-content>\r\n    </ion-menu>\r\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>\r\n");
+
+/***/ }),
+
+/***/ "XBur":
+/*!*********************************************************************************!*\
+  !*** ./src/app/shared/videojuegos/videojuego-card/videojuego-card.component.ts ***!
+  \*********************************************************************************/
+/*! exports provided: VideojuegoCardComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VideojuegoCardComponent", function() { return VideojuegoCardComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _raw_loader_videojuego_card_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./videojuego-card.component.html */ "7l9E");
+/* harmony import */ var _videojuego_card_component_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./videojuego-card.component.scss */ "bqCF");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var src_app_videojuegos_services_videojuego_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/videojuegos/services/videojuego.service */ "PbcP");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! moment */ "wd/R");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
+
+
+
+let VideojuegoCardComponent = class VideojuegoCardComponent {
+    constructor(videojuegoService) {
+        this.videojuegoService = videojuegoService;
+        this.liked = new _angular_core__WEBPACK_IMPORTED_MODULE_3__["EventEmitter"]();
+        this.favourite = new _angular_core__WEBPACK_IMPORTED_MODULE_3__["EventEmitter"]();
+    }
+    ngOnInit() {
+        moment__WEBPACK_IMPORTED_MODULE_5__["locale"]('es');
+        this.videojuego.fechaCreacion = moment__WEBPACK_IMPORTED_MODULE_5__(this.videojuego.fechaCreacion).fromNow();
+    }
+    setLike() {
+        if (this.videojuego.liked === true) {
+            this.eliminarLike();
+        }
+        else {
+            this.darLike();
+        }
+    }
+    setFavorito() {
+        if (this.videojuego.favourite) {
+            this.eliminarFavoritos();
+        }
+        else {
+            this.addFavoritos();
+        }
+    }
+    darLike() {
+        this.liked.emit();
+        this.videojuego.liked = true;
+        this.videojuego.numLikes += 1;
+        this.videojuegoService.darLike(this.videojuego.id).subscribe(() => {
+            console.log('Videojuego like');
+        }, error => {
+            this.videojuego.liked = false;
+            this.videojuego.numLikes -= 1;
+        });
+    }
+    eliminarLike() {
+        this.liked.emit();
+        this.videojuego.liked = false;
+        this.videojuego.numLikes -= 1;
+        this.videojuegoService.eliminarLike(this.videojuego.id).subscribe(() => {
+            console.log('Videojuego like eliminado');
+        }, error => {
+            this.videojuego.liked = true;
+            this.videojuego.numLikes += 1;
+        });
+    }
+    addFavoritos() {
+        this.favourite.emit();
+        this.videojuego.favourite = true;
+        this.videojuegoService.darFavorito(this.videojuego.id).subscribe(() => {
+            console.log('Videojuego favorito');
+        }, error => {
+            this.videojuego.favourite = false;
+        });
+    }
+    eliminarFavoritos() {
+        this.favourite.emit();
+        this.videojuego.favourite = false;
+        this.videojuegoService.eliminarFavoritos(this.videojuego.id).subscribe(() => {
+            console.log('Videojuego favorito eliminado');
+        }, error => {
+            this.videojuego.favourite = true;
+        });
+    }
+};
+VideojuegoCardComponent.ctorParameters = () => [
+    { type: src_app_videojuegos_services_videojuego_service__WEBPACK_IMPORTED_MODULE_4__["VideojuegoService"] }
+];
+VideojuegoCardComponent.propDecorators = {
+    videojuego: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
+    liked: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Output"] }],
+    favourite: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Output"] }]
+};
+VideojuegoCardComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+        selector: 'app-videojuego-card',
+        template: _raw_loader_videojuego_card_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+        styles: [_videojuego_card_component_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
+    })
+], VideojuegoCardComponent);
+
+
 
 /***/ }),
 
@@ -994,6 +1745,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _videojuegos_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./videojuegos-routing.module */ "NFnX");
 /* harmony import */ var _home_home_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./home/home.module */ "CiAP");
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+/* harmony import */ var _shared_shared_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../shared/shared.module */ "PCNd");
+
 
 
 
@@ -1008,7 +1761,8 @@ VideojuegosModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         imports: [
             _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
             _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["IonicModule"],
-            _videojuegos_routing_module__WEBPACK_IMPORTED_MODULE_3__["VideojuegosRoutingModule"]
+            _videojuegos_routing_module__WEBPACK_IMPORTED_MODULE_3__["VideojuegosRoutingModule"],
+            _shared_shared_module__WEBPACK_IMPORTED_MODULE_6__["SharedModule"]
         ],
         exports: [
             _home_home_module__WEBPACK_IMPORTED_MODULE_4__["HomePageModule"]
@@ -1138,6 +1892,32 @@ AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 /***/ }),
 
+/***/ "bqCF":
+/*!***********************************************************************************!*\
+  !*** ./src/app/shared/videojuegos/videojuego-card/videojuego-card.component.scss ***!
+  \***********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("ion-icon {\n  font-size: 30px;\n}\n\nion-label {\n  color: black;\n  font-size: 15px;\n}\n\nbutton {\n  background-color: white;\n}\n\n.plataforma {\n  font-size: 18px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcdmlkZW9qdWVnby1jYXJkLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsZUFBQTtBQUNGOztBQUVBO0VBQ0UsWUFBQTtFQUNBLGVBQUE7QUFDRjs7QUFFQTtFQUNFLHVCQUFBO0FBQ0Y7O0FBRUE7RUFDRSxlQUFBO0FBQ0YiLCJmaWxlIjoidmlkZW9qdWVnby1jYXJkLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLWljb24ge1xyXG4gIGZvbnQtc2l6ZTogMzBweDtcclxufVxyXG5cclxuaW9uLWxhYmVsIHtcclxuICBjb2xvcjogYmxhY2s7XHJcbiAgZm9udC1zaXplOiAxNXB4O1xyXG59XHJcblxyXG5idXR0b24ge1xyXG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG59XHJcblxyXG4ucGxhdGFmb3JtYSB7XHJcbiAgZm9udC1zaXplOiAxOHB4O1xyXG59XHJcbiJdfQ== */");
+
+/***/ }),
+
+/***/ "cXvD":
+/*!******************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/shared/modals/modal-detalle-compra/modal-detalle-compra.component.html ***!
+  \******************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<p>\n  modal-detalle-compra works!\n</p>\n");
+
+/***/ }),
+
 /***/ "d2JP":
 /*!**********************************************************************!*\
   !*** ./src/app/shared/modals/modal-editar/modal-editar.component.ts ***!
@@ -1153,7 +1933,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modal_editar_component_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modal-editar.component.scss */ "JHGF");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
-/* harmony import */ var src_app_usuarios_shared_edit_password_edit_password_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/usuarios/shared/edit-password/edit-password.component */ "gLzG");
+/* harmony import */ var src_app_usuarios_shared_edit_avatar_edit_avatar_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/usuarios/shared/edit-avatar/edit-avatar.component */ "DwT7");
+/* harmony import */ var src_app_usuarios_shared_edit_password_edit_password_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/usuarios/shared/edit-password/edit-password.component */ "gLzG");
+/* harmony import */ var src_app_usuarios_shared_edit_perfil_edit_perfil_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/usuarios/shared/edit-perfil/edit-perfil.component */ "EVJX");
+
+
 
 
 
@@ -1168,17 +1952,27 @@ let ModalEditarComponent = class ModalEditarComponent {
     crearModalEditarPassword() {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
             const modal = yield this.modalCtrl.create({
-                component: src_app_usuarios_shared_edit_password_edit_password_component__WEBPACK_IMPORTED_MODULE_5__["EditPasswordComponent"]
+                component: src_app_usuarios_shared_edit_password_edit_password_component__WEBPACK_IMPORTED_MODULE_6__["EditPasswordComponent"]
             });
             return yield modal.present();
         });
     }
     crearModalEditarPerfil() {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            const modal = yield this.modalCtrl.create({
+                component: src_app_usuarios_shared_edit_perfil_edit_perfil_component__WEBPACK_IMPORTED_MODULE_7__["EditPerfilComponent"],
+                componentProps: { usuario: this.usuario }
+            });
+            return yield modal.present();
         });
     }
-    crearModalEditarAvatar() {
+    crearModalEditarAvatar(avatar) {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            const modal = yield this.modalCtrl.create({
+                component: src_app_usuarios_shared_edit_avatar_edit_avatar_component__WEBPACK_IMPORTED_MODULE_5__["EditAvatarComponent"],
+                componentProps: { avatar: avatar }
+            });
+            return yield modal.present();
         });
     }
     cerrarModal() {
@@ -1213,6 +2007,19 @@ ModalEditarComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])(
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("ion-icon {\n  font-size: 30px;\n}\n\nion-label {\n  color: black;\n  font-size: 15px;\n}\n\nbutton {\n  background-color: white;\n}\n\n/*.styleicono:hover {\n  transform: scale(1.5);\n}*/\n\n.plataforma {\n  font-size: 18px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFxob21lLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGVBQUE7QUFDRjs7QUFFQTtFQUNFLFlBQUE7RUFDQSxlQUFBO0FBQ0Y7O0FBRUE7RUFDRSx1QkFBQTtBQUNGOztBQUVBOztFQUFBOztBQUlBO0VBQ0UsZUFBQTtBQUFGIiwiZmlsZSI6ImhvbWUucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLWljb24ge1xyXG4gIGZvbnQtc2l6ZTogMzBweDtcclxufVxyXG5cclxuaW9uLWxhYmVsIHtcclxuICBjb2xvcjogYmxhY2s7XHJcbiAgZm9udC1zaXplOiAxNXB4O1xyXG59XHJcblxyXG5idXR0b24ge1xyXG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG59XHJcblxyXG4vKi5zdHlsZWljb25vOmhvdmVyIHtcclxuICB0cmFuc2Zvcm06IHNjYWxlKDEuNSk7XHJcbn0qL1xyXG5cclxuLnBsYXRhZm9ybWEge1xyXG4gIGZvbnQtc2l6ZTogMThweDtcclxufVxyXG4iXX0= */");
+
+/***/ }),
+
+/***/ "euYS":
+/*!**************************************************************************************!*\
+  !*** ./src/app/features/historial-compras/detalles-compra/detalles-compra.page.scss ***!
+  \**************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".btnCerrar {\n  margin-right: 15px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcZGV0YWxsZXMtY29tcHJhLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGtCQUFBO0FBQ0YiLCJmaWxlIjoiZGV0YWxsZXMtY29tcHJhLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5idG5DZXJyYXIge1xuICBtYXJnaW4tcmlnaHQ6IDE1cHg7XG59XG4iXX0= */");
 
 /***/ }),
 
@@ -1266,6 +2073,19 @@ EditPasswordComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])
 ], EditPasswordComponent);
 
 
+
+/***/ }),
+
+/***/ "gyaU":
+/*!************************************************************************!*\
+  !*** ./src/app/usuarios/shared/edit-perfil/edit-perfil.component.scss ***!
+  \************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJlZGl0LXBlcmZpbC5jb21wb25lbnQuc2NzcyJ9 */");
 
 /***/ }),
 
@@ -1341,6 +2161,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "ofXK");
 /* harmony import */ var _features_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./features-routing.module */ "0e1J");
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+/* harmony import */ var _shared_shared_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../shared/shared.module */ "PCNd");
+
 
 
 
@@ -1354,12 +2176,26 @@ FeaturesModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         imports: [
             _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
             _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"],
-            _features_routing_module__WEBPACK_IMPORTED_MODULE_3__["FeaturesRoutingModule"]
+            _features_routing_module__WEBPACK_IMPORTED_MODULE_3__["FeaturesRoutingModule"],
+            _shared_shared_module__WEBPACK_IMPORTED_MODULE_5__["SharedModule"]
         ]
     })
 ], FeaturesModule);
 
 
+
+/***/ }),
+
+/***/ "iXL1":
+/*!************************************************************************!*\
+  !*** ./src/app/usuarios/shared/edit-avatar/edit-avatar.component.scss ***!
+  \************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJlZGl0LWF2YXRhci5jb21wb25lbnQuc2NzcyJ9 */");
 
 /***/ }),
 
@@ -1601,6 +2437,104 @@ module.exports = webpackAsyncContext;
 
 /***/ }),
 
+/***/ "kj20":
+/*!********************************************************!*\
+  !*** ./src/app/usuarios/services/provincia.service.ts ***!
+  \********************************************************/
+/*! exports provided: ProvinciaService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProvinciaService", function() { return ProvinciaService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
+
+
+
+
+let ProvinciaService = class ProvinciaService {
+    constructor(http) {
+        this.http = http;
+        this.provinciaUrl = 'provincias';
+    }
+    obtenerProvincias() {
+        return this.http.get(`${this.provinciaUrl}`).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(resp => resp.data));
+    }
+};
+ProvinciaService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }
+];
+ProvinciaService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
+        providedIn: 'root'
+    })
+], ProvinciaService);
+
+
+
+/***/ }),
+
+/***/ "mvSI":
+/*!************************************************************************************!*\
+  !*** ./src/app/features/historial-compras/detalles-compra/detalles-compra.page.ts ***!
+  \************************************************************************************/
+/*! exports provided: DetallesCompraPage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DetallesCompraPage", function() { return DetallesCompraPage; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _raw_loader_detalles_compra_page_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./detalles-compra.page.html */ "CAJa");
+/* harmony import */ var _detalles_compra_page_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./detalles-compra.page.scss */ "euYS");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+/* harmony import */ var _services_detalle_compra_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../services/detalle-compra.service */ "ywlG");
+
+
+
+
+
+
+let DetallesCompraPage = class DetallesCompraPage {
+    constructor(detalleCompraService, modalCtrl) {
+        this.detalleCompraService = detalleCompraService;
+        this.modalCtrl = modalCtrl;
+    }
+    ngOnInit() {
+        this.obtenerDetallesCompra();
+    }
+    obtenerDetallesCompra() {
+        this.detalleCompraService.getDetalleCompra(this.lineaCompra).subscribe(resp => {
+            this.videojuegosCompra = resp;
+        });
+    }
+    cerrarModal() {
+        this.modalCtrl.dismiss();
+    }
+};
+DetallesCompraPage.ctorParameters = () => [
+    { type: _services_detalle_compra_service__WEBPACK_IMPORTED_MODULE_5__["DetalleCompraService"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ModalController"] }
+];
+DetallesCompraPage.propDecorators = {
+    lineaCompra: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }]
+};
+DetallesCompraPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+        selector: 'app-detalles-compra',
+        template: _raw_loader_detalles_compra_page_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+        styles: [_detalles_compra_page_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
+    })
+], DetallesCompraPage);
+
+
+
+/***/ }),
+
 /***/ "umHe":
 /*!****************************************************************************!*\
   !*** ./src/app/usuarios/shared/edit-password/edit-password.component.scss ***!
@@ -1649,6 +2583,18 @@ let UsuariosService = class UsuariosService {
     }
     editarPassword(password) {
         return this.http.patch(`${this.usuariosUrl}/edit/password`, { password: password });
+    }
+    editarPerfil(nombre, apellidos, email, nickname, provincia) {
+        return this.http.put(`${this.usuariosUrl}/me`, {
+            nombre: nombre,
+            apellidos: apellidos,
+            email: email,
+            nickname: nickname,
+            provincia: provincia
+        });
+    }
+    editarAvatar(avatar) {
+        return this.http.patch(`${this.usuariosUrl}/edit/avatar`, { avatar: avatar });
     }
 };
 UsuariosService.ctorParameters = () => [
@@ -1752,6 +2698,45 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "ywlG":
+/*!*******************************************************************************!*\
+  !*** ./src/app/features/historial-compras/services/detalle-compra.service.ts ***!
+  \*******************************************************************************/
+/*! exports provided: DetalleCompraService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DetalleCompraService", function() { return DetalleCompraService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
+
+
+
+
+let DetalleCompraService = class DetalleCompraService {
+    constructor(http) {
+        this.http = http;
+    }
+    getDetalleCompra(lineaCompra) {
+        return this.http.get(`profile/buy/${lineaCompra}`).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(resp => resp.data));
+    }
+};
+DetalleCompraService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }
+];
+DetalleCompraService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
+        providedIn: 'root'
+    })
+], DetalleCompraService);
+
+
+
+/***/ }),
+
 /***/ "zAHJ":
 /*!***************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/videojuegos/home/home.page.html ***!
@@ -1761,7 +2746,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>Videojuegos</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-card *ngFor=\"let videojuego of videojuegos\">\r\n    <img [src]=\"videojuego.imagen\" alt=\"{{videojuego.nombre}}\">\r\n    <ion-card-header>\r\n      <ion-card-title>{{videojuego.nombre}}</ion-card-title>\r\n    </ion-card-header>\r\n    <ion-card-content>\r\n      <ion-row>\r\n        <ion-col>\r\n          {{videojuego.descripcion}}\r\n        </ion-col>\r\n        <ion-col class=\"ion-text-center plataforma\">\r\n          {{videojuego.plataforma.nombre}}\r\n        </ion-col>\r\n      </ion-row>\r\n    </ion-card-content>\r\n\r\n    <ion-footer>\r\n      <ion-row class=\"ion-align-items-center ion-text-center\">\r\n        <ion-col text-center>\r\n          <ion-label>{{videojuego.numLikes}} likes</ion-label>\r\n        </ion-col>\r\n        <ion-col text-center>\r\n          <ion-label>{{videojuego.stock}} en stock</ion-label>\r\n        </ion-col>\r\n        <ion-col text-center>\r\n          <ion-label>Hace {{videojuego.fechaCreacion}}</ion-label>\r\n        </ion-col>\r\n      </ion-row>\r\n    </ion-footer>\r\n    <ion-footer>\r\n      <ion-row class=\"ion-align-items-center ion-text-center\">\r\n        <ion-col text-center>\r\n          <button>\r\n            <ion-icon class=\"styleicono\" name=\"heart-outline\"></ion-icon>\r\n            <div>Like</div>\r\n          </button>\r\n        </ion-col>\r\n        <ion-col text-center>\r\n          <button [routerLink]=\"['/videojuegos', videojuego.id]\">\r\n            <ion-icon name=\"information-circle\"></ion-icon>\r\n            <div>Más info</div>\r\n          </button>\r\n        </ion-col>\r\n        <ion-col text-center>\r\n          <button>\r\n            <ion-icon name=\"bookmark-outline\"></ion-icon>\r\n            <div>Favorito</div>\r\n          </button>\r\n        </ion-col>\r\n      </ion-row>\r\n    </ion-footer>\r\n  </ion-card>\r\n\r\n  <ion-fab vertical=\"bottom\" horizontal=\"end\" slot=\"fixed\">\r\n    <ion-fab-button [routerLink]=\"['/videojuegos/nuevo']\">\r\n      <ion-icon name=\"add\"></ion-icon>\r\n    </ion-fab-button>\r\n  </ion-fab>\r\n</ion-content>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>Videojuegos</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <app-videojuego-card *ngFor=\"let videojuego of videojuegos\" [videojuego]=\"videojuego\"></app-videojuego-card>\r\n\r\n  <ion-fab vertical=\"bottom\" horizontal=\"end\" slot=\"fixed\">\r\n    <ion-fab-button [routerLink]=\"['/videojuegos/nuevo']\">\r\n      <ion-icon name=\"add\"></ion-icon>\r\n    </ion-fab-button>\r\n  </ion-fab>\r\n</ion-content>\r\n");
 
 /***/ }),
 

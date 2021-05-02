@@ -38,46 +38,60 @@ export class VideojuegoCardComponent implements OnInit {
 
   darLike() {
     this.liked.emit();
+    this.videojuego.liked = true;
+    this.videojuego.numLikes += 1;
 
     this.videojuegoService.darLike(this.videojuego.id).subscribe(
       () => {
-        this.videojuego.liked = true;
-        this.videojuego.numLikes += 1;
         console.log('Videojuego like');
+      },
+      error => {
+        this.videojuego.liked = false;
+        this.videojuego.numLikes -= 1;
       }
     );
   }
 
   eliminarLike() {
     this.liked.emit();
+    this.videojuego.liked = false;
+    this.videojuego.numLikes -= 1;
 
     this.videojuegoService.eliminarLike(this.videojuego.id).subscribe(
       () => {
-        this.videojuego.liked = false;
-        this.videojuego.numLikes -= 1;
         console.log('Videojuego like eliminado');
+      },
+      error => {
+        this.videojuego.liked = true;
+        this.videojuego.numLikes += 1;
       }
     );
   }
 
   addFavoritos() {
     this.favourite.emit();
+    this.videojuego.favourite = true;
 
     this.videojuegoService.darFavorito(this.videojuego.id).subscribe(
       () => {
-        this.videojuego.favourite = true;
         console.log('Videojuego favorito');
+      },
+      error => {
+        this.videojuego.favourite = false;
       }
     );
   }
 
   eliminarFavoritos() {
     this.favourite.emit();
+    this.videojuego.favourite = false;
 
     this.videojuegoService.eliminarFavoritos(this.videojuego.id).subscribe(
       () => {
-        this.videojuego.favourite = false;
         console.log('Videojuego favorito eliminado');
+      },
+      error => {
+        this.videojuego.favourite = true;
       }
     );
   }

@@ -1,11 +1,11 @@
 import { Component, Inject, OnInit } from '@angular/core';
+import { Camera, CameraSource, CameraResultType } from '@capacitor/core';
 import { ActionSheetController, ModalController } from '@ionic/angular';
 import { CameraPlugin } from 'src/app/interfaces/native-plugins/CameraPlugin';
 import { Usuario } from 'src/app/interfaces/Usuario';
 import { ModalEditarComponent } from 'src/app/shared/modals/modal-editar/modal-editar.component';
 import { Videojuego } from '../../interfaces/Videojuego';
 import { VideojuegoService } from '../../services/videojuego.service';
-import { VideojuegoFormPage } from '../../videojuego-form/videojuego-form.page';
 import { VideojuegoDetallesPage } from '../videojuego-detalles.page';
 
 @Component({
@@ -71,16 +71,43 @@ export class VideojuegoPerfilUsuarioPage implements OnInit, CameraPlugin {
     await actionSheet.present();
   }
 
-  obtenerFotoCamara() {
+  async obtenerFotoCamara() {
     console.log('hazte una foto');
+
+    const photo = await Camera.getPhoto({
+      source: CameraSource.Camera,
+      quality: 90,
+      height: 640,
+      width: 640,
+      allowEditing: true,
+      resultType: CameraResultType.DataUrl
+    });
+
+    this.modalEditarAvatar(photo.dataUrl);
   }
 
-  obtenerFotoGaleria() {
+  async obtenerFotoGaleria() {
     console.log('selecciona una imagen de la galería');
+
+    const photo = await Camera.getPhoto({
+      source: CameraSource.Photos,
+      height: 640,
+      width: 640,
+      allowEditing: true,
+      resultType: CameraResultType.DataUrl
+    });
+
+    this.modalEditarAvatar(photo.dataUrl);
   }
 
-  modalEditarPassword() {
-    this.modalEditar.crearModalEditarPassword();
+  modalEditarPerfil() {
+    this.modalEditar.crearModalEditarPerfil();
+  }
+
+  modalEditarAvatar(avatar: string) {
+    //if (this.usuario.me) {
+      this.modalEditar.crearModalEditarAvatar(avatar);
+    //}
   }
 
   cerrarModal() {

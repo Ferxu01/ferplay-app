@@ -12,4 +12,5 @@ export interface VideojuegoBase {
   precio: number;
   liked?: boolean;
   favourite?: boolean;
+  mine?: boolean;
 }

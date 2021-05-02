@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/core';
 import { CameraPlugin } from 'src/app/interfaces/native-plugins/CameraPlugin';
+import { Provincia } from 'src/app/interfaces/Provincia';
+import { ProvinciaService } from 'src/app/usuarios/services/provincia.service';
 import { UsuarioRegistro } from '../interfaces/UsuarioRegistro';
 import { AuthService } from '../services/auth.service';
 
@@ -12,18 +14,25 @@ import { AuthService } from '../services/auth.service';
 export class RegistroPage implements OnInit, CameraPlugin {
   usuario: UsuarioRegistro = {
     nombre: '',
-    apellidos: 'aloha',
+    apellidos: '',
     email: '',
-    nickname: 'bot1',
+    nickname: '',
     password: '',
     avatar: '',
     provincia: 1
   };
   password2: string;
+  provincias: Provincia[];
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private provinciaService: ProvinciaService) { }
 
   ngOnInit() {
+    this.provinciaService.obtenerProvincias().subscribe(
+      resp => {
+        console.log(resp);
+        this.provincias = resp;
+      }
+    );
   }
 
   registrar() {

@@ -1,9 +1,32 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>detalles-compra</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+  <ion-row>
+    <ion-col>
+      <ion-title class="mt-3 mb-3">Detalle de la compra</ion-title>
+    </ion-col>
+      <ion-buttons class="btnCerrar">
+        <ion-button (click)="cerrarModal()">Cerrar</ion-button>
+      </ion-buttons>
+  </ion-row>
 
+  <ion-item *ngFor="let videojuegoCompra of videojuegosCompra">
+    <ion-thumbnail slot="start">
+      <img [src]="videojuegoCompra.videojuego.imagen">
+    </ion-thumbnail>
+
+    <ion-grid>
+      <ion-row class="ion-align-items-center">
+        <ion-col size="12">
+          <ion-label>
+            <h2>{{videojuegoCompra.videojuego.nombre}}</h2>
+            <h3>
+              {{videojuegoCompra.precio | currency:'EUR':'symbol':'0.0-2'}} X {{videojuegoCompra.cantidad}}
+
+              <span *ngIf="videojuegoCompra.cantidad === 1">unidad</span>
+              <span *ngIf="videojuegoCompra.cantidad > 1">unidades</span>
+            </h3>
+          </ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
 </ion-content>

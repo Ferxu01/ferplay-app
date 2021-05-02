@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar>\r\n    <ion-title>Vendedor</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-row>\r\n        <ion-col>\r\n          <img (click)=\"mostrarActionSheet()\" [src]=\"usuario.avatar\">\r\n        </ion-col>\r\n        <ion-col class=\"ion-text-end\">\r\n          <!--<ion-button (click)=\"mostrarModalEditar()\" color=\"light\" size=\"small\">\r\n            <ion-icon name=\"pencil-outline\"></ion-icon>\r\n          </ion-button>-->\r\n          <a (click)=\"mostrarModalEditar()\" color=\"primary\">\r\n            <ion-icon name=\"pencil-outline\"></ion-icon>\r\n          </a>\r\n        </ion-col>\r\n      </ion-row>\r\n\r\n      <ion-row>\r\n        <ion-col>\r\n          <ion-card-title>\r\n            {{usuario.nombre}} {{usuario.apellidos}}\r\n          </ion-card-title>\r\n\r\n            Email: {{usuario.email}} <br>\r\n            Nickname: {{usuario.nickname}} <br>\r\n            Provincia: {{usuario.provincia.nombre}}\r\n        </ion-col>\r\n      </ion-row>\r\n    </ion-card-content>\r\n    <ion-item-divider></ion-item-divider>\r\n    <ion-card-content>\r\n      <ion-card-title>Videojuegos del usuario</ion-card-title>\r\n    </ion-card-content>\r\n    <ion-slides #sliderVideojuegosUsuario pager=\"true\" (ionSlidesDidLoad)=\"slidear(sliderVideojuegosUsuario)\">\r\n      <ion-slide *ngFor=\"let videojuego of videojuegosUsuario\">\r\n        <ion-card>\r\n          <ion-row>\r\n            <ion-img [src]=\"videojuego.imagen\"></ion-img>\r\n          </ion-row>\r\n          <ion-footer>\r\n            <ion-card-title class=\"mb-4\">\r\n              {{videojuego.nombre}}\r\n            </ion-card-title>\r\n          </ion-footer>\r\n        </ion-card>\r\n      </ion-slide>\r\n    </ion-slides>\r\n  </ion-card>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar>\r\n    <ion-title>Vendedor</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-row>\r\n        <ion-col>\r\n          <img *ngIf=\"usuario.me\" (click)=\"mostrarActionSheet()\" [src]=\"usuario.avatar\">\r\n\r\n          <img *ngIf=\"!usuario.me\" [src]=\"usuario.avatar\">\r\n        </ion-col>\r\n        <ion-col class=\"ion-text-end\">\r\n          <!--<ion-button (click)=\"modalEditarPerfil()\" color=\"light\" size=\"small\">\r\n            <ion-icon name=\"pencil-outline\"></ion-icon>\r\n          </ion-button>-->\r\n          <a color=\"primary\" *ngIf=\"usuario.me\" (click)=\"modalEditarPerfil()\">\r\n            <ion-icon name=\"pencil-outline\"></ion-icon>\r\n          </a>\r\n        </ion-col>\r\n      </ion-row>\r\n\r\n      <ion-row>\r\n        <ion-col>\r\n          <ion-card-title>\r\n            {{usuario.nombre}} {{usuario.apellidos}}\r\n          </ion-card-title>\r\n\r\n            Email: {{usuario.email}} <br>\r\n            Nickname: {{usuario.nickname}} <br>\r\n            Provincia: {{usuario.provincia.nombre}}\r\n        </ion-col>\r\n      </ion-row>\r\n    </ion-card-content>\r\n    <ion-item-divider></ion-item-divider>\r\n    <ion-card-content>\r\n      <ion-card-title>Videojuegos del usuario</ion-card-title>\r\n    </ion-card-content>\r\n    <ion-slides #sliderVideojuegosUsuario pager=\"true\" (ionSlidesDidLoad)=\"slidear(sliderVideojuegosUsuario)\">\r\n      <ion-slide *ngFor=\"let videojuego of videojuegosUsuario\">\r\n        <ion-card>\r\n          <ion-row>\r\n            <ion-img [src]=\"videojuego.imagen\"></ion-img>\r\n          </ion-row>\r\n          <ion-footer>\r\n            <ion-card-title class=\"mb-4\">\r\n              {{videojuego.nombre}}\r\n            </ion-card-title>\r\n          </ion-footer>\r\n        </ion-card>\r\n      </ion-slide>\r\n    </ion-slides>\r\n  </ion-card>\r\n");
 
 /***/ }),
 
@@ -27,10 +27,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _raw_loader_videojuego_perfil_usuario_page_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./videojuego-perfil-usuario.page.html */ "5Niq");
 /* harmony import */ var _videojuego_perfil_usuario_page_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./videojuego-perfil-usuario.page.scss */ "t7Vz");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
-/* harmony import */ var src_app_shared_modals_modal_editar_modal_editar_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/shared/modals/modal-editar/modal-editar.component */ "d2JP");
-/* harmony import */ var _services_videojuego_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../services/videojuego.service */ "PbcP");
-/* harmony import */ var _videojuego_detalles_page__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../videojuego-detalles.page */ "PWwL");
+/* harmony import */ var _capacitor_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @capacitor/core */ "gcOT");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+/* harmony import */ var src_app_shared_modals_modal_editar_modal_editar_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/shared/modals/modal-editar/modal-editar.component */ "d2JP");
+/* harmony import */ var _services_videojuego_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../services/videojuego.service */ "PbcP");
+/* harmony import */ var _videojuego_detalles_page__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../videojuego-detalles.page */ "PWwL");
+
 
 
 
@@ -89,23 +91,49 @@ let VideojuegoPerfilUsuarioPage = class VideojuegoPerfilUsuarioPage {
         });
     }
     obtenerFotoCamara() {
-        console.log('hazte una foto');
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            console.log('hazte una foto');
+            const photo = yield _capacitor_core__WEBPACK_IMPORTED_MODULE_4__["Camera"].getPhoto({
+                source: _capacitor_core__WEBPACK_IMPORTED_MODULE_4__["CameraSource"].Camera,
+                quality: 90,
+                height: 640,
+                width: 640,
+                allowEditing: true,
+                resultType: _capacitor_core__WEBPACK_IMPORTED_MODULE_4__["CameraResultType"].DataUrl
+            });
+            this.modalEditarAvatar(photo.dataUrl);
+        });
     }
     obtenerFotoGaleria() {
-        console.log('selecciona una imagen de la galería');
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            console.log('selecciona una imagen de la galería');
+            const photo = yield _capacitor_core__WEBPACK_IMPORTED_MODULE_4__["Camera"].getPhoto({
+                source: _capacitor_core__WEBPACK_IMPORTED_MODULE_4__["CameraSource"].Photos,
+                height: 640,
+                width: 640,
+                allowEditing: true,
+                resultType: _capacitor_core__WEBPACK_IMPORTED_MODULE_4__["CameraResultType"].DataUrl
+            });
+            this.modalEditarAvatar(photo.dataUrl);
+        });
     }
-    modalEditarPassword() {
-        this.modalEditar.crearModalEditarPassword();
+    modalEditarPerfil() {
+        this.modalEditar.crearModalEditarPerfil();
+    }
+    modalEditarAvatar(avatar) {
+        //if (this.usuario.me) {
+        this.modalEditar.crearModalEditarAvatar(avatar);
+        //}
     }
     cerrarModal() {
         this.modalEditar.cerrarModal();
     }
 };
 VideojuegoPerfilUsuarioPage.ctorParameters = () => [
-    { type: _videojuego_detalles_page__WEBPACK_IMPORTED_MODULE_7__["VideojuegoDetallesPage"], decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Inject"], args: [_videojuego_detalles_page__WEBPACK_IMPORTED_MODULE_7__["VideojuegoDetallesPage"],] }] },
-    { type: _services_videojuego_service__WEBPACK_IMPORTED_MODULE_6__["VideojuegoService"] },
-    { type: src_app_shared_modals_modal_editar_modal_editar_component__WEBPACK_IMPORTED_MODULE_5__["ModalEditarComponent"] },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ActionSheetController"] }
+    { type: _videojuego_detalles_page__WEBPACK_IMPORTED_MODULE_8__["VideojuegoDetallesPage"], decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Inject"], args: [_videojuego_detalles_page__WEBPACK_IMPORTED_MODULE_8__["VideojuegoDetallesPage"],] }] },
+    { type: _services_videojuego_service__WEBPACK_IMPORTED_MODULE_7__["VideojuegoService"] },
+    { type: src_app_shared_modals_modal_editar_modal_editar_component__WEBPACK_IMPORTED_MODULE_6__["ModalEditarComponent"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["ActionSheetController"] }
 ];
 VideojuegoPerfilUsuarioPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({

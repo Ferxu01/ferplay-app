@@ -7,5 +7,6 @@ export interface Compra {
   videojuego: Videojuego;
   cantidad: number;
   precio: number;
+  lineaCompra: number;
   fechaCompra: string;
 }

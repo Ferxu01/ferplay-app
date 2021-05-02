@@ -7,132 +7,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b53278ab-b655-4297-9b77-da69abc852ca" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/gc.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/android.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.idea/app.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/capacitor.build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/capacitor.build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/capacitor.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/capacitor.config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/0.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/0.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/1.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/10.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/10.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/11.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/11.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/12.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/12.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/13.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/13.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/14.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/14.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/15.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/15.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/16.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/16.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/17.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/17.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/18.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/18.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/19.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/19.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/2.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/20.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/20.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/21.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/21.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/22.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/22.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/23.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/23.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/24.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/24.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/25.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/25.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/26.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/26.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/27.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/27.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/28.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/28.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/29.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/29.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/3.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/30.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/30.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/31.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/31.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/32.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/32.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/33.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/33.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/34.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/34.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/35.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/35.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/36.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/36.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/37.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/37.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/38.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/38.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/39.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/39.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/4.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/4.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/40.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/40.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/41.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/41.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/42.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/42.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/5.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/5.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/6.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/6.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/7.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/7.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/8.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/8.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/9.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/9.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/assets/shapes.svg" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/assets/shapes.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/carro-compra-carro-compra-carro-compra-module.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/carro-compra-carro-compra-carro-compra-module.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/common.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/common.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/default~login-login-module~registro-registro-module~videojuego-form-videojuego-form-module.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/default~login-login-module~registro-registro-module~videojuego-form-videojuego-form-module.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/focus-visible-f4ad4f1a-js.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/focus-visible-f4ad4f1a-js.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/historial-compras-detalles-compra-detalles-compra-module.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/historial-compras-detalles-compra-detalles-compra-module.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/historial-compras-detalles-compra-detalles-compra-module.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/historial-compras-detalles-compra-detalles-compra-module.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/carro-compra-carro-compra-carro-compra-module.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/carro-compra-carro-compra-carro-compra-module.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/default~login-login-module~registro-registro-module~videojuego-form-videojuego-form-module.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/default~login-login-module~registro-registro-module~videojuego-form-videojuego-form-module.js.map" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/historial-compras-historial-compras-historial-compras-module.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/historial-compras-historial-compras-historial-compras-module.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/historial-compras-historial-compras-historial-compras-module.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/historial-compras-historial-compras-historial-compras-module.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/input-shims-73f15161-js.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/input-shims-73f15161-js.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/keyboard-5742b5da-js.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/keyboard-5742b5da-js.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/login-login-module.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/login-login-module.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/login-login-module.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/login-login-module.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/main.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/native-bridge.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/native-bridge.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/perfil-perfil-module.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/perfil-perfil-module.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/perfil-perfil-module.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/perfil-perfil-module.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/polyfills-core-js.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/polyfills-core-js.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/polyfills-css-shim.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/polyfills-css-shim.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/polyfills-dom.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/polyfills-dom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/polyfills.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/polyfills.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/polyfills.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/polyfills.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/registro-registro-module.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/registro-registro-module.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/registro-registro-module.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/registro-registro-module.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/runtime.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/runtime.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/runtime.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/runtime.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/shadow-css-a3f00b33-js.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/shadow-css-a3f00b33-js.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/status-tap-bdecfebf-js.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/status-tap-bdecfebf-js.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/swipe-back-ee838cf8-js.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/swipe-back-ee838cf8-js.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/swiper-bundle-44a9b1f9-js.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/swiper-bundle-44a9b1f9-js.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/tap-click-cc1ae2b2-js.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/tap-click-cc1ae2b2-js.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/vendor.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/vendor.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/vendor.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/vendor.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/videojuego-comentarios-videojuego-comentarios-module.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/videojuego-comentarios-videojuego-comentarios-module.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/videojuego-comentarios-videojuego-comentarios-module.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/videojuego-comentarios-videojuego-comentarios-module.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/videojuego-detalles-videojuego-detalles-module.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/videojuego-detalles-videojuego-detalles-module.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/videojuego-detalles-videojuego-detalles-module.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/videojuego-detalles-videojuego-detalles-module.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/videojuego-form-videojuego-form-module.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/videojuego-form-videojuego-form-module.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/videojuego-form-videojuego-form-module.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/videojuego-form-videojuego-form-module.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/videojuego-info-videojuego-info-module.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/videojuego-info-videojuego-info-module.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/videojuego-info-videojuego-info-module.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/videojuego-info-videojuego-info-module.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/videojuego-perfil-usuario-videojuego-perfil-usuario-module.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/videojuego-perfil-usuario-videojuego-perfil-usuario-module.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/assets/public/videojuego-perfil-usuario-videojuego-perfil-usuario-module.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/public/videojuego-perfil-usuario-videojuego-perfil-usuario-module.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/xml/config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/network_security_config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/xml/network_security_config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/capacitor-cordova-android-plugins/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/capacitor-cordova-android-plugins/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/capacitor-cordova-android-plugins/cordova.variables.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/capacitor-cordova-android-plugins/cordova.variables.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/capacitor-cordova-android-plugins/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/capacitor-cordova-android-plugins/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/capacitor-cordova-android-plugins/src/main/res/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/capacitor-cordova-android-plugins/src/main/res/.gitkeep" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/capacitor.settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/capacitor.settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../capacitor.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/../capacitor.config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/features/carro-compra/carro-compra/carro-compra.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/features/carro-compra/carro-compra/carro-compra.page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/features/carro-compra/carro-compra/carro-compra.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/features/carro-compra/carro-compra/carro-compra.page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/features/features-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/features/features-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/features/interfaces/Responses.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/features/interfaces/Responses.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/interfaces/usuario.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/interfaces/usuario.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/shared/videojuegos/videojuego-card/videojuego-card.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/shared/videojuegos/videojuego-card/videojuego-card.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/videojuegos/interfaces/VideojuegoBase.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/videojuegos/interfaces/VideojuegoBase.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/videojuegos/services/videojuego.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/videojuegos/services/videojuego.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/videojuegos/videojuego-detalles/videojuego-perfil-usuario/videojuego-perfil-usuario.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/videojuegos/videojuego-detalles/videojuego-perfil-usuario/videojuego-perfil-usuario.page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/videojuegos/videojuego-detalles/videojuego-perfil-usuario/videojuego-perfil-usuario.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/videojuegos/videojuego-detalles/videojuego-perfil-usuario/videojuego-perfil-usuario.page.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/environments/environment.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -269,21 +176,21 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1223" y="265" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1619431066813" />
-    <state width="986" height="223" key="GridCell.Tab.0.bottom" timestamp="1619433378932">
+    <state width="937" height="223" key="GridCell.Tab.0.bottom" timestamp="1619810884203">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="986" height="223" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1619433378932" />
-    <state width="986" height="223" key="GridCell.Tab.0.center" timestamp="1619433378932">
+    <state width="937" height="223" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1619810884203" />
+    <state width="937" height="223" key="GridCell.Tab.0.center" timestamp="1619810884203">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="986" height="223" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1619433378932" />
-    <state width="986" height="223" key="GridCell.Tab.0.left" timestamp="1619433378932">
+    <state width="937" height="223" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1619810884203" />
+    <state width="937" height="223" key="GridCell.Tab.0.left" timestamp="1619810884203">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="986" height="223" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1619433378932" />
-    <state width="986" height="223" key="GridCell.Tab.0.right" timestamp="1619433378932">
+    <state width="937" height="223" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1619810884203" />
+    <state width="937" height="223" key="GridCell.Tab.0.right" timestamp="1619810884203">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="986" height="223" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1619433378932" />
+    <state width="937" height="223" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1619810884203" />
   </component>
 </project>

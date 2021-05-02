@@ -52,7 +52,7 @@ const routes = [
             },
             {
                 path: 'perfil',
-                loadChildren: () => __webpack_require__.e(/*! import() | videojuego-perfil-usuario-videojuego-perfil-usuario-module */ "videojuego-perfil-usuario-videojuego-perfil-usuario-module").then(__webpack_require__.bind(null, /*! ./videojuego-perfil-usuario/videojuego-perfil-usuario.module */ "NO+q")).then(m => m.VideojuegoPerfilUsuarioPageModule)
+                loadChildren: () => Promise.all(/*! import() | videojuego-perfil-usuario-videojuego-perfil-usuario-module */[__webpack_require__.e("default~login-login-module~perfil-perfil-module~registro-registro-module~videojuego-form-videojuego-~215c839c"), __webpack_require__.e("videojuego-perfil-usuario-videojuego-perfil-usuario-module")]).then(__webpack_require__.bind(null, /*! ./videojuego-perfil-usuario/videojuego-perfil-usuario.module */ "NO+q")).then(m => m.VideojuegoPerfilUsuarioPageModule)
             },
             {
                 path: '',

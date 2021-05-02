@@ -20,10 +20,12 @@ export class AppComponent implements OnInit {
 
   numVideojuegosCarro: BehaviorSubject<number>;
 
+  menuDisabled = true;
+
   public appPages = [
     { title: 'Home', url: '/videojuegos', icon: 'home' },
     { title: 'Subir un videojuego', url: '/videojuegos/nuevo', icon: 'add-circle' },
-    { title: 'Favoritos', url: '/folder/Favorites', icon: 'bookmark' },
+    { title: 'Favoritos', url: '/features/favoritos', icon: 'bookmark' },
     { title: 'Carro de compra', url: '/features/carro', icon: 'cart' },
     { title: 'Mis compras', url: '/features/compras/historial', icon: 'list' },
     { title: 'Mi perfil', url: '/usuarios/me', icon: 'person' },
@@ -33,7 +35,11 @@ export class AppComponent implements OnInit {
     private generalService: GeneralService,
     private authService: AuthService,
     private carroService: CarroCompraService,
-    private nav: NavController) {}
+    private nav: NavController) {
+      this.authService.loginChange$.subscribe(
+        logged => this.menuDisabled = !logged
+      );
+    }
 
   ngOnInit(): void {
     this.obtenerInfoUsuario();

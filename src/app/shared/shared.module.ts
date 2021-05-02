@@ -4,11 +4,12 @@ import { ModalEditarComponent } from './modals/modal-editar/modal-editar.compone
 import { IonicModule } from '@ionic/angular';
 import { VideojuegoCardComponent } from './videojuegos/videojuego-card/videojuego-card.component';
 import { RouterModule } from '@angular/router';
+import { ModalDetalleCompraComponent } from './modals/modal-detalle-compra/modal-detalle-compra.component';
 
 
 
 @NgModule({
-  declarations: [ModalEditarComponent, VideojuegoCardComponent],
+  declarations: [ModalEditarComponent, VideojuegoCardComponent, ModalDetalleCompraComponent],
   imports: [
     CommonModule,
     IonicModule,
@@ -16,6 +17,7 @@ import { RouterModule } from '@angular/router';
   ],
   exports: [
     ModalEditarComponent,
+    ModalDetalleCompraComponent,
     VideojuegoCardComponent
   ]
 })
