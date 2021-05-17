@@ -21,6 +21,10 @@ export class CarroCompraService {
     return this.contVideojuegosCarro;
   }
 
+  setContVideojuegosCarro(valor: number) {
+    this.contVideojuegosCarro.next(valor);
+  }
+
   obtenerNumVideojuegosCarroCompra() {
     return this.numVideojuegosCarroCompra;
   }

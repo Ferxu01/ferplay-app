@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { Usuario } from 'src/app/interfaces/Usuario';
+import { ToastAlertComponent } from 'src/app/shared/toasts/toast-alert/toast-alert.component';
 import { UsuariosService } from '../../services/usuarios.service';
 
 @Component({
@@ -11,8 +12,13 @@ import { UsuariosService } from '../../services/usuarios.service';
 export class EditAvatarComponent implements OnInit {
   usuario: Usuario;
   @Input() avatar: string;
+  avatarUsuario: string;
 
-  constructor(private modalCtrl: ModalController, private usuarioService: UsuariosService) { }
+  constructor(
+    private modalCtrl: ModalController,
+    private usuarioService: UsuariosService,
+    private toastAlert: ToastAlertComponent
+  ) { }
 
   ngOnInit() {
     this.usuarioService.obtenerMiPerfil().subscribe(
@@ -22,14 +28,17 @@ export class EditAvatarComponent implements OnInit {
 
   editarAvatar() {
     this.usuarioService.editarAvatar(this.avatar).subscribe(
-      () => {
-        console.log('Avatar editado');
-        this.modalCtrl.dismiss();
+      resp => {
+        this.cerrarModal();
+
+        this.toastAlert.crearAlertaMensaje('Avatar editado correctamente', 'success', 'toast-confirmacion');
       }
     );
   }
 
-  cancelar() {
-    this.modalCtrl.dismiss();
+  cerrarModal() {
+    this.modalCtrl.dismiss({
+      avatar: this.usuario.avatar
+    });
   }
 }

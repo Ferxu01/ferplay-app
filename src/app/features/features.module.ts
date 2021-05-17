@@ -11,8 +11,7 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     IonicModule,
-    FeaturesRoutingModule,
-    SharedModule
+    FeaturesRoutingModule
   ]
 })
 export class FeaturesModule { }

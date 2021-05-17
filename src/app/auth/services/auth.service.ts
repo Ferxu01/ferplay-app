@@ -14,12 +14,21 @@ export class AuthService {
   logged: boolean = false;
   loginChange$ = new Subject<boolean>();
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    if (localStorage.getItem('token') !== '') {
+      this.logged = true;
+    }
+  }
 
   isLogged(): Observable<boolean> {
-    if (this.logged) {
+    console.warn('isLogged: '+this.logged);
+
+    if (this.logged && localStorage.getItem('token')) {
+      console.log('aloha 1');
       return of(true);
     } else if (!this.logged && !localStorage.getItem('token')) {
+      console.warn('aloha 2: '+this.logged);
+      console.log('aloha 2');
       return of(false);
     }
 

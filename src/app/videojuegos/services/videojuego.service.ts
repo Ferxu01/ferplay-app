@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, Subject, throwError } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 import { VideojuegoResponse, VideojuegosResponse } from 'src/app/interfaces/Responses';
 import { Videojuego } from '../interfaces/Videojuego';
 import { VideojuegoNuevo } from '../interfaces/VideojuegoNuevo';
@@ -12,7 +12,13 @@ import { VideojuegoNuevo } from '../interfaces/VideojuegoNuevo';
 export class VideojuegoService {
   private readonly videojuegoURL = 'videojuegos';
 
+  videojuegoCreado$ = new Subject<Videojuego>();
+
   constructor(private http: HttpClient) {}
+
+  getVideojuegoCreado(): Observable<Videojuego> {
+    return this.videojuegoCreado$.asObservable();
+  }
 
   obtenerVideojuegos(): Observable<Videojuego[]> {
     return this.http.get<VideojuegosResponse>(`${this.videojuegoURL}`).pipe(
@@ -33,22 +39,28 @@ export class VideojuegoService {
   }
 
   subirVideojuego(videojuego: VideojuegoNuevo): Observable<Videojuego> {
-    console.log('aloha');
-    console.log(videojuego);
     return this.http.post<VideojuegoResponse>(this.videojuegoURL, videojuego).pipe(
-      map(resp => resp.data)
+      map(resp => {
+        this.videojuegoCreado$.next(resp.data);
+        return resp.data;
+      })
     );
   }
 
-  editarVideojuego(videojuego: VideojuegoNuevo): Observable<void> {
-    return this.http.put<void>(`${this.videojuegoURL}/edit/${videojuego.id}`, {
+  editarVideojuego(videojuego: VideojuegoNuevo): Observable<Videojuego> {
+    return this.http.put<VideojuegoResponse>(`${this.videojuegoURL}/edit/${videojuego.id}`, {
       nombre: videojuego.nombre,
       descripcion: videojuego.descripcion,
       precio: videojuego.precio,
       imagen: videojuego.imagen,
       plataforma: videojuego.plataforma,
       stock: videojuego.stock
-    });
+    }).pipe(
+      map(resp => {
+        this.videojuegoCreado$.next(resp.data);
+        return resp.data;
+      })
+    );
   }
 
   borrarVideojuego(id: number): Observable<void> {
@@ -57,7 +69,10 @@ export class VideojuegoService {
 
   obtenerVideojuegosFavoritos(): Observable<Videojuego[]> {
     return this.http.get<VideojuegosResponse>(`${this.videojuegoURL}/favoritos`).pipe(
-      map(resp => resp.data)
+      map(resp => resp.data),
+      catchError((error: any) => {
+        return throwError(error.error);
+      })
     );
   }
 

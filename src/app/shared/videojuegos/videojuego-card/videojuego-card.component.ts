@@ -43,7 +43,6 @@ export class VideojuegoCardComponent implements OnInit {
 
     this.videojuegoService.darLike(this.videojuego.id).subscribe(
       () => {
-        console.log('Videojuego like');
       },
       error => {
         this.videojuego.liked = false;
@@ -59,7 +58,6 @@ export class VideojuegoCardComponent implements OnInit {
 
     this.videojuegoService.eliminarLike(this.videojuego.id).subscribe(
       () => {
-        console.log('Videojuego like eliminado');
       },
       error => {
         this.videojuego.liked = true;
@@ -74,7 +72,6 @@ export class VideojuegoCardComponent implements OnInit {
 
     this.videojuegoService.darFavorito(this.videojuego.id).subscribe(
       () => {
-        console.log('Videojuego favorito');
       },
       error => {
         this.videojuego.favourite = false;
@@ -88,7 +85,6 @@ export class VideojuegoCardComponent implements OnInit {
 
     this.videojuegoService.eliminarFavoritos(this.videojuego.id).subscribe(
       () => {
-        console.log('Videojuego favorito eliminado');
       },
       error => {
         this.videojuego.favourite = true;

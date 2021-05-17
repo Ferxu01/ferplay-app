@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
@@ -14,6 +14,11 @@ import { VideojuegosModule } from './videojuegos/videojuegos.module';
 import { SharedModule } from './shared/shared.module';
 import { UsuariosModule } from './usuarios/usuarios.module';
 import { FeaturesModule } from './features/features.module';
+import { InitializeProviderService } from './providers/initialize-provider.service';
+
+export function obtenerDatosUsuarioLogueado(provider) {
+  return () => provider.obtenerDatosUsuarioLogueado();
+}
 
 @NgModule({
   declarations: [AppComponent],
@@ -43,7 +48,15 @@ import { FeaturesModule } from './features/features.module';
       provide: HTTP_INTERCEPTORS,
       useClass: AuthTokenInterceptor,
       multi: true
-    }
+    },
+    //Provisional (en pruebas)
+    /*{
+      provide: APP_INITIALIZER,
+      useFactory: obtenerDatosUsuarioLogueado,
+      deps: [InitializeProviderService],
+      multi: true
+    }*/
+
   ],
   bootstrap: [AppComponent],
 })

@@ -35,3 +35,7 @@ export interface ComentarioResponse {
 export interface ProvinciasResponse {
   data: Provincia[];
 }
+
+export interface ProvinciaResponse {
+  data: Provincia;
+}

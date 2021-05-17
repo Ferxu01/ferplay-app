@@ -10,16 +10,29 @@ import { VideojuegoService } from 'src/app/videojuegos/services/videojuego.servi
 export class FavoritosPage implements OnInit {
   videojuegosFavoritos: Videojuego[];
 
-  constructor(private videojuegoService: VideojuegoService) { }
+  terminado: boolean = false;
+  error: string = null;
+
+  constructor(private videojuegoService: VideojuegoService) {
+    this.obtenerVideojuegosFavoritos();
+  }
 
   ngOnInit() {
     this.obtenerVideojuegosFavoritos();
   }
 
-  obtenerVideojuegosFavoritos() {
+  obtenerVideojuegosFavoritos(event?) {
     this.videojuegoService.obtenerVideojuegosFavoritos().subscribe(
       resp => {
-        this.videojuegosFavoritos = resp
+        if (event) {
+          event.target.complete();
+        }
+        this.videojuegosFavoritos = resp;
+        this.error = null;
+        this.terminado = true;
+      },
+      error => {
+        this.error = error.errores.mensaje;
       }
     );
   }

@@ -32,17 +32,21 @@ export class UsuariosService {
     return this.http.patch<void>(`${this.usuariosUrl}/edit/password`, {password: password});
   }
 
-  editarPerfil(nombre: string, apellidos: string, email: string, nickname: string, provincia: number): Observable<void> {
-    return this.http.put<void>(`${this.usuariosUrl}/me`, {
+  editarPerfil(nombre: string, apellidos: string, email: string, nickname: string, provincia: number): Observable<Usuario> {
+    return this.http.put<UsuarioResponse>(`${this.usuariosUrl}/me`, {
       nombre: nombre,
       apellidos: apellidos,
       email: email,
       nickname: nickname,
       provincia: provincia
-    });
+    }).pipe(
+      map(resp => resp.data)
+    );
   }
 
-  editarAvatar(avatar: string): Observable<void> {
-    return this.http.patch<void>(`${this.usuariosUrl}/edit/avatar`, {avatar: avatar});
+  editarAvatar(avatar: string): Observable<Usuario> {
+    return this.http.patch<UsuarioResponse>(`${this.usuariosUrl}/edit/avatar`, {avatar: avatar}).pipe(
+      map(resp => resp.data)
+    );
   }
 }

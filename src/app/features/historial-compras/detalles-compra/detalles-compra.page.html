@@ -1,13 +1,6 @@
-<ion-content>
-  <ion-row>
-    <ion-col>
-      <ion-title class="mt-3 mb-3">Detalle de la compra</ion-title>
-    </ion-col>
-      <ion-buttons class="btnCerrar">
-        <ion-button (click)="cerrarModal()">Cerrar</ion-button>
-      </ion-buttons>
-  </ion-row>
+<app-header-modal [nombrePagina]="'Detalle de la compra'"></app-header-modal>
 
+<ion-content>
   <ion-item *ngFor="let videojuegoCompra of videojuegosCompra">
     <ion-thumbnail slot="start">
       <img [src]="videojuegoCompra.videojuego.imagen">

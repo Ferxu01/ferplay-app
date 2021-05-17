@@ -5,6 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { EditPerfilComponent } from './edit-perfil/edit-perfil.component';
 import { EditAvatarComponent } from './edit-avatar/edit-avatar.component';
+import { SharedModule as GeneralShared } from './../../shared/shared.module';
 
 
 
@@ -13,7 +14,8 @@ import { EditAvatarComponent } from './edit-avatar/edit-avatar.component';
   imports: [
     CommonModule,
     IonicModule,
-    FormsModule
+    FormsModule,
+    GeneralShared
   ],
   exports: [
     EditPasswordComponent,

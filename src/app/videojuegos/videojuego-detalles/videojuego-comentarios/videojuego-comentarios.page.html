@@ -1,17 +1,22 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
     <ion-title>Comentarios</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-item-sliding *ngFor="let comentario of comentarios">
+  <ion-refresher slot="fixed" (ionRefresh)="obtenerComentarios(this.idVideojuego, $event)">
+    <ion-refresher-content
+    pulling-icon="refresh-outline"
+    pulling-text="Recargar página"
+    refreshingSpinner="circles"
+    refreshingText="Cargando comentarios..."></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-item-sliding *ngFor="let comentario of comentarios; let i = index">
     <ion-item>
       <ion-avatar slot="start">
-        <img [src]="comentario.usuario.avatar" alt="">
+        <img [src]="comentario.usuario.avatar">
       </ion-avatar>
       <ion-label>
         <h3>{{comentario.usuario.nickname}}</h3>
@@ -19,12 +24,67 @@
       </ion-label>
     </ion-item>
 
-    <ion-item-options side="end">
+    <ion-item-options *ngIf="usuario.id === comentario.usuario.id" side="end">
       <ion-item-option color="danger" (click)="borrarComentario(comentario.id)">
         <ion-icon name="trash"></ion-icon>
       </ion-item-option>
     </ion-item-options>
   </ion-item-sliding>
+
+  <!-- Skeleton -->
+  <div *ngIf="!terminado">
+    <ion-list>
+      <ion-item>
+        <ion-avatar slot="start">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-avatar>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-avatar slot="start">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-avatar>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-avatar slot="start">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-avatar>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+  <!-- End skeleton-->
 
   <div *ngIf="error" class="alert alert-warning">
     {{error}}

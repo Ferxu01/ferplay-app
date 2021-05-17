@@ -13,8 +13,8 @@ import { CarroCompraService } from './features/carro-compra/services/carro-compr
 })
 export class AppComponent implements OnInit {
   user: Usuario = {
-    email: 'hola',
-    nickname: 'nickname',
+    email: '',
+    nickname: '',
     avatar: ''
   };
 
@@ -26,9 +26,9 @@ export class AppComponent implements OnInit {
     { title: 'Home', url: '/videojuegos', icon: 'home' },
     { title: 'Subir un videojuego', url: '/videojuegos/nuevo', icon: 'add-circle' },
     { title: 'Favoritos', url: '/features/favoritos', icon: 'bookmark' },
+    { title: 'Mi perfil', url: '/usuarios/me', icon: 'person' },
     { title: 'Carro de compra', url: '/features/carro', icon: 'cart' },
     { title: 'Mis compras', url: '/features/compras/historial', icon: 'list' },
-    { title: 'Mi perfil', url: '/usuarios/me', icon: 'person' },
   ];
 
   constructor(
@@ -37,13 +37,27 @@ export class AppComponent implements OnInit {
     private carroService: CarroCompraService,
     private nav: NavController) {
       this.authService.loginChange$.subscribe(
-        logged => this.menuDisabled = !logged
+        logged => {
+          console.log('logged: '+logged);
+          this.menuDisabled = !logged;
+          console.warn(this.menuDisabled);
+        }
       );
     }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    console.log('App component ngOnInit ejecutado');
+    this.defaultUser();
     this.obtenerInfoUsuario();
     this.numVideojuegosCarro = this.carroService.obtenerContVideojuegosCarro();
+  }
+
+  defaultUser() {
+    this.user = {
+      nombre: 'Unnamed user',
+      email: 'unnamed@user.com',
+      avatar: '../assets/default.png'
+    }
   }
 
   obtenerInfoUsuario() {

@@ -12,6 +12,7 @@ import { AuthService } from '../services/auth.service';
 export class LoginPage implements OnInit {
   @ViewChild('loginForm') loginForm: NgForm;
   usuario: LoginUsuario;
+  error: string;
 
   constructor(private authService: AuthService, private router: Router) { }
 
@@ -31,7 +32,7 @@ export class LoginPage implements OnInit {
         this.router.navigate(['/videojuegos']);
       },
       error => {
-        console.error(error);
+        this.error = error.error.message;
       }
     );
   }

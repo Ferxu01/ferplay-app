@@ -1,11 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { from } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
 import { Provincia } from 'src/app/interfaces/Provincia';
 import { Usuario } from 'src/app/interfaces/Usuario';
-import { ModalEditarComponent } from 'src/app/shared/modals/modal-editar/modal-editar.component';
 import { UsuariosService } from '../../services/usuarios.service';
 import { ProvinciaService } from '../../services/provincia.service';
 import { ModalController } from '@ionic/angular';
+import { ToastAlertComponent } from 'src/app/shared/toasts/toast-alert/toast-alert.component';
 
 @Component({
   selector: 'app-edit-perfil',
@@ -21,7 +20,12 @@ export class EditPerfilComponent implements OnInit {
 
   provincias: Provincia[];
 
-  constructor(private modalCtrl: ModalController, private usuarioService: UsuariosService, private provinciaService: ProvinciaService) { }
+  constructor(
+    private modalCtrl: ModalController,
+    private usuarioService: UsuariosService,
+    private provinciaService: ProvinciaService,
+    private toastAlert: ToastAlertComponent
+  ) { }
 
   ngOnInit() {
     this.provinciaService.obtenerProvincias().subscribe(
@@ -30,6 +34,10 @@ export class EditPerfilComponent implements OnInit {
       }
     );
 
+    this.obtenerDatosPerfil();
+  }
+
+  obtenerDatosPerfil() {
     this.usuarioService.obtenerMiPerfil().subscribe(
       resp => {
         this.usuario = resp;
@@ -43,14 +51,21 @@ export class EditPerfilComponent implements OnInit {
 
   editarPerfil() {
     this.usuarioService.editarPerfil(this.nombre, this.apellidos, this.usuario.email, this.nickname, this.provincia).subscribe(
-      () => {
-        console.log('Perfil editado');
+      resp => {
+        this.cerrarModal();
+
+        this.toastAlert.crearAlertaMensaje('Perfil editado correctamente', 'success', 'toast-confirmacion');
       }
     );
   }
 
-  cancelar() {
-    this.modalCtrl.dismiss();
+  cerrarModal() {
+    this.modalCtrl.dismiss({
+      nombre: this.nombre,
+      apellidos: this.apellidos,
+      nickname: this.nickname,
+      provincia: this.provincia
+    });
   }
 
 }

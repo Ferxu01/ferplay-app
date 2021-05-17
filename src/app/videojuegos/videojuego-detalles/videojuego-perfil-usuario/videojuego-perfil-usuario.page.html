@@ -5,36 +5,8 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <ion-card-content>
-      <ion-row>
-        <ion-col>
-          <img *ngIf="usuario.me" (click)="mostrarActionSheet()" [src]="usuario.avatar">
-
-          <img *ngIf="!usuario.me" [src]="usuario.avatar">
-        </ion-col>
-        <ion-col class="ion-text-end">
-          <!--<ion-button (click)="modalEditarPerfil()" color="light" size="small">
-            <ion-icon name="pencil-outline"></ion-icon>
-          </ion-button>-->
-          <a color="primary" *ngIf="usuario.me" (click)="modalEditarPerfil()">
-            <ion-icon name="pencil-outline"></ion-icon>
-          </a>
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col>
-          <ion-card-title>
-            {{usuario.nombre}} {{usuario.apellidos}}
-          </ion-card-title>
-
-            Email: {{usuario.email}} <br>
-            Nickname: {{usuario.nickname}} <br>
-            Provincia: {{usuario.provincia.nombre}}
-        </ion-col>
-      </ion-row>
-    </ion-card-content>
+  <!--<ion-card>-->
+    <app-perfil-usuario [usuario]="usuario" [usuarioLogueado]="usuarioLogueado"></app-perfil-usuario>
     <ion-item-divider></ion-item-divider>
     <ion-card-content>
       <ion-card-title>Videojuegos del usuario</ion-card-title>
@@ -43,7 +15,7 @@
       <ion-slide *ngFor="let videojuego of videojuegosUsuario">
         <ion-card>
           <ion-row>
-            <ion-img [src]="videojuego.imagen"></ion-img>
+            <ion-img [routerLink]="['/videojuegos', videojuego.id]" [src]="videojuego.imagen"></ion-img>
           </ion-row>
           <ion-footer>
             <ion-card-title class="mb-4">
@@ -53,4 +25,4 @@
         </ion-card>
       </ion-slide>
     </ion-slides>
-  </ion-card>
+  <!--</ion-card>-->

@@ -24,3 +24,25 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+.alert-registro {
+  white-space: pre;
+  padding-left: -20px;
+}
+
+.toast-confirmacion {
+  font-weight: 500;
+  color: #000;
+  font-size: 16px;
+}
+
+.style-desc-videojuego, .style-nombre-videojuego {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.style-nombre-videojuego {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

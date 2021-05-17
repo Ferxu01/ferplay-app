@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -7,7 +7,15 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content color="medium">
+  <ion-refresher slot="fixed" (ionRefresh)="recargarVideojuegos($event)">
+    <ion-refresher-content
+    pulling-icon="refresh-outline"
+    pulling-text="Recargar página"
+    refreshingSpinner="circles"
+    refreshingText="Cargando videojuegos..."></ion-refresher-content>
+  </ion-refresher>
+
   <app-videojuego-card *ngFor="let videojuego of videojuegos" [videojuego]="videojuego"></app-videojuego-card>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">

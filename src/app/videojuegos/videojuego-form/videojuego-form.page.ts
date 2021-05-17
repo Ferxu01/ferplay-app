@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/core';
 import { NavController } from '@ionic/angular';
 import { CameraPlugin } from 'src/app/interfaces/native-plugins/CameraPlugin';
+import { ToastAlertComponent } from 'src/app/shared/toasts/toast-alert/toast-alert.component';
 import { Plataforma } from '../interfaces/Plataforma';
 import { VideojuegoNuevo } from '../interfaces/VideojuegoNuevo';
 import { PlataformaService } from '../services/plataforma.service';
@@ -29,7 +30,9 @@ export class VideojuegoFormPage implements OnInit, CameraPlugin {
     private plataformaService: PlataformaService,
     private videojuegoService: VideojuegoService,
     private route: ActivatedRoute,
-    private nav: NavController
+    private nav: NavController,
+    private router: Router,
+    private toastAlert: ToastAlertComponent
   ) { }
 
   ngOnInit() {
@@ -70,17 +73,20 @@ export class VideojuegoFormPage implements OnInit, CameraPlugin {
 
   subirVideojuego() {
     this.videojuegoService.subirVideojuego(this.nuevoVideojuego).subscribe(
-      async () => {
-        await console.log('aloha 2');
+      async resp => {
+        this.toastAlert.crearAlertaMensaje('Videojuego subido correctamente', 'success', 'toast-confirmacion');
+
+        await this.router.navigate(['/videojuegos']);
       }
     )
   }
 
   editarVideojuego() {
     this.videojuegoService.editarVideojuego(this.nuevoVideojuego).subscribe(
-      async () => {
-        console.log('editado');
-        await this.nav.navigateRoot(['/videojuegos']);
+      async resp => {
+        this.toastAlert.crearAlertaMensaje('Videojuego editado correctamente', 'success', 'toast-confirmacion');
+
+        await this.router.navigate(['/videojuegos', resp.id]);
       }
     )
   }

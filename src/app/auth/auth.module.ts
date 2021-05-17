@@ -2,8 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { AuthRoutingModule } from './auth-routing.module';
-import { GoogleLoginModule } from './google-login/google-login.module';
-
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -11,7 +10,8 @@ import { GoogleLoginModule } from './google-login/google-login.module';
   imports: [
     CommonModule,
     IonicModule,
-    AuthRoutingModule
+    AuthRoutingModule,
+    SharedModule
   ]
 })
 export class AuthModule { }

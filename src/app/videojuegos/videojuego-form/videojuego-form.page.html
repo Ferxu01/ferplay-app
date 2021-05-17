@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
@@ -12,76 +12,65 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  <form #productForm="ngForm" (ngSubmit)="enviarFormulario()">
-    <ion-list>
-      <ion-item>
-        <ion-label position="floating">Title</ion-label>
-        <ion-input minlength="5" name="title" required [(ngModel)]="nuevoVideojuego.nombre" #titleModel="ngModel"></ion-input>
-        <ion-icon name="checkmark-circle" slot="end" color="success" *ngIf="titleModel.dirty && titleModel.valid"></ion-icon>
-      </ion-item>
+<ion-content class="ion-padding">
+  <form #videojuegoForm="ngForm" (ngSubmit)="enviarFormulario()">
+    <ion-item class="ion-margin-bottom">
+      <!--<ion-label position="floating">Nombre</ion-label>-->
+      <ion-input minlength="5" placeholder="Nombre" name="nombre" required [(ngModel)]="nuevoVideojuego.nombre" #nombreModel="ngModel"></ion-input>
+      <ion-icon name="checkmark-circle" slot="end" color="success" *ngIf="nombreModel.dirty && nombreModel.valid"></ion-icon>
+    </ion-item>
 
-      <ion-item>
-        <ion-label position="floating">Description</ion-label>
-        <ion-input name="description" required [(ngModel)]="nuevoVideojuego.descripcion" #descriptionModel="ngModel"></ion-input>
-        <ion-icon name="checkmark-circle" slot="end" color="success" *ngIf="descriptionModel.dirty && descriptionModel.valid"></ion-icon>
-      </ion-item>
+    <ion-item class="ion-margin-bottom descripcion">
+      <!--<ion-label position="floating">Descripción</ion-label>-->
+      <ion-textarea rows="7" placeholder="Descripción del videojuego" name="description" required [(ngModel)]="nuevoVideojuego.descripcion" #descripcionModel="ngModel"></ion-textarea>
+      <ion-icon name="checkmark-circle" slot="end" color="success" *ngIf="descripcionModel.dirty && descripcionModel.valid"></ion-icon>
+    </ion-item>
 
-      <ion-item>
-        <ion-label position="floating">Category</ion-label>
-        <ion-select required #categoryModel="ngModel" name="category" [(ngModel)]="nuevoVideojuego.plataforma">
-          <ion-select-option value="0">Choose a category...</ion-select-option>
-          <ion-select-option *ngFor="let plataforma of plataformas" [value]="plataforma.id">{{plataforma.nombre}}</ion-select-option>
-        </ion-select>
-        <ion-icon name="checkmark-circle" slot="end" color="success" *ngIf="categoryModel.dirty && categoryModel.valid && categoryModel.value !== 0"></ion-icon>
-      </ion-item>
+    <ion-item class="ion-margin-bottom">
+      <ion-label position="fixed">Plataforma</ion-label>
+      <ion-select appDefaultOptionSelect required #plataformaModel="ngModel" name="plataforma" [(ngModel)]="nuevoVideojuego.plataforma" cancel-text="Cancelar">
+        <ion-select-option value="0">Elige una plataforma...</ion-select-option>
+        <ion-select-option *ngFor="let plataforma of plataformas" [value]="plataforma.id">{{plataforma.nombre}}</ion-select-option>
+      </ion-select>
+      <ion-icon name="checkmark-circle" slot="end" color="success" *ngIf="plataformaModel.dirty && plataformaModel.valid && plataformaModel.value !== 0"></ion-icon>
+    </ion-item>
 
-      <ion-item>
-        <ion-label position="floating">Price</ion-label>
-        <ion-input type="number" min="0.00" step="0.01" name="price" required [(ngModel)]="nuevoVideojuego.precio" #priceModel="ngModel"></ion-input>
-        <ion-icon name="checkmark-circle" slot="end" color="success" *ngIf="priceModel.dirty && priceModel.valid"></ion-icon>
-      </ion-item>
+    <ion-item class="ion-margin-bottom">
+      <ion-label position="fixed">Precio</ion-label>
+      <ion-input appPositiveValue type="number" placeholder="Precio" min="0.00" step="0.01" name="precio" required [(ngModel)]="nuevoVideojuego.precio" #precioModel="ngModel"></ion-input>
+      <ion-icon name="checkmark-circle" slot="end" color="success" *ngIf="precioModel.dirty && precioModel.valid"></ion-icon>
+    </ion-item>
 
-      <ion-item>
-        <ion-label position="floating">Stock</ion-label>
-        <ion-input type="number" min="0" name="stock" required [(ngModel)]="nuevoVideojuego.stock" #stockModel="ngModel"></ion-input>
-        <ion-icon name="checkmark-circle" slot="end" color="success" *ngIf="stockModel.dirty && stockModel.valid"></ion-icon>
-      </ion-item>
+    <ion-item class="ion-margin-bottom">
+      <ion-label position="fixed">Stock</ion-label>
+      <ion-input appPositiveValue type="number" placeholder="Añade un stock" min="0" name="stock" required [(ngModel)]="nuevoVideojuego.stock" #stockModel="ngModel"></ion-input>
+      <ion-icon name="checkmark-circle" slot="end" color="success" *ngIf="stockModel.dirty && stockModel.valid"></ion-icon>
+    </ion-item>
 
-      <ion-item>
-        <ion-label position="inset">Image</ion-label>
-        <ion-button color="secondary" (click)="obtenerFotoCamara()">
-          <ion-icon name="camera" slot="start"></ion-icon>
-          Camera
-        </ion-button>
-        <ion-button color="tertiary" (click)="obtenerFotoGaleria()">
-          <ion-icon name="images" slot="start"></ion-icon>
-          Gallery
-        </ion-button>
-      </ion-item>
-    </ion-list>
+    <ion-item>
+      <ion-label position="fixed">Imagen</ion-label>
+      <ion-button color="secondary" (click)="obtenerFotoCamara()">
+        <ion-icon name="camera" slot="start"></ion-icon>
+        Cámara
+      </ion-button>
+      <ion-button color="tertiary" (click)="obtenerFotoGaleria()">
+        <ion-icon name="images" slot="start"></ion-icon>
+        Galería
+      </ion-button>
+    </ion-item>
 
     <ion-img [src]="nuevoVideojuego.imagen" *ngIf="nuevoVideojuego.imagen && !editando"></ion-img>
-
     <ion-img *ngIf="editando" [src]="nuevoVideojuego.imagen"></ion-img>
 
     <ion-grid>
       <ion-row>
         <ion-col>
-          <ion-button *ngIf="!editando" type="submit" color="primary" expand="block" [disabled]="productForm.invalid || !nuevoVideojuego.imagen">
-            <ion-icon name="paper-plane" slot="start"></ion-icon>
+          <ion-button *ngIf="!editando" type="submit" color="primary" expand="block" [disabled]="videojuegoForm.invalid || !nuevoVideojuego.imagen">
             Subir videojuego
           </ion-button>
 
-          <ion-button *ngIf="editando" type="submit" color="primary" expand="block" [disabled]="productForm.invalid || !nuevoVideojuego.imagen">
-            <ion-icon name="paper-plane" slot="start"></ion-icon>
+          <ion-button *ngIf="editando" type="submit" color="primary" expand="block" [disabled]="videojuegoForm.invalid || !nuevoVideojuego.imagen">
             Editar videojuego
-          </ion-button>
-        </ion-col>
-        <ion-col>
-          <ion-button color="danger" expand="block" fill="outline" [routerLink]="['/videojuegos']" [routerDirection]="'root'">
-            <ion-icon name="arrow-undo" slot="start"></ion-icon>
-            Cancelar
           </ion-button>
         </ion-col>
       </ion-row>

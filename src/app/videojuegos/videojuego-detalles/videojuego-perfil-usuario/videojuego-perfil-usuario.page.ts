@@ -1,9 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { Camera, CameraSource, CameraResultType } from '@capacitor/core';
-import { ActionSheetController, ModalController } from '@ionic/angular';
-import { CameraPlugin } from 'src/app/interfaces/native-plugins/CameraPlugin';
+import { shuffle } from 'lodash';
 import { Usuario } from 'src/app/interfaces/Usuario';
-import { ModalEditarComponent } from 'src/app/shared/modals/modal-editar/modal-editar.component';
+import { UsuariosService } from 'src/app/usuarios/services/usuarios.service';
 import { Videojuego } from '../../interfaces/Videojuego';
 import { VideojuegoService } from '../../services/videojuego.service';
 import { VideojuegoDetallesPage } from '../videojuego-detalles.page';
@@ -13,7 +11,8 @@ import { VideojuegoDetallesPage } from '../videojuego-detalles.page';
   templateUrl: './videojuego-perfil-usuario.page.html',
   styleUrls: ['./videojuego-perfil-usuario.page.scss'],
 })
-export class VideojuegoPerfilUsuarioPage implements OnInit, CameraPlugin {
+export class VideojuegoPerfilUsuarioPage implements OnInit {
+  usuarioLogueado: Usuario;
   usuario: Usuario;
 
   videojuegosUsuario: Videojuego[] = []
@@ -21,97 +20,40 @@ export class VideojuegoPerfilUsuarioPage implements OnInit, CameraPlugin {
   constructor(
     @Inject(VideojuegoDetallesPage) private parentComponent: VideojuegoDetallesPage,
     private videojuegosService: VideojuegoService,
-    private modalEditar: ModalEditarComponent,
-    private actionSheetController: ActionSheetController
+    private usuarioService: UsuariosService,
+
   ) { }
 
   ngOnInit() {
+    this.usuarioService.obtenerMiPerfil().subscribe(
+      resp => {
+        this.usuarioLogueado = resp
+      });
+
     this.usuario = this.parentComponent.videojuego.usuario;
 
     this.videojuegosService.obtenerVideojuegosUsuario(this.usuario.id).subscribe(
       resp => {
-        this.videojuegosUsuario = resp
+        this.videojuegosUsuario = resp;
+
+        //Escoger 4-5 videojuegos aleatorios para mostrar
+        this.videojuegosUsuario = shuffle(this.videojuegosUsuario);
+
+        if (this.videojuegosUsuario.length > 5) {
+          let videojuegosMostrar = [];
+
+          for (let i = 0; i < 5; i++) {
+            videojuegosMostrar.push(this.videojuegosUsuario[i]);
+          }
+
+          this.videojuegosUsuario = videojuegosMostrar;
+        }
       }
     );
   }
 
   slidear(slides) {
     slides.startAutoplay();
-  }
-
-  async mostrarActionSheet() {
-    const actionSheet = await this.actionSheetController.create({
-      header: 'Seleccionar una imagen',
-      buttons: [
-        {
-          text: 'Hacer foto',
-          icon: 'camera',
-          handler: () => {
-            this.obtenerFotoCamara();
-          }
-        },
-        {
-          text: 'Seleccionar una imagen',
-          icon: 'images',
-          handler: () => {
-            this.obtenerFotoGaleria();
-          }
-        },
-        {
-          text: 'Cancelar',
-          icon: 'close',
-          role: 'cancel',
-          handler: () => {
-            this.actionSheetController.dismiss();
-          }
-        }
-  ]
-    });
-
-    await actionSheet.present();
-  }
-
-  async obtenerFotoCamara() {
-    console.log('hazte una foto');
-
-    const photo = await Camera.getPhoto({
-      source: CameraSource.Camera,
-      quality: 90,
-      height: 640,
-      width: 640,
-      allowEditing: true,
-      resultType: CameraResultType.DataUrl
-    });
-
-    this.modalEditarAvatar(photo.dataUrl);
-  }
-
-  async obtenerFotoGaleria() {
-    console.log('selecciona una imagen de la galería');
-
-    const photo = await Camera.getPhoto({
-      source: CameraSource.Photos,
-      height: 640,
-      width: 640,
-      allowEditing: true,
-      resultType: CameraResultType.DataUrl
-    });
-
-    this.modalEditarAvatar(photo.dataUrl);
-  }
-
-  modalEditarPerfil() {
-    this.modalEditar.crearModalEditarPerfil();
-  }
-
-  modalEditarAvatar(avatar: string) {
-    //if (this.usuario.me) {
-      this.modalEditar.crearModalEditarAvatar(avatar);
-    //}
-  }
-
-  cerrarModal() {
-    this.modalEditar.cerrarModal();
   }
 
 }

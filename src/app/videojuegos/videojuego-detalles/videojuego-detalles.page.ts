@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { Videojuego } from '../interfaces/Videojuego';
 import { VideojuegoService } from '../services/videojuego.service';
 
@@ -9,9 +9,11 @@ import { VideojuegoService } from '../services/videojuego.service';
   templateUrl: './videojuego-detalles.page.html',
   styleUrls: ['./videojuego-detalles.page.scss'],
 })
-export class VideojuegoDetallesPage implements OnInit {
+export class VideojuegoDetallesPage implements OnInit, OnDestroy {
   videojuego: Videojuego;
   videojuego$: Observable<Videojuego>;
+
+  videojuegoSubscription: Subscription;
 
   constructor(private videojuegoService: VideojuegoService, private route: ActivatedRoute) {
     /*this.route.data.subscribe(
@@ -20,6 +22,13 @@ export class VideojuegoDetallesPage implements OnInit {
       }
     );*/
     //this.videojuego$ = this.videojuegoService.obtenerVideojuego(this.route.snapshot.params.id).pipe(shareReplay(1));
+
+    this.videojuego$ = this.videojuegoService.getVideojuegoCreado();
+    this.videojuegoSubscription = this.videojuego$.subscribe(
+      resp => {
+        this.videojuego = resp
+      }
+    );
   }
 
   ngOnInit() {
@@ -28,6 +37,12 @@ export class VideojuegoDetallesPage implements OnInit {
         this.videojuego = resp.videojuego;
       }
     );
+
+
+  }
+
+  ngOnDestroy() {
+    this.videojuegoSubscription.unsubscribe();
   }
 
 }

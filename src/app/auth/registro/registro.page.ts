@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/core';
+import { ActionSheetController, AlertController, NavController } from '@ionic/angular';
 import { CameraPlugin } from 'src/app/interfaces/native-plugins/CameraPlugin';
 import { Provincia } from 'src/app/interfaces/Provincia';
 import { ProvinciaService } from 'src/app/usuarios/services/provincia.service';
@@ -12,34 +14,63 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./registro.page.scss'],
 })
 export class RegistroPage implements OnInit, CameraPlugin {
-  usuario: UsuarioRegistro = {
-    nombre: '',
-    apellidos: '',
-    email: '',
-    nickname: '',
-    password: '',
-    avatar: '',
-    provincia: 1
-  };
-  password2: string;
-  provincias: Provincia[];
+  usuario: UsuarioRegistro;
 
-  constructor(private authService: AuthService, private provinciaService: ProvinciaService) { }
+  password2: string = '';
+  provincias: Provincia[];
+  errores: string[];
+
+  constructor(private authService: AuthService, private provinciaService: ProvinciaService, private router: Router, private navCtrl: NavController, private alertCtrl: AlertController, private actionSheetCtrl: ActionSheetController) { }
 
   ngOnInit() {
+    this.resetearFormulario();
+
     this.provinciaService.obtenerProvincias().subscribe(
       resp => {
-        console.log(resp);
         this.provincias = resp;
       }
     );
+  }
+
+  //Provisional
+  async mostrarAlerta() {
+    const alert = await this.alertCtrl.create({
+      cssClass: 'alert-registro',
+      message: 'Usuario registrado correctamente',
+      mode: 'md'
+    });
+
+    await alert.present();
+
+    setTimeout(() => {
+      alert.dismiss();
+    }, 1500);
+  }
+
+  resetearFormulario() {
+    this.usuario = {
+      nombre: '',
+      apellidos: '',
+      email: '',
+      nickname: '',
+      password: '',
+      avatar: '',
+      provincia: 0
+    };
+    this.password2 = '';
   }
 
   registrar() {
     console.log(this.usuario);
     this.authService.registrar(this.usuario).subscribe(
       () => {
-        console.log('Usuario registrado');
+        this.navCtrl.navigateRoot('/auth/login');
+        this.mostrarAlerta();
+      },
+      error => {
+        console.warn(error);
+        console.log(this.errores);
+        //this.errores = error.error.errores.mensaje;
       }
     );
   }

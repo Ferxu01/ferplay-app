@@ -13,6 +13,7 @@ import { ModalDetalleCompraComponent } from 'src/app/shared/modals/modal-detalle
 export class HistorialComprasPage implements OnInit {
   compras: Compra[];
   fechaCompra: string = '';
+  error: string = null;
 
   constructor(private historialCompraService: HistorialComprasService, private modalDetalleCompra: ModalDetalleCompraComponent) { }
 
@@ -31,6 +32,9 @@ export class HistorialComprasPage implements OnInit {
         this.compras.forEach(compra => {
           compra.fechaCompra = moment(compra.fechaCompra).fromNow();
         });
+      },
+      error => {
+        this.error = error.error.errores.mensajes;
       }
     )
   }

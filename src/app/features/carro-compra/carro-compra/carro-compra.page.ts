@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ToastAlertComponent } from 'src/app/shared/toasts/toast-alert/toast-alert.component';
 import { Videojuego } from 'src/app/videojuegos/interfaces/Videojuego';
 import { CompraService } from '../../compra/services/compra.service';
 import { CarroCompra } from '../interfaces/carro-compra';
@@ -10,10 +12,18 @@ import { CarroCompraService } from '../services/carro-compra.service';
   styleUrls: ['./carro-compra.page.scss'],
 })
 export class CarroCompraPage implements OnInit {
-  videojuegosCarro: CarroCompra[];
+  videojuegosCarro: CarroCompra[] = [];
   error: string = '';
+  comprado: boolean = false;
 
-  constructor(private carroService: CarroCompraService, private compraService: CompraService) { }
+  constructor(
+    private carroService: CarroCompraService,
+    private compraService: CompraService,
+    private toastAlert: ToastAlertComponent,
+    private router: Router
+  ) {
+    this.obtenerVideojuegosCarro();
+  }
 
   ngOnInit() {
     this.obtenerVideojuegosCarro();
@@ -71,11 +81,23 @@ export class CarroCompraPage implements OnInit {
   }
 
   realizarCompra() {
-    console.log('Compra realizada');
-
     this.compraService.comprar().subscribe(
       () => {
-        console.log('Compras realizadas');
+        this.carroService.setContVideojuegosCarro(0);
+        this.router.navigate(['/videojuegos']);
+
+        this.toastAlert.crearAlertaMensaje('Compra realizada correctamente', 'success', 'toast-confirmacion');
+
+        this.videojuegosCarro = [];
+        this.comprado = true;
+
+        let elements = document.getElementsByClassName('elements');
+
+        const array = Array.from(elements);
+
+        Array.prototype.filter.call(elements, element => {
+          element.parentNode.removeChild(element)
+        });
       }
     );
   }

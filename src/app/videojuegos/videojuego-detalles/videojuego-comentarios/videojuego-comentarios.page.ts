@@ -1,5 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
+import { Usuario } from 'src/app/interfaces/Usuario';
+import { UsuariosService } from 'src/app/usuarios/services/usuarios.service';
 import { Comentario } from '../../interfaces/Comentario';
+import { Videojuego } from '../../interfaces/Videojuego';
 import { ComentarioService } from '../../services/comentario.service';
 import { VideojuegoDetallesPage } from '../videojuego-detalles.page';
 
@@ -13,26 +16,45 @@ export class VideojuegoComentariosPage implements OnInit {
   idVideojuego: number;
   error: string;
 
+  usuario: Usuario;
+
+  terminado: boolean = false;
+
   comentario: Comentario = {
     texto: ''
   };
 
   constructor(
     private comentarioService: ComentarioService,
-    @Inject(VideojuegoDetallesPage) private parentComponent: VideojuegoDetallesPage
+    @Inject(VideojuegoDetallesPage) private parentComponent: VideojuegoDetallesPage,
+    private usuarioService: UsuariosService
   ) { }
 
   ngOnInit() {
     this.idVideojuego = this.parentComponent.videojuego.id;
+    this.usuarioService.obtenerMiPerfil().subscribe(
+      resp => {
+        this.usuario = resp
+      }
+    );
+
     this.obtenerComentarios(this.idVideojuego);
   }
 
-  obtenerComentarios(id: number) {
+  obtenerComentarios(id: number, event?) {
     this.comentarioService.obtenerComentarios(id).subscribe(
       resp => {
+        if (event) {
+          event.target.complete();
+        }
         this.comentarios = resp;
+        this.terminado = true;
       },
       error => {
+        if (event) {
+          event.target.complete();
+        }
+        this.terminado = true;
         this.error = error.errores.mensaje;
       }
     );

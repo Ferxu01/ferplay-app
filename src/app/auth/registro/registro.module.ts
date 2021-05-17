@@ -6,6 +6,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { RegistroPage } from './registro.page';
 import { RouterModule, Routes } from '@angular/router';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 const routes: Routes = [
   {
@@ -19,6 +20,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
+    SharedModule,
     RouterModule.forChild(routes)
   ],
   declarations: [RegistroPage]
