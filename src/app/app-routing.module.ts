@@ -29,8 +29,6 @@ const routes: Routes = [
     loadChildren: () => import('./features/features.module').then(m => m.FeaturesModule),
     canActivate: [LoginActivateGuard]
   }
-
-
 ];
 
 @NgModule({

@@ -1,11 +1,10 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>Información</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-card>
     <ion-item>
       <ion-avatar slot="start">
         <img [src]="videojuego.usuario.avatar" alt="">
@@ -20,31 +19,31 @@
     <ion-img [src]="videojuego.imagen"></ion-img>
 
     <ion-card-header>
-      <ion-card-title>{{videojuego.nombre}}</ion-card-title>
+      <ion-card-title class="style-nombre-videojuego">{{videojuego.nombre | capitalizeText}}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <ion-row>
         <ion-col class="ion-text-center precio">
-          {{videojuego.precio}} €
+          {{videojuego.precio | currencyFormat}}
         </ion-col>
         <ion-col class="ion-text-center plataforma">
           {{videojuego.plataforma.nombre}}
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col>{{videojuego.descripcion}}</ion-col>
+        <ion-col class="style-desc-videojuego">{{videojuego.descripcion | capitalizeText}}</ion-col>
       </ion-row>
     </ion-card-content>
 
-    <ion-footer>
-      <ion-row>
-        <ion-col>
+    <ion-footer class="ion-margin">
+      <ion-row class="ion-margin">
+        <ion-col class="ion-margin-horizontal">
           <button center text-center (click)="addVideojuegoCarro()">
             <ion-icon name="cart"></ion-icon>
             <div>Añadir a carro</div>
           </button>
         </ion-col>
-        <ion-col>
+        <ion-col *ngIf="videojuego.mine" class="ion-margin-horizontal">
           <button center text-center [routerLink]="['/videojuegos/edit', videojuego.id]">
             <ion-icon name="create-outline"></ion-icon>
             <div>Editar</div>
@@ -52,5 +51,4 @@
         </ion-col>
       </ion-row>
     </ion-footer>
-  </ion-card>
 </ion-content>

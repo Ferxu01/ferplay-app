@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { VideojuegoResolverService } from './resolvers/videojuego-resolver.service';
+import { VideojuegoResolverService } from '../shared/resolvers/videojuego-resolver.service';
 
 const routes: Routes = [
   {

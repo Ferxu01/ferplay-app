@@ -1,0 +1,28 @@
+<ion-card-content>
+  <ion-row>
+    <ion-col>
+      <ion-avatar>
+        <img *ngIf="usuarioLogueado?.id === usuario?.id" (click)="mostrarActionSheet()" [src]="usuario.avatar">
+
+        <img *ngIf="usuarioLogueado?.id !== usuario?.id" [src]="usuario.avatar">
+      </ion-avatar>
+    </ion-col>
+    <ion-col class="ion-text-end">
+      <a color="primary" *ngIf="usuarioLogueado?.id === usuario?.id" (click)="modalEditarPerfil()">
+        <ion-icon name="pencil-outline"></ion-icon>
+      </a>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <ion-card-title>
+        {{usuario.nombre}} {{usuario.apellidos}}
+      </ion-card-title>
+
+        Email: {{usuario.email}} <br>
+        Nickname: {{usuario.nickname}} <br>
+        Provincia: {{usuario.provincia.nombre}}
+    </ion-col>
+  </ion-row>
+</ion-card-content>

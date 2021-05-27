@@ -1,12 +1,12 @@
 <ion-app>
   <ion-split-pane contentId="main-content">
-    <ion-menu contentId="main-content" type="overlay">
-      <ion-content>
+    <ion-menu contentId="main-content" type="overlay" [disabled]="menuDisabled" (ionWillOpen)="checkCargado()">
+      <ion-content color="primary">
 
-        <ion-list id="inbox-list">
-          <ion-item>
+        <ion-list id="inbox-list" style="background-color: #228DAD">
+          <ion-item color="primary" *ngIf="!default">
             <ion-avatar slot="start">
-              <img [src]="user.avatar" alt="Avatar usuario">
+              <img [src]="user.avatar">
             </ion-avatar>
             <ion-label>
               <h2>{{user.nombre}} {{user.apellidos}}</h2>
@@ -14,31 +14,40 @@
             </ion-label>
           </ion-item>
 
+          <ion-item color="primary" *ngIf="default">
+            <ion-avatar slot="start">
+              <ion-skeleton-text animated></ion-skeleton-text>
+            </ion-avatar>
+            <ion-label>
+              <p>
+                <ion-skeleton-text animated style="width: 90%"></ion-skeleton-text>
+              </p>
+              <p>
+                <ion-skeleton-text animated style="width: 90%"></ion-skeleton-text>
+              </p>
+            </ion-label>
+          </ion-item>
+
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
-            <ion-item *ngIf="p.icon !== 'cart'" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false">
-              <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+            <ion-item color="primary" *ngIf="p.icon !== 'cart'" routerDirection="forward" [routerLink]="[p.url]" lines="none" detail="false">
+              <ion-icon color="light" slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
               <ion-label>{{ p.title }}</ion-label>
             </ion-item>
 
-            <ion-item *ngIf="p.icon === 'cart'" routerDirection="root" [routerLink]="['/features/carro']" lines="none" detail="false">
-              <ion-icon slot="start" [ios]="'cart-outline'" [md]="'cart-sharp'"></ion-icon>
+            <ion-item color="primary" *ngIf="p.icon === 'cart'" routerDirection="root" [routerLink]="['/features/carro']" lines="none" detail="false">
+              <ion-icon color="light" slot="start" [ios]="'cart-outline'" [md]="'cart-sharp'"></ion-icon>
               <ion-label>Carro de compra</ion-label>
-              <ion-badge *ngIf="numVideojuegosCarro.value !== 0" color="danger" class="badge-cart">{{numVideojuegosCarro.value}}</ion-badge>
+              <ion-badge color="light" *ngIf="numVideojuegosCarro.value !== 0"  class="badge-cart">{{numVideojuegosCarro.value}}</ion-badge>
             </ion-item>
 
           </ion-menu-toggle>
           <ion-menu-toggle auto-hide="false">
-            <ion-item lines="none" (click)="cerrarSesion()">
-              <ion-icon slot="start" [md]="'exit-sharp'"></ion-icon>
+            <ion-item color="primary" lines="none" (click)="cerrarSesion()">
+              <ion-icon color="light" slot="start" [md]="'exit-sharp'"></ion-icon>
               <ion-label>Cerrar sesión</ion-label>
             </ion-item>
-
-            <!-- Icono con cantidad de artículos en carro de compra -->
-            <!--<ion-button>
-              <ion-icon slot="icon-only" name="cart"></ion-icon>
-              <ion-badge color="danger" class="badge-cart">99</ion-badge>
-            </ion-button>-->
           </ion-menu-toggle>
+
         </ion-list>
       </ion-content>
     </ion-menu>

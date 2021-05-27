@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PerfilResolverService } from '../shared/usuarios/resolvers/perfil-resolver.service';
+import { PerfilResolverService } from '../shared/resolvers/perfil-resolver.service';
 
 const routes: Routes = [
   {
@@ -14,7 +14,15 @@ const routes: Routes = [
     resolve: {
       usuario: PerfilResolverService
     }
+  },
+  {
+    path: ':id',
+    loadChildren: () => import('./perfil-usuario/perfil-usuario.module').then( m => m.PerfilUsuarioPageModule),
+    resolve: {
+      usuario: PerfilResolverService
+    }
   }
+
 ];
 
 @NgModule({

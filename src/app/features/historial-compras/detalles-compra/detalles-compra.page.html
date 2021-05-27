@@ -1,9 +1,25 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>detalles-compra</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header-modal [nombrePagina]="'Detalle de la compra'"></app-header-modal>
 
 <ion-content>
+  <ion-item *ngFor="let videojuegoCompra of videojuegosCompra">
+    <ion-thumbnail slot="start">
+      <img [src]="videojuegoCompra.videojuego.imagen">
+    </ion-thumbnail>
 
+    <ion-grid>
+      <ion-row class="ion-align-items-center">
+        <ion-col size="12">
+          <ion-label>
+            <h2>{{videojuegoCompra.videojuego.nombre}}</h2>
+            <h3>
+              {{videojuegoCompra.precio | currencyFormat}} X {{videojuegoCompra.cantidad}}
+
+              <span *ngIf="videojuegoCompra.cantidad === 1">unidad</span>
+              <span *ngIf="videojuegoCompra.cantidad > 1">unidades</span>
+            </h3>
+          </ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
 </ion-content>

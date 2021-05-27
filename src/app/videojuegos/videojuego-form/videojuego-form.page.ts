@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/core';
-import { NavController } from '@ionic/angular';
-import { CameraPlugin } from 'src/app/interfaces/native-plugins/CameraPlugin';
-import { Plataforma } from '../interfaces/Plataforma';
-import { VideojuegoNuevo } from '../interfaces/VideojuegoNuevo';
-import { PlataformaService } from '../services/plataforma.service';
-import { VideojuegoService } from '../services/videojuego.service';
+import { CameraPlugin } from 'src/app/shared/interfaces/native-plugins/CameraPlugin';
+import { Plataforma } from 'src/app/shared/interfaces/videojuegos/Plataforma';
+import { VideojuegoNuevo } from 'src/app/shared/interfaces/videojuegos/VideojuegoNuevo';
+import { PlataformaService } from 'src/app/shared/services/videojuegos/plataforma.service';
+import { VideojuegoService } from 'src/app/shared/services/videojuegos/videojuego.service';
+import { ToastAlertComponent } from 'src/app/shared/toasts/toast-alert/toast-alert.component';
 
 @Component({
   selector: 'app-videojuego-form',
@@ -29,7 +29,8 @@ export class VideojuegoFormPage implements OnInit, CameraPlugin {
     private plataformaService: PlataformaService,
     private videojuegoService: VideojuegoService,
     private route: ActivatedRoute,
-    private nav: NavController
+    private router: Router,
+    private toastAlert: ToastAlertComponent
   ) { }
 
   ngOnInit() {
@@ -43,7 +44,6 @@ export class VideojuegoFormPage implements OnInit, CameraPlugin {
 
       this.videojuegoService.obtenerVideojuego(parseInt(id)).subscribe(
         resp => {
-          console.warn(resp);
           this.nuevoVideojuego = {
             id: resp.id,
             nombre: resp.nombre,
@@ -70,17 +70,20 @@ export class VideojuegoFormPage implements OnInit, CameraPlugin {
 
   subirVideojuego() {
     this.videojuegoService.subirVideojuego(this.nuevoVideojuego).subscribe(
-      async () => {
-        await console.log('aloha 2');
+      async resp => {
+        this.toastAlert.crearAlertaMensaje('Videojuego subido correctamente', 'success', 'toast-confirmacion');
+
+        await this.router.navigate(['/videojuegos']);
       }
     )
   }
 
   editarVideojuego() {
     this.videojuegoService.editarVideojuego(this.nuevoVideojuego).subscribe(
-      async () => {
-        console.log('editado');
-        await this.nav.navigateRoot(['/videojuegos']);
+      async resp => {
+        this.toastAlert.crearAlertaMensaje('Videojuego editado correctamente', 'success', 'toast-confirmacion');
+
+        await this.router.navigate(['/videojuegos', resp.id]);
       }
     )
   }

@@ -1,11 +1,9 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { ActionSheetController, ModalController } from '@ionic/angular';
-import { CameraPlugin } from 'src/app/interfaces/native-plugins/CameraPlugin';
-import { Usuario } from 'src/app/interfaces/Usuario';
-import { ModalEditarComponent } from 'src/app/shared/modals/modal-editar/modal-editar.component';
-import { Videojuego } from '../../interfaces/Videojuego';
-import { VideojuegoService } from '../../services/videojuego.service';
-import { VideojuegoFormPage } from '../../videojuego-form/videojuego-form.page';
+import { shuffle } from 'lodash';
+import { Usuario } from 'src/app/shared/interfaces/usuarios/Usuario';
+import { Videojuego } from 'src/app/shared/interfaces/videojuegos/Videojuego';
+import { UsuariosService } from 'src/app/shared/services/usuarios/usuarios.service';
+import { VideojuegoService } from 'src/app/shared/services/videojuegos/videojuego.service';
 import { VideojuegoDetallesPage } from '../videojuego-detalles.page';
 
 @Component({
@@ -13,78 +11,50 @@ import { VideojuegoDetallesPage } from '../videojuego-detalles.page';
   templateUrl: './videojuego-perfil-usuario.page.html',
   styleUrls: ['./videojuego-perfil-usuario.page.scss'],
 })
-export class VideojuegoPerfilUsuarioPage implements OnInit, CameraPlugin {
+export class VideojuegoPerfilUsuarioPage implements OnInit {
+  usuarioLogueado: Usuario;
   usuario: Usuario;
 
-  videojuegosUsuario: Videojuego[] = []
+  videojuegosUsuario: Videojuego[] = [];
+  totalVideojuegosUsuario: number = 0;
 
   constructor(
     @Inject(VideojuegoDetallesPage) private parentComponent: VideojuegoDetallesPage,
     private videojuegosService: VideojuegoService,
-    private modalEditar: ModalEditarComponent,
-    private actionSheetController: ActionSheetController
+    private usuarioService: UsuariosService,
   ) { }
 
   ngOnInit() {
+    this.usuarioService.obtenerMiPerfil().subscribe(
+      resp => {
+        this.usuarioLogueado = resp
+      });
+
     this.usuario = this.parentComponent.videojuego.usuario;
 
     this.videojuegosService.obtenerVideojuegosUsuario(this.usuario.id).subscribe(
       resp => {
-        this.videojuegosUsuario = resp
+        this.videojuegosUsuario = resp;
+        this.totalVideojuegosUsuario = this.videojuegosUsuario.length;
+
+        //Obtener 5 videojuegos aleatorios del usuario
+        this.videojuegosUsuario = shuffle(this.videojuegosUsuario);
+
+        if (this.videojuegosUsuario.length > 5) {
+          let videojuegosMostrar = [];
+
+          for (let i = 0; i < 5; i++) {
+            videojuegosMostrar.push(this.videojuegosUsuario[i]);
+          }
+
+          this.videojuegosUsuario = videojuegosMostrar;
+        }
       }
     );
   }
 
-  slidear(slides) {
+  playSlider(slides) {
     slides.startAutoplay();
-  }
-
-  async mostrarActionSheet() {
-    const actionSheet = await this.actionSheetController.create({
-      header: 'Seleccionar una imagen',
-      buttons: [
-        {
-          text: 'Hacer foto',
-          icon: 'camera',
-          handler: () => {
-            this.obtenerFotoCamara();
-          }
-        },
-        {
-          text: 'Seleccionar una imagen',
-          icon: 'images',
-          handler: () => {
-            this.obtenerFotoGaleria();
-          }
-        },
-        {
-          text: 'Cancelar',
-          icon: 'close',
-          role: 'cancel',
-          handler: () => {
-            this.actionSheetController.dismiss();
-          }
-        }
-  ]
-    });
-
-    await actionSheet.present();
-  }
-
-  obtenerFotoCamara() {
-    console.log('hazte una foto');
-  }
-
-  obtenerFotoGaleria() {
-    console.log('selecciona una imagen de la galería');
-  }
-
-  modalEditarPassword() {
-    this.modalEditar.crearModalEditarPassword();
-  }
-
-  cerrarModal() {
-    this.modalEditar.cerrarModal();
   }
 
 }

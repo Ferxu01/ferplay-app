@@ -1,0 +1,38 @@
+<app-header-modal [nombrePagina]="'Editar perfil'"></app-header-modal>
+
+<div class="formContainer">
+  <form id="form" #editProfileForm="ngForm" (ngSubmit)="editarPerfil()">
+
+    <ion-item class="ion-margin-bottom">
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input type="text" name="name" required [(ngModel)]="nombre" #nameModel="ngModel"></ion-input>
+    </ion-item>
+
+    <ion-item class="ion-margin-bottom">
+      <ion-label position="floating">Apellidos</ion-label>
+      <ion-input type="text" name="apellidos" required [(ngModel)]="apellidos" #apellidosModel="ngModel"></ion-input>
+    </ion-item>
+
+    <ion-item class="ion-margin-bottom">
+      <ion-label position="floating">Nickname</ion-label>
+      <ion-input type="text" name="nickname" required [(ngModel)]="nickname" #nicknameModel="ngModel"></ion-input>
+    </ion-item>
+
+    <ion-item class="ion-margin-bottom provincia">
+      <ion-label position="stacked">Provincia</ion-label>
+      <ion-select cancelText="Cancelar" required #provinciaModel="ngModel" name="provincia" [(ngModel)]="provincia">
+        <ion-select-option value="0">Selecciona una provincia...</ion-select-option>
+        <ion-select-option *ngFor="let provincia of provincias" [value]="provincia.id">{{provincia.nombre}}</ion-select-option>
+      </ion-select>
+      <ion-icon name="checkmark-circle" slot="end" color="success" *ngIf="provinciaModel.dirty && provinciaModel.valid && provinciaModel.value !== 0"></ion-icon>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="primary" expand="block" [disabled]="editProfileForm.invalid">
+          Editar perfil
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</div>

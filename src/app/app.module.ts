@@ -9,11 +9,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { BaseUrlInterceptor } from './interceptors/base-url.interceptor';
 import { AuthTokenInterceptor } from './interceptors/auth-token.interceptor';
-import { AuthModule } from './auth/auth.module';
-import { VideojuegosModule } from './videojuegos/videojuegos.module';
-import { SharedModule } from './shared/shared.module';
-import { UsuariosModule } from './usuarios/usuarios.module';
-import { FeaturesModule } from './features/features.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,12 +17,7 @@ import { FeaturesModule } from './features/features.module';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    HttpClientModule,
-    AuthModule,
-    VideojuegosModule,
-    UsuariosModule,
-    FeaturesModule,
-    SharedModule
+    HttpClientModule
   ],
   providers: [
     {

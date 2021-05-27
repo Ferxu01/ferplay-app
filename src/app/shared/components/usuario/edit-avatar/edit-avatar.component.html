@@ -1,0 +1,15 @@
+<app-header-modal [nombrePagina]="'Editar avatar'"></app-header-modal>
+
+<div class="formContainer">
+  <form id="form" #editAvatarForm="ngForm" (ngSubmit)="editarAvatar()">
+    <ion-img [src]="avatar" *ngIf="avatar"></ion-img>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="primary" expand="block" [disabled]="editAvatarForm.invalid">
+          Editar avatar
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</div>
