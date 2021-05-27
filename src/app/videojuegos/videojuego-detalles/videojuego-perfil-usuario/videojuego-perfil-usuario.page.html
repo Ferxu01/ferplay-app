@@ -1,28 +1,30 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>Vendedor</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <!--<ion-card>-->
-    <app-perfil-usuario [usuario]="usuario" [usuarioLogueado]="usuarioLogueado"></app-perfil-usuario>
+  <app-perfil-usuario [usuario]="usuario" [usuarioLogueado]="usuarioLogueado"></app-perfil-usuario>
     <ion-item-divider></ion-item-divider>
-    <ion-card-content>
+    <ion-item lines="none">
       <ion-card-title>Videojuegos del usuario</ion-card-title>
-    </ion-card-content>
-    <ion-slides #sliderVideojuegosUsuario pager="true" (ionSlidesDidLoad)="slidear(sliderVideojuegosUsuario)">
+      <ion-chip color="primary">
+        <span>{{totalVideojuegosUsuario}} en total</span>
+      </ion-chip>
+    </ion-item>
+    <ion-slides #sliderVideojuegosUsuario pager="true" (ionSlidesDidLoad)="playSlider(sliderVideojuegosUsuario)">
       <ion-slide *ngFor="let videojuego of videojuegosUsuario">
         <ion-card>
           <ion-row>
             <ion-img [routerLink]="['/videojuegos', videojuego.id]" [src]="videojuego.imagen"></ion-img>
           </ion-row>
           <ion-footer>
-            <ion-card-title class="mb-4">
+            <ion-card-title class="mb-4 pt-2 style-nombre-videojuego">
               {{videojuego.nombre}}
             </ion-card-title>
           </ion-footer>
         </ion-card>
       </ion-slide>
     </ion-slides>
-  <!--</ion-card>-->
+</ion-content>

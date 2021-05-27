@@ -1,17 +1,16 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { Usuario } from 'src/app/interfaces/Usuario';
-import { EditAvatarComponent } from 'src/app/usuarios/shared/edit-avatar/edit-avatar.component';
-import { EditPasswordComponent } from 'src/app/usuarios/shared/edit-password/edit-password.component';
-import { EditPerfilComponent } from 'src/app/usuarios/shared/edit-perfil/edit-perfil.component';
+import { Usuario } from 'src/app/shared/interfaces/usuarios/Usuario';
+import { EditAvatarComponent } from 'src/app/shared/components/usuario/edit-avatar/edit-avatar.component';
+import { EditPasswordComponent } from '../../components/usuario/edit-password/edit-password.component';
+import { EditPerfilComponent } from '../../components/usuario/edit-perfil/edit-perfil.component';
 
 @Injectable({
   providedIn: 'root'
 })
 @Component({
   selector: 'app-modal-editar',
-  templateUrl: './modal-editar.component.html',
-  styleUrls: ['./modal-editar.component.scss'],
+  template: ''
 })
 export class ModalEditarComponent implements OnInit {
   usuario: Usuario;

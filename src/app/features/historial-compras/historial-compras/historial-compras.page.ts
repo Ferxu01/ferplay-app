@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Compra } from '../../interfaces/Compra';
-import { HistorialComprasService } from '../services/historial-compras.service';
+import { Compra } from '../../../shared/interfaces/features/Compra';
 
 import * as moment from 'moment';
 import { ModalDetalleCompraComponent } from 'src/app/shared/modals/modal-detalle-compra/modal-detalle-compra.component';
+import { HistorialComprasService } from 'src/app/shared/services/features/historial-compras.service';
 
 @Component({
   selector: 'app-historial-compras',

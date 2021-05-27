@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/core';
-import { ActionSheetController, AlertController, NavController } from '@ionic/angular';
-import { CameraPlugin } from 'src/app/interfaces/native-plugins/CameraPlugin';
-import { Provincia } from 'src/app/interfaces/Provincia';
-import { ProvinciaService } from 'src/app/usuarios/services/provincia.service';
-import { UsuarioRegistro } from '../interfaces/UsuarioRegistro';
-import { AuthService } from '../services/auth.service';
+import { AlertController, NavController } from '@ionic/angular';
+import { CameraPlugin } from 'src/app/shared/interfaces/native-plugins/CameraPlugin';
+import { Provincia } from 'src/app/shared/interfaces/usuarios/Provincia';
+import { AuthService } from 'src/app/shared/services/auth/auth.service';
+import { ProvinciaService } from 'src/app/shared/services/usuarios/provincia.service';
+import { UsuarioRegistro } from '../../shared/interfaces/auth/UsuarioRegistro';
 
 @Component({
   selector: 'app-registro',
@@ -20,7 +19,12 @@ export class RegistroPage implements OnInit, CameraPlugin {
   provincias: Provincia[];
   errores: string[];
 
-  constructor(private authService: AuthService, private provinciaService: ProvinciaService, private router: Router, private navCtrl: NavController, private alertCtrl: AlertController, private actionSheetCtrl: ActionSheetController) { }
+  constructor(
+    private authService: AuthService,
+    private provinciaService: ProvinciaService,
+    private navCtrl: NavController,
+    private alertCtrl: AlertController
+  ) { }
 
   ngOnInit() {
     this.resetearFormulario();
@@ -32,7 +36,6 @@ export class RegistroPage implements OnInit, CameraPlugin {
     );
   }
 
-  //Provisional
   async mostrarAlerta() {
     const alert = await this.alertCtrl.create({
       cssClass: 'alert-registro',
@@ -68,9 +71,7 @@ export class RegistroPage implements OnInit, CameraPlugin {
         this.mostrarAlerta();
       },
       error => {
-        console.warn(error);
-        console.log(this.errores);
-        //this.errores = error.error.errores.mensaje;
+        this.errores = error.error.errores.mensaje;
       }
     );
   }

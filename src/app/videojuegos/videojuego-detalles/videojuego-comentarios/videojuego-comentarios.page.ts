@@ -1,9 +1,9 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { Usuario } from 'src/app/interfaces/Usuario';
-import { UsuariosService } from 'src/app/usuarios/services/usuarios.service';
-import { Comentario } from '../../interfaces/Comentario';
-import { Videojuego } from '../../interfaces/Videojuego';
-import { ComentarioService } from '../../services/comentario.service';
+import { Usuario } from 'src/app/shared/interfaces/usuarios/Usuario';
+import { UsuariosService } from 'src/app/shared/services/usuarios/usuarios.service';
+import { ComentarioService } from 'src/app/shared/services/videojuegos/comentario.service';
+import { ToastAlertComponent } from 'src/app/shared/toasts/toast-alert/toast-alert.component';
+import { Comentario } from '../../../shared/interfaces/videojuegos/Comentario';
 import { VideojuegoDetallesPage } from '../videojuego-detalles.page';
 
 @Component({
@@ -27,7 +27,8 @@ export class VideojuegoComentariosPage implements OnInit {
   constructor(
     private comentarioService: ComentarioService,
     @Inject(VideojuegoDetallesPage) private parentComponent: VideojuegoDetallesPage,
-    private usuarioService: UsuariosService
+    private usuarioService: UsuariosService,
+    private toastAlert: ToastAlertComponent
   ) { }
 
   ngOnInit() {
@@ -76,6 +77,7 @@ export class VideojuegoComentariosPage implements OnInit {
   borrarComentario(idComentario: number) {
     this.comentarioService.borrarComentario(this.idVideojuego, idComentario).subscribe(
       () => {
+        this.toastAlert.crearAlertaMensaje('Comentario borrado', 'success', 'toast-confirmacion', 1000);
         this.obtenerComentarios(this.idVideojuego);
 
         if (this.comentarios.length === 1) {

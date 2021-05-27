@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { Compra } from '../../interfaces/Compra';
-import { DetalleCompraService } from '../services/detalle-compra.service';
+import { DetalleCompraService } from 'src/app/shared/services/features/detalle-compra.service';
+import { Compra } from '../../../shared/interfaces/features/Compra';
+
 
 @Component({
   selector: 'app-detalles-compra',

@@ -1,11 +1,10 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>Información</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
     <ion-item>
       <ion-avatar slot="start">
         <img [src]="videojuego.usuario.avatar" alt="">
@@ -20,19 +19,19 @@
     <ion-img [src]="videojuego.imagen"></ion-img>
 
     <ion-card-header>
-      <ion-card-title class="style-nombre-videojuego">{{videojuego.nombre}}</ion-card-title>
+      <ion-card-title class="style-nombre-videojuego">{{videojuego.nombre | capitalizeText}}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <ion-row>
         <ion-col class="ion-text-center precio">
-          {{videojuego.precio}} €
+          {{videojuego.precio | currencyFormat}}
         </ion-col>
         <ion-col class="ion-text-center plataforma">
           {{videojuego.plataforma.nombre}}
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col class="style-desc-videojuego">{{videojuego.descripcion}}</ion-col>
+        <ion-col class="style-desc-videojuego">{{videojuego.descripcion | capitalizeText}}</ion-col>
       </ion-row>
     </ion-card-content>
 

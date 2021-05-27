@@ -1,10 +1,5 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-button color="primary">
-        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
-      </ion-button>
-    </ion-buttons>
     <ion-buttons slot="end">
       <ion-button [routerLink]="['/auth/registro']">Regístrate</ion-button>
     </ion-buttons>
@@ -12,54 +7,16 @@
 </ion-header>
 
 <ion-content>
-  <!--<form #loginForm="ngForm" (ngSubmit)="login()">
-    <ion-list>
-      <ion-item>
-        <ion-label position="floating">Email</ion-label>
-        <ion-input type="email" name="email" [(ngModel)]="usuario.username" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Password</ion-label>
-        <ion-input type="password" name="password" [(ngModel)]="usuario.password" required></ion-input>
-      </ion-item>
-    </ion-list>
-
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          <ion-button type="submit" color="primary" expand="block" [disabled]="loginForm.invalid">
-            <ion-icon name="log-in" slot="start"></ion-icon>
-            Login
-          </ion-button>
-        </ion-col>
-        <ion-col>
-          <ion-button color="tertiary" expand="block" [routerLink]="['/auth/registro']" [routerDirection]="'root'">
-            <ion-icon name="paper-plane" slot="start"></ion-icon>
-            Register
-          </ion-button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </form>
-  <ion-row>
-    <ion-col>
-      <app-google-login></app-google-login>
-    </ion-col>
-  </ion-row>-->
-
-
   <div id="header">
     <h1>Login</h1>
-    <img src="assets/logo.png">
+    <img src="assets/game-controller.png">
   </div>
 
   <form id="form" #loginForm="ngForm" (ngSubmit)="login()">
     <ion-item class="ion-margin-bottom">
-      <!--<ion-label position="floating">Email</ion-label>-->
       <ion-input type="email" name="email" placeholder="Correo electrónico" [(ngModel)]="usuario.username" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"></ion-input>
     </ion-item>
     <ion-item class="ion-margin-bottom">
-      <!--<ion-label position="floating">Password</ion-label>-->
       <ion-input type="password" name="password" placeholder="Contraseña" [(ngModel)]="usuario.password" required></ion-input>
     </ion-item>
     <div *ngIf="error" class="alert alert-danger">

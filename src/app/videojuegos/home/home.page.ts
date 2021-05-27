@@ -2,8 +2,8 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
 import { Observable, Subscription } from 'rxjs';
-import { Videojuego } from '../interfaces/Videojuego';
-import { VideojuegoService } from '../services/videojuego.service';
+import { Videojuego } from 'src/app/shared/interfaces/videojuegos/Videojuego';
+import { VideojuegoService } from 'src/app/shared/services/videojuegos/videojuego.service';
 
 @Component({
   selector: 'app-home',
@@ -18,7 +18,6 @@ export class HomePage implements OnInit, OnDestroy {
 
   //Observable para obtener el videojuego a añadir
   videojuegoCreado$: Observable<Videojuego>;
-
   videojuegoSubscription: Subscription;
 
   cargado: boolean = false;

@@ -1,9 +1,9 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { shuffle } from 'lodash';
-import { Usuario } from 'src/app/interfaces/Usuario';
-import { UsuariosService } from 'src/app/usuarios/services/usuarios.service';
-import { Videojuego } from '../../interfaces/Videojuego';
-import { VideojuegoService } from '../../services/videojuego.service';
+import { Usuario } from 'src/app/shared/interfaces/usuarios/Usuario';
+import { Videojuego } from 'src/app/shared/interfaces/videojuegos/Videojuego';
+import { UsuariosService } from 'src/app/shared/services/usuarios/usuarios.service';
+import { VideojuegoService } from 'src/app/shared/services/videojuegos/videojuego.service';
 import { VideojuegoDetallesPage } from '../videojuego-detalles.page';
 
 @Component({
@@ -15,13 +15,13 @@ export class VideojuegoPerfilUsuarioPage implements OnInit {
   usuarioLogueado: Usuario;
   usuario: Usuario;
 
-  videojuegosUsuario: Videojuego[] = []
+  videojuegosUsuario: Videojuego[] = [];
+  totalVideojuegosUsuario: number = 0;
 
   constructor(
     @Inject(VideojuegoDetallesPage) private parentComponent: VideojuegoDetallesPage,
     private videojuegosService: VideojuegoService,
     private usuarioService: UsuariosService,
-
   ) { }
 
   ngOnInit() {
@@ -35,8 +35,9 @@ export class VideojuegoPerfilUsuarioPage implements OnInit {
     this.videojuegosService.obtenerVideojuegosUsuario(this.usuario.id).subscribe(
       resp => {
         this.videojuegosUsuario = resp;
+        this.totalVideojuegosUsuario = this.videojuegosUsuario.length;
 
-        //Escoger 4-5 videojuegos aleatorios para mostrar
+        //Obtener 5 videojuegos aleatorios del usuario
         this.videojuegosUsuario = shuffle(this.videojuegosUsuario);
 
         if (this.videojuegosUsuario.length > 5) {
@@ -52,7 +53,7 @@ export class VideojuegoPerfilUsuarioPage implements OnInit {
     );
   }
 
-  slidear(slides) {
+  playSlider(slides) {
     slides.startAutoplay();
   }
 

@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoginUsuario } from '../interfaces/LoginUsuario';
-import { AuthService } from '../services/auth.service';
+import { LoginUsuario } from 'src/app/shared/interfaces/auth/LoginUsuario';
+import { AuthService } from 'src/app/shared/services/auth/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +16,11 @@ export class LoginPage implements OnInit {
 
   constructor(private authService: AuthService, private router: Router) { }
 
-  async ngOnInit() {
+  ngOnInit() {
+    this.resetearForm();
+  }
+
+  resetearForm() {
     this.usuario = {
       username: '',
       password: ''
@@ -29,6 +33,7 @@ export class LoginPage implements OnInit {
       password: this.usuario.password
     }).subscribe(
       () => {
+        this.resetearForm();
         this.router.navigate(['/videojuegos']);
       },
       error => {

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Usuario } from 'src/app/interfaces/Usuario';
+import { Usuario } from 'src/app/shared/interfaces/usuarios/Usuario';
 import { ModalEditarComponent } from 'src/app/shared/modals/modal-editar/modal-editar.component';
 
 @Component({

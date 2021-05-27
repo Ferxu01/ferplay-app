@@ -1,13 +1,13 @@
 import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ActionSheetController, AlertController } from '@ionic/angular';
-import { CarroCompraService } from 'src/app/features/carro-compra/services/carro-compra.service';
-import { Videojuego } from '../../interfaces/Videojuego';
-import { VideojuegoService } from '../../services/videojuego.service';
 import { VideojuegoDetallesPage } from '../videojuego-detalles.page';
 import * as moment from 'moment';
 import { ToastAlertComponent } from 'src/app/shared/toasts/toast-alert/toast-alert.component';
 import { Observable, Subscription } from 'rxjs';
+import { CarroCompraService } from 'src/app/shared/services/features/carro-compra.service';
+import { Videojuego } from 'src/app/shared/interfaces/videojuegos/Videojuego';
+import { VideojuegoService } from 'src/app/shared/services/videojuegos/videojuego.service';
 
 @Component({
   selector: 'app-videojuego-info',
@@ -19,7 +19,6 @@ export class VideojuegoInfoPage implements OnInit, OnDestroy {
 
   //Observable para obtener el videojuego a añadir
   videojuegoCreado$: Observable<Videojuego>;
-
   videojuegoSubscription: Subscription;
 
   botones: any[] = [];
@@ -40,7 +39,6 @@ export class VideojuegoInfoPage implements OnInit, OnDestroy {
     this.videojuego = this.parentComponent.videojuego;
     this.videojuego.fechaCreacion = moment(this.videojuego.fechaCreacion).fromNow();
 
-    //Cambiar botones del action sheet
     this.botones = [
       {
         text: 'Añadir al carro',

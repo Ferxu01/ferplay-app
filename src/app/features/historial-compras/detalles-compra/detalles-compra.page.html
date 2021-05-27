@@ -12,7 +12,7 @@
           <ion-label>
             <h2>{{videojuegoCompra.videojuego.nombre}}</h2>
             <h3>
-              {{videojuegoCompra.precio | currency:'EUR':'symbol':'0.0-2'}} X {{videojuegoCompra.cantidad}}
+              {{videojuegoCompra.precio | currencyFormat}} X {{videojuegoCompra.cantidad}}
 
               <span *ngIf="videojuegoCompra.cantidad === 1">unidad</span>
               <span *ngIf="videojuegoCompra.cantidad > 1">unidades</span>

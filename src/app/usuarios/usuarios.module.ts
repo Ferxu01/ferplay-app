@@ -3,9 +3,6 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { UsuariosRoutingModule } from './usuarios-routing.module';
 import { FormsModule } from '@angular/forms';
-import { SharedModule } from './shared/shared.module';
-
-
 
 @NgModule({
   declarations: [],
@@ -13,8 +10,7 @@ import { SharedModule } from './shared/shared.module';
     CommonModule,
     UsuariosRoutingModule,
     IonicModule,
-    FormsModule,
-    SharedModule
+    FormsModule
   ]
 })
 export class UsuariosModule { }

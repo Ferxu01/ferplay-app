@@ -6,8 +6,7 @@ import { ToastController } from '@ionic/angular';
 })
 @Component({
   selector: 'app-toast-alert',
-  templateUrl: './toast-alert.component.html',
-  styleUrls: ['./toast-alert.component.scss'],
+  template: ''
 })
 export class ToastAlertComponent {
 

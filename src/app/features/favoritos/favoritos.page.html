@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -25,7 +25,7 @@
     </ion-label>
   </ion-item>
 
-  <div *ngIf="error" class="alert alert-danger">
+  <div *ngIf="error" class="alert alert-warning">
     {{error}}
   </div>
 

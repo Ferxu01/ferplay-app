@@ -7,8 +7,7 @@ import { DetallesCompraPage } from 'src/app/features/historial-compras/detalles-
 })
 @Component({
   selector: 'app-modal-detalle-compra',
-  templateUrl: './modal-detalle-compra.component.html',
-  styleUrls: ['./modal-detalle-compra.component.scss'],
+  template: ''
 })
 export class ModalDetalleCompraComponent implements OnInit {
 

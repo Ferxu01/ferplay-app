@@ -1,0 +1,113 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Mi carro compra</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="obtenerVideojuegosCarro($event)">
+    <ion-refresher-content
+    pulling-icon="refresh-outline"
+    pulling-text="Recargar videojuegos"
+    refreshingSpinner="circles"
+    refreshingText="Cargando videojuegos..."></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-item-sliding *ngFor="let videojuegoCarro of videojuegosCarro; let i = index;">
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <img [src]="videojuegoCarro?.videojuego.imagen">
+      </ion-thumbnail>
+
+      <ion-grid>
+        <ion-row class="ion-align-items-center">
+          <ion-col size="6">
+            <ion-label style="width: 130px;">
+              <h3>{{videojuegoCarro?.videojuego.nombre}}</h3>
+            </ion-label>
+          </ion-col>
+          <ion-col size="3" class="ion-align-self-center">
+            <ion-button [disabled]="videojuegoCarro.cantidad === 1" color="darkgray" fill="clear" (click)="decrementarStockVideojuego(videojuegoCarro.videojuego, videojuegoCarro)">
+              <ion-icon name="remove-circle" slot="icon-only"></ion-icon>
+            </ion-button>
+          </ion-col>
+
+          <ion-col size="1" class="ion-align-self-center">
+            {{videojuegoCarro.cantidad}}
+          </ion-col>
+
+          <ion-col size="2" class="ion-align-self-center">
+            <ion-button [disabled]="videojuegoCarro.videojuego.stock === videojuegoCarro.cantidad" color="darkgray" fill="clear" (click)="aumentarStockVideojuego(videojuegoCarro.videojuego, videojuegoCarro)">
+              <ion-icon name="add-circle" slot="icon-only"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-align-items-end">
+          <ion-col size="4" offset="8">
+            <p class="style-item-cart">
+              {{videojuegoCarro.cantidad * videojuegoCarro.videojuego.precio | currencyFormat}}
+            </p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    <ion-item-options side="end">
+      <ion-item-option color="danger" (click)="eliminarVideojuegoCarro(videojuegoCarro.videojuego.id, videojuegoCarro.id, i)">Borrar</ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
+
+  <ion-item class="elements" *ngIf="videojuegosCarro.length !== 0 || comprado">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="9">
+          Total:
+        </ion-col>
+        <ion-col size="3" class="ion-text-end">
+          {{getTotal() | currencyFormat}}
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+
+  <ion-button class="elements" *ngIf="videojuegosCarro.length !== 0 || comprado" (click)="realizarCompra()" expand="full">
+    Realizar compra
+  </ion-button>
+
+  <div *ngIf="!terminado">
+    <ion-list>
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-thumbnail>
+        <ion-label>
+          <p>
+            <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
+          </p>
+          <p class="precio-videojuego-carro">
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-thumbnail>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
+          </h3>
+          <p class="precio-videojuego-carro">
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <div *ngIf="error" class="alert alert-warning">
+    {{error}}
+  </div>
+</ion-content>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Videojuego } from 'src/app/videojuegos/interfaces/Videojuego';
-import { VideojuegoService } from 'src/app/videojuegos/services/videojuego.service';
+import { Subscription } from 'rxjs';
+import { Videojuego } from 'src/app/shared/interfaces/videojuegos/Videojuego';
+import { VideojuegoService } from 'src/app/shared/services/videojuegos/videojuego.service';
+
 
 @Component({
   selector: 'app-favoritos',
@@ -13,12 +15,20 @@ export class FavoritosPage implements OnInit {
   terminado: boolean = false;
   error: string = null;
 
-  constructor(private videojuegoService: VideojuegoService) {
-    this.obtenerVideojuegosFavoritos();
-  }
+  eventAddVideojuego: Subscription;
+
+  constructor(private videojuegoService: VideojuegoService) { }
 
   ngOnInit() {
     this.obtenerVideojuegosFavoritos();
+  }
+
+  ionViewWillEnter() {
+    this.eventAddVideojuego = this.videojuegoService.obtenerEventObservable().subscribe(
+      resp => {
+        this.obtenerVideojuegosFavoritos();
+      }
+    );
   }
 
   obtenerVideojuegosFavoritos(event?) {
@@ -32,6 +42,7 @@ export class FavoritosPage implements OnInit {
         this.terminado = true;
       },
       error => {
+        this.terminado = true;
         this.error = error.errores.mensaje;
       }
     );
