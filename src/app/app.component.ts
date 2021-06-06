@@ -50,9 +50,7 @@ export class AppComponent implements OnInit {
   }
 
   checkCargado() {
-    if (this.default) {
-      this.obtenerInfoUsuario();
-    }
+    this.obtenerInfoUsuario();
   }
 
   async obtenerInfoUsuario() {

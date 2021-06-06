@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-refresher slot="fixed" (ionRefresh)="obtenerVideojuegosFavoritos($event)">
+  <ion-refresher *ngIf="videojuegosFavoritos.length !== 0" slot="fixed" (ionRefresh)="obtenerVideojuegosFavoritos($event)">
     <ion-refresher-content
     pulling-icon="refresh-outline"
     pulling-text="Recargar videojuegos"

@@ -10,7 +10,7 @@ import { VideojuegoService } from 'src/app/shared/services/videojuegos/videojueg
   styleUrls: ['./favoritos.page.scss'],
 })
 export class FavoritosPage implements OnInit {
-  videojuegosFavoritos: Videojuego[];
+  videojuegosFavoritos: Videojuego[] = [];
 
   terminado: boolean = false;
   error: string = null;
