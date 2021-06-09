@@ -40,13 +40,10 @@
         </ion-avatar>
         <ion-label>
           <h3>
-            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+            <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
           </h3>
           <p>
             <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
-          </p>
-          <p>
-            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
           </p>
         </ion-label>
       </ion-item>
@@ -56,13 +53,10 @@
         </ion-avatar>
         <ion-label>
           <h3>
-            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+            <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
           </h3>
           <p>
             <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
-          </p>
-          <p>
-            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
           </p>
         </ion-label>
       </ion-item>
@@ -77,5 +71,5 @@
 <ion-item-divider></ion-item-divider>
 <ion-item>
   <ion-input #comentarioModel="ngModel" placeholder="Comenta aquí" [(ngModel)]="comentario.texto"></ion-input>
-  <ion-button [disabled]="comentario.texto === ''" (click)="comentar()" color="primary">Comentar</ion-button>
+  <ion-button [disabled]="comentario.texto.trim() === ''" (click)="comentar()" color="primary">Comentar</ion-button>
 </ion-item>

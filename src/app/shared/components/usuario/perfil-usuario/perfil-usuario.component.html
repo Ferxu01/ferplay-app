@@ -17,7 +17,7 @@
   <ion-row>
     <ion-col>
       <ion-card-title>
-        {{usuario.nombre}} {{usuario.apellidos}}
+        {{usuario.nombre | capitalizeText}} {{usuario.apellidos | capitalizeText}}
       </ion-card-title>
 
         Email: {{usuario.email}} <br>

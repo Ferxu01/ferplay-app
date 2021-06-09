@@ -63,6 +63,10 @@ export class CarroCompraPage implements OnInit {
       () => {
         this.toastAlert.crearAlertaMensaje('Videojuego eliminado del carro', 'success', 'toast-confirmacion');
         this.videojuegosCarro.splice(indexVideojuego, 1);
+
+        if (this.videojuegosCarro.length === 0) {
+          this.error = 'No has añadido ningún videojuego aún';
+        }
       }
     );
   }

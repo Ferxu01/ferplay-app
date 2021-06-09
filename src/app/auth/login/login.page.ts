@@ -27,6 +27,11 @@ export class LoginPage implements OnInit {
     }
   }
 
+  ionViewWillEnter() {
+    this.resetearForm();
+    this.error = null;
+  }
+
   login(): void {
     this.authService.login({
       username: this.usuario.username,

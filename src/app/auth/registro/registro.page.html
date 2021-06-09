@@ -6,10 +6,10 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <h1>Créate una<br>Cuenta</h1>
+<ion-content class="ion-padding">
+  <h1>Créate una<br>cuenta</h1>
 
-  <form id="form" #formRegistro="ngForm" (ngSubmit)="registrar()">
+  <form #formRegistro="ngForm" (ngSubmit)="registrar()">
     <ion-item class="ion-margin-bottom">
       <ion-input name="name" placeholder="Nombre" required [(ngModel)]="usuario.nombre" #nombreModel="ngModel"></ion-input>
       <ion-icon name="checkmark-circle" slot="end" color="success" *ngIf="nombreModel.dirty && nombreModel.valid"></ion-icon>
@@ -50,14 +50,22 @@
     </ion-item>
 
     <ion-img [src]="usuario.avatar" *ngIf="usuario.avatar"></ion-img>
-    <ion-button color="secondary" (click)="obtenerFotoCamara()">
-      <ion-icon name="camera" slot="start"></ion-icon>
-      Cámara
-    </ion-button>
-    <ion-button color="tertiary" (click)="obtenerFotoGaleria()">
-      <ion-icon name="images" slot="start"></ion-icon>
-      Galería
-    </ion-button>
+
+    <ion-item class="avatar">
+      <ion-label position="fixed">Avatar</ion-label>
+      <ion-row class="align-content-center">
+        <ion-col>
+          <ion-button fill="clear" (click)="obtenerFotoCamara()">
+            <ion-icon color="dark" name="camera" slot="icon-only"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button fill="clear" (click)="obtenerFotoGaleria()">
+            <ion-icon color="dark" name="images" slot="icon-only"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-item>
 
     <div *ngIf="errores" class="alert alert-danger">
       <span class="errorMsg" *ngFor="let error of errores">
